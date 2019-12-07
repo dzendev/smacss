@@ -1,0 +1,19 @@
+extends layout.pug
+
+block title
+	title My Gulp
+
+block content
+	h1 My Gulp!
+	.content
+		.col
+			img(src="img/gulp.png", alt="", width="200")
+		.col
+			img(src="img/subdirectory/nodejs-logo.png", alt="", width="200")
+	.wrap_icon
+		span.icon.icon-Char
+		span.icon-svg.svg-wordpress
+		span.svg-font.svg-font-drupal(style="color:red;font-size:60px;")
+
+block append footer
+	p text footer 2
