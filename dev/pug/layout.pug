@@ -20,16 +20,21 @@ html(lang="ru")
 			<![endif]-->
 
 	body.t-green
+		#l-menu
+			.l-page-width
+				.l-menu
+						+nav([
+							{name:"Главная", link:"index.html", "active": true},
+							{name:"Формы", link:"index.html", "active": false}
+						])
+						span.hamburger.fa.fa-menu
 		header#l-header
 			.l-page-width
-				a(href="index.html")
-					img(src="img/jack-head.png", alt="")
-				.l-menu
-					+nav([
-						{name:"Главная", link:"index.html", "active": true},
-						{name:"Формы", link:"index.html", "active": false}
-					])
-					span.hamburger.fa.fa-menu
+				a(href="http://smacss.com/")
+					img(src="img/jack-head.png", alt="smacss site")
+				div
+					h2 SMACSS — масштабируемая и модульная архитектура CSS
+					p Создание сайтов малых и больших размеров.
 		// /header#l-header
 		.l-wrap-2
 			+breadcrumb('SMACSS', {home: 'Главная'}, {library: 'Библиотека'} , {data: 'Данные'})

@@ -4,10 +4,23 @@
 /*!-----------------------------------------------------------------
 	layout.pug
  -----------------------------------------------------------------*/
+#l-menu
+	background-color: rgba(10, 31, 41, 0.8)
 #l-header
-	height 100px
+	// height 100px
 	.l-page-width
+		display flex
+		justify-content center
+		align-items center
 		padding 0 15px
+		img
+			margin: 7px 20px 0 0
+		h2
+			font-size: 1.7rem
+			margin: 0 0 5px 0
+		p
+			font-size 1.3rem
+			font-style: italic
 #l-footer
 	height 300px
 	.l-page-width
@@ -15,9 +28,7 @@
 
 
 .l-menu
-	clearfix()
 	.nav
-		float left
 		+below(m)
 			display none
 	.hamburger
