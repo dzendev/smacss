@@ -1,0 +1,15 @@
+/*-----------------------------------------------------------------
+  .icon - модуль png иконки
+ -----------------------------------------------------------------*/
+.icon {
+  display: inline-block;
+}
+.icon-facebook-logo {
+  background-position: 0px 0px;
+  background-image: url("../img/sprite.png");
+  width: 16px;
+  height: 16px;
+}
+.icon-facebook-logo:hover {
+  background-position: -16px 0px;
+}

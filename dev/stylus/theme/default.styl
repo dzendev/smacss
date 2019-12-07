@@ -1,0 +1,140 @@
+/*!
+ *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * Default Theme
+ *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+/*!-----------------------------------------------------------------
+  Подключение шрифтов
+ -----------------------------------------------------------------*/
+fontFace(SegoeUIBold)
+fontFace(SegoeUIItalic)
+fontFace(SegoeUILight)
+fontFace(SegoeUIRegular)
+fontFace(SegoeUISemiBold)
+/*-----------------------------------------------------------------
+  Переменные. Ипользуются theme, modules и state
+ -----------------------------------------------------------------*/
+// Grid
+rupture.scale = 0 320px 480px 768px 992px 1170px 1440px
+rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 'hd'
+// Name theme
+themeDefault = '.t-default'
+themeDefaultBazeFontFamily = "Helvetica Neue", Helvetica, Arial, sans-serif
+themeDefaultBazeFontSize = 16
+themeDefaultBazeFontLineHeight = (24 / themeDefaultBazeFontSize)em
+themeDefaultBazeFontColor = #000
+// Link
+themeDefaultLinkColor = #337ab7
+themeDefaultLinkColorHover = #23527c
+themeDefaultLinkColorFocus = themeDefaultLinkColorHover
+// Background page
+themeDefaultBgHeader = rgba(51, 153, 204, 0.5)
+// themeDefaultBgFooter = themeDefaultBgHeader
+themeDefaultBgFooter = #EEE
+// Border-radius element
+themeDefaultBorderRadius = .25rem
+// State
+themeDefaultIsActiveBg = #0275d8
+themeDefaultIsActiveColor = #fff
+/*!-----------------------------------------------------------------
+  Typography
+ -----------------------------------------------------------------*/
+body
+body{themeDefault}
+	font 100%/themeDefaultBazeFontLineHeight themeDefaultBazeFontFamily
+	color themeDefaultBazeFontColor
+h1, h2, h3, h4, h5, h6
+{themeDefault} h1, {themeDefault} h2, {themeDefault} h3, {themeDefault} h4, {themeDefault} h5, {themeDefault} h6
+	font-weight 500
+	line-height 1.1
+h1
+{themeDefault} h1
+	font-size 36
+h2
+{themeDefault} h2
+	font-size 30
+h3
+{themeDefault} h3
+	font-size 24
+h4
+{themeDefault} h4
+	font-size 18
+h5
+{themeDefault} h5
+	font-size 14
+h6
+{themeDefault} h6
+	font-size 12
+.h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small {
+    font-size: 65%;
+}
+.h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, .h4 .small, .h4 small, .h5 .small, .h5 small, .h6 .small, .h6 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small, h4 .small, h4 small, h5 .small, h5 small, h6 .small, h6 small{
+	font-weight 400
+	line-height 1
+	color #777
+}
+p
+{themeDefault} p
+	font-size 14
+	margin 0 0 10px
+	line-height 1.428
+abbr[title]
+{themeDefault} abbr[title]
+	font-size 14
+	cursor help
+	border-bottom 1px dotted #777
+	text-decoration none
+address
+{themeDefault} address
+	font-size 14
+	font-style normal
+.small, {themeDefault} .small,
+small, {themeDefault} small
+	font-size 85%
+/*!-----------------------------------------------------------------
+  Link
+ -----------------------------------------------------------------*/
+a
+	color themeDefaultLinkColor
+	text-decoration none
+	&:focus
+		color themeDefaultLinkColorFocus
+		text-decoration: underline
+	&:hover
+		color themeDefaultLinkColorHover
+		text-decoration: underline
+/*!-----------------------------------------------------------------
+  Таблицы
+ -----------------------------------------------------------------*/
+table
+	background-color transparent
+	margin-bottom 20px
+	border-spacing 0
+	border-collapse collapse
+	width: 100%
+	max-width: 100%
+	+below(m)
+		display: block
+		overflow-x: auto
+td, th
+	padding .2rem 0.75rem
+	border 1px solid #eceeef
+th
+	text-align left
+/*!-----------------------------------------------------------------
+  Адаптивные картинки
+ -----------------------------------------------------------------*/
+img
+	max-width 100%
+	height auto
+/*!-----------------------------------------------------------------
+  Фон страниц layout.pug
+ -----------------------------------------------------------------*/
+header
+header{themeDefault}
+{themeDefault} header
+	background themeDefaultBgHeader
+footer
+footer{themeDefault}
+{themeDefault} footer
+	background themeDefaultBgFooter

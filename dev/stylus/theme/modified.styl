@@ -1,0 +1,96 @@
+/*!
+ *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * Modified Theme
+ *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+/*-----------------------------------------------------------------
+  Переменные. Ипользуются theme, modules и state
+ -----------------------------------------------------------------*/
+
+// Name theme
+themeModified = '.t-green'
+// Font
+themeModifiedBazeFontFamily = "Arial", Helvetica, Arial, sans-serif
+themeModifiedBazeFontSize = 16
+themeModifiedBazeFontLineHeight = (24 / themeModifiedBazeFontSize)em
+themeModifiedBazeFontColor = #000
+// Link
+themeModifiedLinkColor = #337ab7
+themeModifiedLinkColorHover = #23527c
+themeModifiedLinkColorFocus = themeModifiedLinkColorHover
+// Backgound page
+themeModifiedBgHeader = #ccc
+themeModifiedBgFooter = themeModifiedBgHeader
+// State
+themeModifiedIsActive = #444
+if false
+	/*!-----------------------------------------------------------------
+	  Подключение шрифтов
+	 -----------------------------------------------------------------*/
+	fontFace(SegoeUIBold)
+	fontFace(SegoeUIItalic)
+	fontFace(SegoeUILight)
+	fontFace(SegoeUIRegular)
+	fontFace(SegoeUISemiBold)
+if false
+	/*!-----------------------------------------------------------------
+	  Typography
+	 -----------------------------------------------------------------*/
+	body{themeModified}
+		font 100%/themeModifiedBazeFontLineHeight themeModifiedBazeFontFamily
+		color themeModifiedBazeFontColor
+	h1{themeModified}, h2{themeModified}, h3{themeModified}, h4{themeModified}, h5{themeModified}, h6{themeModified},
+	{themeModified} h1, {themeModified} h2, {themeModified} h3, {themeModified} h4, {themeModified} h5, {themeModified} h6
+		font-weight 500
+	h1{themeModified}
+	{themeModified} h1
+		font-size (36 / themeModifiedBazeFontSize)em
+	h2{themeModified}
+	{themeModified} h2
+		font-size (30 / themeModifiedBazeFontSize)em
+	h3{themeModified}
+	{themeModified} h3
+		font-size (24 / themeModifiedBazeFontSize)em
+	h4{themeModified}
+	{themeModified} h4
+		font-size (18 / themeModifiedBazeFontSize)em
+	h5{themeModified}
+	{themeModified} h5
+		font-size (14 / themeModifiedBazeFontSize)em
+	h6{themeModified}
+	{themeModified} h6
+		font-size (12 / themeModifiedBazeFontSize)em
+	p{themeModified}
+	{themeModified} p
+		font-size (14 / themeModifiedBazeFontSize)em
+	abbr[title]{themeModified}
+	{themeModified} abbr[title]
+		font-size (14 / themeModifiedBazeFontSize)em
+		cursor help
+		border-bottom 1px dotted #777
+		text-decoration none
+	address{themeModified}
+	{themeModified} address
+		font-size (14 / themeModifiedBazeFontSize)em
+		font-style normal
+if false
+	a{themeModified}
+	{themeModified} a
+		color themeModifiedLinkColor
+		text-decoration none
+		&:focus
+			color themeModifiedLinkColorFocus
+			text-decoration: underline
+		&:hover
+			color themeModifiedLinkColorHover
+			text-decoration: underline
+/*!-----------------------------------------------------------------
+  Фон
+ -----------------------------------------------------------------*/
+if false
+	header{themeModified}
+	{themeModified} header
+		background themeModifiedBgHeader
+	footer{themeModified}
+	{themeModified} footer
+		background themeModifiedBgFooter

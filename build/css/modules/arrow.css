@@ -1,0 +1,24 @@
+/*-----------------------------------------------------------------
+  .arrow - модуль стрелка
+ -----------------------------------------------------------------*/
+.arrow:after {
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  padding: 4px;
+  content: '';
+  display: inline-block;
+  margin-left: 5px;
+}
+.arrow.is-right:after {
+  transform: rotate(-45deg);
+  margin-left: 1px;
+}
+.arrow.is-left:after {
+  transform: rotate(135deg);
+}
+.arrow.is-up:after {
+  transform: rotate(-135deg);
+}
+.arrow.is-down:after {
+  transform: rotate(45deg);
+}

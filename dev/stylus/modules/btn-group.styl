@@ -1,0 +1,48 @@
+/*!-----------------------------------------------------------------
+	.btn-group - модуль группировки кнопок
+ -----------------------------------------------------------------*/
+.btn-group
+.btn-group-justified
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	&:after
+		clearfix()
+
+	> .btn
+		position: relative
+		float: left
+		border-radius: 0
+		&:not(:last-child)
+			border-right: none
+		&:last-child
+			border-top-right-radius: themeDefaultBorderRadius
+			border-bottom-right-radius: themeDefaultBorderRadius
+		&:first-child
+			border-top-left-radius: themeDefaultBorderRadius
+			border-bottom-left-radius: themeDefaultBorderRadius
+
+.btn-group-justified
+	display: table
+	width: 100%
+	table-layout: fixed
+	border-collapse: separate
+
+	> .btn
+	> .btn-group
+		display: table-cell
+		float: none
+		width: 1%
+
+	> .btn-group
+		> .btn
+			width: 100%
+			border-radius: 0
+	> .btn-group:last-child
+		> .btn
+			border-top-right-radius: themeDefaultBorderRadius
+			border-bottom-right-radius: themeDefaultBorderRadius
+	> .btn-group:first-child
+		> .btn
+			border-top-left-radius: themeDefaultBorderRadius
+			border-bottom-left-radius: themeDefaultBorderRadius

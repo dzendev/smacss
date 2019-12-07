@@ -1,0 +1,122 @@
+/*!-----------------------------------------------------------------
+  Стили для страниц
+ -----------------------------------------------------------------*/
+/*!-----------------------------------------------------------------
+	layout.pug
+ -----------------------------------------------------------------*/
+#l-header
+	height 100px
+	.l-page-width
+		padding 0 15px
+#l-footer
+	height 300px
+	.l-page-width
+		padding 0 15px
+
+
+.l-menu
+	clearfix()
+	.nav
+		float left
+		+below(m)
+			display none
+	.hamburger
+		float right
+		display none
+		margin-top 5px
+		cursor pointer
+		+below(m)
+			display inline-block
+
+#l-1
+	width calc(30% - 2px)
+#l-2
+	gutter = 2px
+	width "calc(30% - %s)" % gutter
+
+pageCenterWidthh = 960px
+
+.l-center
+	margin 0 auto
+	max-width pageCenterWidthh
+
+foo()
+	.bar
+		{block}
+
++foo()
+	width 10px
+
+
+.l-wrap-2
+	center(960px)
+.l-col3
+	column(1/3)
+.l-col3:last-child
+	move(1/3)
+	+below(m)
+		unmove()
+
+.l-wrap-flex
+	// center(960px)
+	max-width 960px
+	margin 0 auto
+	display flex
+	justify-content: space-between
+	flex-wrap: wrap
+.l-col4-flex
+	width: column-width(1/4, $gutter:2)
+	+below(m)
+		width: column-width(1/2)
+	+below(400px)
+		width: 100%
+.wrap
+	center(960px)
+.l-col4
+	// column(1/4)
+	column(1/4, $gutter: 2)
+	+below(m)
+		column(1/2, $cycle:2)
+	+below(400px)
+		stack($pad:0, align:false)
+.l-col-1-6
+	column(1/6, $gutter: 0)
+	+below(m)
+		display none
+.l-col-5-6
+	column(5/6, $gutter: 0)
+	+below(m)
+		stack($pad:0, align:false)
+.l-col-offset-5-6
+	column(5/6, $gutter: 0, $offset: 1/6)
+	+below(m)
+		stack($pad:0, align:false)
+.align-wrap
+	position relative
+	height 100px
+	background: red
+.align-block
+	align()
+	p
+		padding-bottom: 0
+		margin 0
+// .l-col4:last-child
+// 	column(1/4, $offset: 1/4)
+
+#l-top-scroll
+	height 50px
+	width 50px
+	position fixed
+	bottom 50px
+	right 50px
+	background #000
+	color #fff
+	font-size: 40px
+	text-align center
+	line-height: 50px
+/*!-----------------------------------------------------------------
+	index.pug
+ -----------------------------------------------------------------*/
+/*!-----------------------------------------------------------------
+	404.pug
+ -----------------------------------------------------------------*/

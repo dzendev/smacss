@@ -1,0 +1,57 @@
+/*-----------------------------------------------------------------
+	.alert - модуль предупреждений
+ -----------------------------------------------------------------*/
+.alert {
+  padding: 0.75rem 2rem 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  position: relative;
+}
+.alert > .fa-close {
+  cursor: pointer;
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 50%;
+  right: 1rem;
+  transform: translate(0%, -50%);
+}
+.alert a {
+  text-decoration: underline;
+}
+.alert.is-danger {
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442;
+}
+.alert.is-danger a,
+.alert.is-danger a:hover {
+  color: #a94442;
+}
+.alert.is-success {
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+  color: #3c763d;
+}
+.alert.is-success a,
+.alert.is-success a:hover {
+  color: #3c763d;
+}
+.alert.is-warning {
+  background-color: #fcf8e3;
+  border-color: #faf2cc;
+  color: #8a6d3b;
+}
+.alert.is-warning a,
+.alert.is-warning a:hover {
+  color: #8a6d3b;
+}
+.alert.is-info {
+  background-color: #d9edf7;
+  border-color: #bcdff1;
+  color: #31708f;
+}
+.alert.is-info a,
+.alert.is-info a:hover {
+  color: #31708f;
+}

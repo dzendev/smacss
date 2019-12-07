@@ -1,0 +1,35 @@
+/*!-----------------------------------------------------------------
+  .callout - модуль выноска
+ -----------------------------------------------------------------*/
+.callout
+	padding: 20px
+	margin: 20px 0
+	border: 1px solid #eee
+	border-left-width: 5px
+	border-radius: themeDefaultBorderRadius
+
+	h4
+		margin-top: 0
+		margin-bottom: .25rem
+	p:last-child
+		margin-bottom: 0
+
+	& + &
+		margin-top: -5px
+
+	&.is-warning
+		border-left-color: #f0ad4e
+		h4
+			color: #f0ad4e
+	&.is-danger
+		border-left-color: #a94442
+		h4
+			color #a94442
+	&.is-info
+		border-left-color: #31708f
+		h4
+			color #31708f
+	&.is-success
+		border-left-color: #3c763d
+		h4
+			color #3c763d

@@ -1,0 +1,46 @@
+/*!-----------------------------------------------------------------
+	.alert - модуль предупреждений
+ -----------------------------------------------------------------*/
+.alert
+	padding: .75rem 2rem .75rem 1.25rem
+	margin-bottom: 1rem
+	border: 1px solid transparent
+	border-radius: .25rem
+	position: relative
+	> .fa-close
+		cursor: pointer
+		position absolute
+		transform-style: preserve-3d
+		top: 50%
+		right 1rem
+		transform: translate(0%, -50%)
+	a
+		text-decoration underline
+	&.is-danger
+		background-color: #f2dede
+		border-color: #ebcccc
+		color: #a94442
+		a
+		a:hover
+			color #a94442
+	&.is-success
+		background-color: #dff0d8
+		border-color: #d0e9c6
+		color: #3c763d
+		a
+		a:hover
+			color #3c763d
+	&.is-warning
+		background-color: #fcf8e3
+		border-color: #faf2cc
+		color: #8a6d3b
+		a
+		a:hover
+			color #8a6d3b
+	&.is-info
+		background-color: #d9edf7
+		border-color: #bcdff1
+		color: #31708f
+		a
+		a:hover
+			color #31708f

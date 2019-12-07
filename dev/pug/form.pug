@@ -1,0 +1,248 @@
+extends layout.pug
+
+block content
+	.l-wrap-2
+		h1 Формы и кнопки
+	.container
+		.row(style="max-width:500px;margin:0 auto;")
+			form
+				fieldset
+					legend Обычная форма
+					.form-wrap
+						label(for='exampleinputemail1') email address
+						input#exampleinputemail1.form-control(type='email', placeholder='email')
+					.form-wrap
+						label(for='exampleinputpassword1') password
+						input#exampleinputpassword1.form-control(type='password', placeholder='password')
+					.form-wrap
+						label(for='exampleinputfile') file input
+						input#exampleinputfile(type='file')
+						p.form-help example block-level help text here.
+					.form-wrap
+						label(for='exampleTextarea') textarea
+						textarea.form-control(rows='3')#exampleTextarea
+					.form-checkbox
+						label
+							input(type='checkbox', checked)
+							| check me out
+					.form-checkbox
+						label
+							input(type='checkbox', value='')
+							| Option one is this and that&mdash;be sure to include why it&apos;s great
+					.form-checkbox.is-disabled
+						label
+							input(type='checkbox', value='', disabled='')
+							| Option two is disabled
+					.form-radio
+						label
+							input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
+							| Option one is this and that&mdash;be sure to include why it&apos;s great
+					.form-radio
+						label
+							input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+							| Option two can be something else and selecting it will deselect option one
+					.form-radio.is-disabled
+						label
+							input#optionsRadios3(type='radio', name='optionsRadios', value='option3', disabled='')
+							| Option three is disabled
+					.form-wrap
+						select.form-control
+							option 1
+							option 2
+							option 3
+							option 4
+							option 5
+					.form-wrap
+						select(multiple).form-control
+							option 1
+							option 2
+							option 3
+							option 4
+							option 5
+					button.btn.is-primary(type='submit') Submit
+			br
+			br
+			form
+				fieldset(disabled='')
+					legend Неактивная форма
+					.form-wrap
+						label(for='disabledtextinput') disabled input
+						input#disabledtextinput.form-control(type='text', placeholder='disabled input')
+					.form-wrap
+						label(for='disabledselect') disabled select menu
+						select#disabledselect.form-control
+							option disabled select
+					.form-checkbox
+						label
+							input(type='checkbox')
+							| can&apos;t check this
+					button.btn.btn-primary(type='submit') submit
+			br
+			br
+			form
+				fieldset
+					legend Горизонтальная форма
+					.form-wrap
+						label.l-col-1-6.form-label(for='inputEmail3') Email
+						.l-col-5-6
+							input#inputEmail3.form-control(type='email', placeholder='Email')
+					.form-wrap
+						label.l-col-1-6.form-label(for='inputPassword3') Password
+						.l-col-5-6
+							input#inputPassword3.form-control(type='password', placeholder='Password')
+					.form-wrap
+						label.l-col-1-6.form-label Email
+						.l-col-5-6
+							p.form-text email@example.com
+					.form-wrap
+						label.l-col-1-6.form-label checkbox
+						.l-col-5-6
+							label.form-checkbox.is-inline
+								input#inlineCheckbox1(type='checkbox', value='option1')
+								| 1
+							label.form-checkbox.is-inline
+								input#inlineCheckbox2(type='checkbox', value='option2')
+								| 2
+							label.form-checkbox.is-inline
+								input#inlineCheckbox3(type='checkbox', value='option3')
+								| 3
+					.form-wrap
+						label.l-col-1-6.form-label radio
+						.l-col-5-6
+							label.form-radio.is-inline
+								input#inlineRadio1(type='radio', name='inlineRadioOptions', value='option1')
+								| 1
+							label.form-radio.is-inline
+								input#inlineRadio2(type='radio', name='inlineRadioOptions', value='option2')
+								| 2
+							label.form-radio.is-inline
+								input#inlineRadio3(type='radio', name='inlineRadioOptions', value='option3')
+								| 3
+					.l-col-offset-5-6
+						.form-checkbox
+							label
+								input(type='checkbox')
+								| Remember me
+					.form-wrap
+						.l-col-offset-5-6
+							button.btn.is-primary(type='submit') Sign in
+			br
+			br
+			form.is-inline
+				.form-wrap
+					label(for='exampleInputName2') Name
+					input#exampleInputName2.form-control(type='text', placeholder='Jane Doe')
+				.form-wrap
+					label(for='exampleInputEmail2') Email
+					input#exampleInputEmail2.form-control(type='email', placeholder='jane.doe@example.com')
+
+
+				button.btn.is-primary(type='submit') Send invitation
+			br
+			br
+			form.is-inline
+				.form-wrap
+					label.sr-only(for='exampleinputemail3') email address
+					input#exampleinputemail3.form-control(type='email', placeholder='email')
+				.form-wrap
+					label.sr-only(for='exampleinputpassword3') password
+					input#exampleinputpassword3.form-control(type='password', placeholder='password')
+				.checkbox
+					label
+						input(type='checkbox')
+						|  remember me
+				button.btn.is-primary(type='submit') sign in
+			br
+			br
+			form.is-inline
+				.form-group
+					input#exampleinputamount.form-control(type='text', placeholder='amount')
+					button.btn.is-primary(type='submit') transfer cash
+			br
+			br
+			form.is-inline
+				.form-wrap
+					label.sr-only(for='exampleinputamount') amount (in dollars)
+					.input-group
+						.input-group-addon $
+						input#exampleinputamount.form-control(type='text', placeholder='amount')
+						.input-group-addon .00
+				button.btn.is-primary(type='submit') transfer cash
+			form.form.is-inline
+				.form-wrap
+					label.sr-only(for='exampleinputamount') amount (in dollars)
+					.input-group
+						.input-group-addon.form-control $
+						input#exampleinputamount.form-control(type='text', placeholder='amount')
+						button.btn.is-primary(type='submit') transfer cash
+		.row
+			h2 Btn
+			div
+				button.btn.is-success Success
+				button.btn.is-info Info
+				button.btn.is-warning Warning
+				button.btn.is-danger Danger
+				button.btn.is-primary Primary
+				button.btn.is-secondary Secondary
+			div
+				input(type="button", value="Success").btn.is-success
+				input(type="button", value="Info").btn.is-info
+				input(type="button", value="Warning").btn.is-warning
+				input(type="button", value="Danger").btn.is-danger
+				input(type="button", value="Primary").btn.is-primary
+				input(type="button", value="Secondary").btn.is-secondary
+			div
+				input(type="submit", value="Success").btn.is-success
+				input(type="submit", value="Info").btn.is-info
+				input(type="submit", value="Warning").btn.is-warning
+				input(type="submit", value="Danger").btn.is-danger
+				input(type="submit", value="Primary").btn.is-primary
+				input(type="submit", value="Secondary").btn.is-secondary
+			div
+				a.btn.is-success Success
+				a.btn.is-info Info
+				a.btn.is-warning Warning
+				a.btn.is-danger Danger
+				a.btn.is-primary.is-disable Primary
+				a.btn.is-secondary Secondary
+			div(style="padding:20px 0")
+				.btn-group
+					button.btn.is-success Success
+					button.btn.is-info Info
+					button.btn.is-warning Warning
+					button.btn.is-danger Danger
+					button(disabled="disabled").btn.is-primary Primary
+					button.btn.is-secondary Secondary
+			div(style="padding:20px 0")
+				.btn-group-justified
+					a.btn.is-success Success
+					a.btn.is-info Info
+					a.btn.is-warning Warning
+					a.btn.is-danger Danger
+					a.btn.is-primary Primary
+					a.btn.is-secondary Secondary
+			div(style="padding:20px 0")
+				.btn-group-justified
+					.btn-group: button.btn.is-success Success
+					.btn-group: button.btn.is-info Info
+					.btn-group: button.btn.is-warning Warning
+					.btn-group: button.btn.is-danger Danger
+					.btn-group: button.btn.is-primary Primary
+					.btn-group: button.btn.is-secondary Secondary
+		.row
+			label.switch
+				input(type='checkbox')
+				.switch__slider
+			label.switch
+				input(type='checkbox', checked='')
+				.switch__slider
+			br
+			br
+			label.switch
+				input(type='checkbox')
+				.switch__slider.is-secondary
+			label.switch
+				input(type='checkbox', checked='')
+				.switch__slider.is-secondary
+	// /.container
+

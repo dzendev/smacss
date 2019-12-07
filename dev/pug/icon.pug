@@ -1,0 +1,50 @@
+extends layout.pug
+
+block content
+
+	.l-wrap-2
+		h1 Иконки
+
+		h2 .icon - png icon
+		div
+			span.icon.icon-facebook-logo
+			| .icon.icon-facebook-logo
+
+		h2 .fa - font-awesome
+		div
+			i.fa.fa-vk
+			| .fa.fa-vk
+		div.
+			#[i.fa.fa-vk].fa.fa-vk
+
+		h2 .iconfont - svg icon to font
+		div
+			span.iconfont.iconfont-blogger
+			span.iconfont.iconfont-drupal
+
+		h2 .iconsvg - svg sprite
+		div
+			p
+				+iconsvg('business', 'is-large')
+				| svg.iconsvg.is-large > use#business
+			p
+				+iconsvg('business')
+				| svg.iconsvg > use#business
+			p
+				+iconsvg('business', 'is-small')
+				| svg.iconsvg.is-small > use#business
+
+		h2 CSS Arrows
+		div
+			p
+				| .arrow.is-right:
+				i.arrow.is-right
+			p
+				| .arrow.is-left:
+				i.arrow.is-left
+			p
+				| .arrow.is-up:
+				i.arrow.is-up
+			p
+				| .arrow.is-down:
+				i.arrow.is-down

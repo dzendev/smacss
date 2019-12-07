@@ -1,0 +1,46 @@
+//- .nav - модуль навигации
+//- mixin nav(active, ...items)
+//- 	nav.nav
+//- 		each item in items
+//- 			- for(var key in item) {
+//- 				if active == key
+//- 					a(href=key).is-active= item[key]
+//- 				else
+//- 					a(href=key)= item[key]
+//- 			- }
+
+mixin nav(items)
+	nav.nav
+		each item in items
+			if item.active == true
+				a(href=item.link).is-active= item.name
+			else
+				a(href=item.link)= item.name
+	// Этот javascript код для удобства тестирования многостраничной верстки
+	// Его надо удалить после создания шаблонов
+	script.
+		var nav;
+		nav = document.querySelectorAll('nav.nav > a');
+		nav.forEach(function(elem){
+			if (elem.classList.contains('is-active')){
+				elem.classList.remove('is-active');
+			}
+			if (elem.href === window.location.href){
+				elem.classList.add('is-active');
+			}
+		});
+	// /nav.nav
+
+//- .breadcrumb - модуль хлебные крошки
+mixin breadcrumb(active, ...items)
+	nav.breadcrumb
+		each item in items
+			- for(var key in item) {
+					a(href=key)= item[key]
+			- }
+		span=active
+
+//- .iconsvg - модуль svg sprite
+mixin iconsvg(iconName, state)
+	svg.iconsvg(class="iconsvg-" + iconName, class=state ? state: '')
+		use(xlink:href="#" + iconName)

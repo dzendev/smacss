@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+	.l-wrap-2
+		h1 Навигация по сайту
+
+	.l-wrap-2
+		nav.pagination
+			a(href="prev").is-disabled Previous
+			a(href="1").is-active 1
+			a(href="2") 2
+			a(href="3") 3
+			a(href="next") Next

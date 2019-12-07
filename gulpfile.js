@@ -63,7 +63,7 @@ function sync() {
 }
 
 function pugToHtml() {
-	return gulp.src(['dev/pug/**/*.pug', '!dev/pug/layout.pug'])
+	return gulp.src(['dev/pug/**/*.pug', '!dev/pug/layout.pug', '!dev/pug/_*.pug'])
 		.pipe(plumberNotifier())
 		.pipe(pug({ pretty: true }))
 		.pipe(pipeIf(env === 'production', htmlReplace({
@@ -265,8 +265,8 @@ function coffeeToJs() {
 }
 
 function watch() {
-	// gulp.watch('dev/pug/**/*.pug', pugToHtml);
-	gulp.watch('dev/html/**/*.html', html);
+	gulp.watch('dev/pug/**/*.pug', pugToHtml);
+	// gulp.watch('dev/html/**/*.html', html);
 	gulp.watch('dev/img/**/*.*', img);
 	gulp.watch('dev/stylus/**/*.styl', stylusToCss);
 	// gulp.watch('dev/sass/**/*.scss', sassToCss);
@@ -282,8 +282,8 @@ exports.move = gulp.parallel(moveFont, moveJs); // перемещение шри
 exports.email = email; // генерация email письма из html
 
 const task = [
-	// pugToHtml,
-	html,
+	pugToHtml,
+	// html,
 	img,
 	stylusToCss,
 	// sassToCss,

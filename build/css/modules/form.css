@@ -1,0 +1,247 @@
+/*-----------------------------------------------------------------
+	.form - модуль форм
+ -----------------------------------------------------------------*/
+form fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+form legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+form label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+}
+form input[type="search"] {
+  box-sizing: border-box;
+}
+form input[type="radio"],
+form input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px 9;
+  line-height: normal;
+}
+form input[type="file"] {
+  display: block;
+}
+form input[type="range"] {
+  display: block;
+  width: 100%;
+}
+form select[multiple],
+form select[size] {
+  height: auto;
+}
+form input[type="file"]:focus,
+form input[type="radio"]:focus,
+form input[type="checkbox"]:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+form output {
+  display: block;
+  padding-top: 7px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+}
+form .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: themeDefaultBorderRadius;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+form .form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6);
+}
+form .form-control::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+form .form-control:-ms-input-placeholder {
+  color: #999;
+}
+form .form-control::-webkit-input-placeholder {
+  color: #999;
+}
+form .form-control::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+form .form-control[disabled],
+form .form-control[readonly],
+form fieldset[disabled] .form-control {
+  background-color: #eee;
+  opacity: 1;
+}
+form .form-control[disabled],
+form fieldset[disabled] .form-control {
+  cursor: not-allowed;
+}
+form textarea.form-control {
+  height: auto;
+}
+form input[type="search"] {
+  -webkit-appearance: none;
+}
+form .form-radio,
+form .form-checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+form .form-radio.is-inline,
+form .form-checkbox.is-inline {
+  display: inline-block;
+  margin: 0;
+  font-weight: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  padding-top: 7px;
+  padding-bottom: 3px;
+}
+form .form-radio.is-inline input[type="radio"],
+form .form-checkbox.is-inline input[type="radio"],
+form .form-radio.is-inline input[type="checkbox"],
+form .form-checkbox.is-inline input[type="checkbox"] {
+  margin-top: 11px;
+}
+form .form-radio label,
+form .form-checkbox label {
+  min-height: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+form .form-radio input[type="radio"],
+form .form-checkbox input[type="radio"],
+form .form-radio input[type="checkbox"],
+form .form-checkbox input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 5px;
+}
+form .form-radio + .form-radio,
+form .form-checkbox + .form-checkbox {
+  margin-top: -5px;
+}
+form .form-radio.is-inline + .form-radio.is-inline,
+form .form-checkbox.is-inline + .form-checkbox.is-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+form .form-text {
+  min-height: 34px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 0;
+}
+form .form-help {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+form .form-label {
+  padding: 5px 10px 0 0;
+  margin-bottom: 0;
+  text-align: right;
+}
+@media only screen and (min-width: 800px) {
+  form.is-inline .form-wrap {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  form.is-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  form.is-inline .form-text {
+    display: inline-block;
+  }
+  form.is-inline .form-input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  form.is-inline .form-input-group .input-group-addon,
+  form.is-inline .form-input-group .input-group-btn,
+  form.is-inline .form-input-group .form-control {
+    width: auto;
+  }
+  form.is-inline .form-input-group > .form-control {
+    width: 100%;
+  }
+  form.is-inline .form-control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  form.is-inline .form-radio,
+  form.is-inline .form-checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  form.is-inline .form-radio label,
+  form.is-inline .form-checkbox label {
+    padding-left: 0;
+  }
+  form.is-inline .form-radio input[type="radio"],
+  form.is-inline .form-checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+  form.is-inline .is-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+.form-horizontal .form-radio,
+.form-horizontal .form-checkbox,
+.form-horizontal .form-radio.is-inline,
+.form-horizontal .form-checkbox.is-inline {
+  padding-top: 7px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.form-horizontal .form-radio,
+.form-horizontal .form-checkbox {
+  min-height: 27px;
+}
+.form-wrap::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.form-wrap {
+  margin-bottom: 15px;
+}
+.form-horizontal .is-feedback .form-control-feedback {
+  right: 15px;
+}

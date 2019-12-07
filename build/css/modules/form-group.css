@@ -1,0 +1,22 @@
+/*-----------------------------------------------------------------
+	.form-group - модуль группирования полей формы
+ -----------------------------------------------------------------*/
+form.is-inline .form-group {
+  display: inline-table;
+  vertical-align: middle;
+  position: relative;
+  display: table;
+  border-collapse: collapse;
+}
+form.is-inline .form-group > * {
+  border-radius: 0;
+  display: table-cell;
+}
+form.is-inline .form-group > *:first-child {
+  border-top-left-radius: themeDefaultBorderRadius;
+  border-bottom-left-radius: themeDefaultBorderRadius;
+}
+form.is-inline .form-group > *:last-child {
+  border-top-right-radius: themeDefaultBorderRadius;
+  border-bottom-right-radius: themeDefaultBorderRadius;
+}

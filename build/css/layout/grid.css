@@ -1,0 +1,251 @@
+/*-----------------------------------------------------------------
+   Сетка
+ ------------------------------------------------------------------*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.l-page-width {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 leftRightPaddingPage;
+}
+.l-page-width::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+@media only screen and (max-width: 1050px) {
+  .l-page-width {
+    padding: 0 leftRightPaddingPageMobile;
+  }
+}
+.l-col3-4 {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 74.25%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.l-col3-4::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.l-col3-4:last-child {
+  margin-right: 0%;
+}
+@media only screen and (max-width: 600px) {
+  .l-col3-4 {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .l-col3-4:first-child {
+    margin-left: auto;
+  }
+  .l-col3-4:last-child {
+    margin-right: auto;
+  }
+}
+.l-col1-4 {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.l-col1-4::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.l-col1-4:last-child {
+  margin-right: 0%;
+}
+@media only screen and (max-width: 600px) {
+  .l-col1-4 {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .l-col1-4:first-child {
+    margin-left: auto;
+  }
+  .l-col1-4:last-child {
+    margin-right: auto;
+  }
+}
+.l-col2-4 {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.l-col2-4::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.l-col2-4:last-child {
+  margin-right: 0%;
+}
+@media only screen and (max-width: 600px) {
+  .l-col2-4 {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .l-col2-4:first-child {
+    margin-left: auto;
+  }
+  .l-col2-4:last-child {
+    margin-right: auto;
+  }
+}
+.l-col2 {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.l-col2::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.l-col2:last-child {
+  margin-right: 0%;
+}
+@media only screen and (max-width: 600px) {
+  .l-col2 {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .l-col2:first-child {
+    margin-left: auto;
+  }
+  .l-col2:last-child {
+    margin-right: auto;
+  }
+}
+.l-col4 {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 22.75%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.l-col4::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.l-col4:nth-child(n) {
+  margin-right: 3%;
+  float: left;
+  clear: none;
+}
+.l-col4:nth-child(4n) {
+  margin-right: 0%;
+  float: right;
+}
+.l-col4:nth-child(4n + 1) {
+  clear: both;
+}
+@media only screen and (max-width: 800px) {
+  .l-col4 {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+  }
+  .l-col4::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  .l-col4:nth-child(n) {
+    margin-right: 3%;
+    float: left;
+    clear: none;
+  }
+  .l-col4:nth-child(2n) {
+    margin-right: 0%;
+    float: right;
+  }
+  .l-col4:nth-child(2n + 1) {
+    clear: both;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .l-col4 {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .l-col4:first-child {
+    margin-left: auto;
+  }
+  .l-col4:last-child {
+    margin-right: auto;
+  }
+}
+.l-col3 {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.999999999999996%;
+  margin-left: 0%;
+  margin-right: 2%;
+}
+.l-col3::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.l-col3:last-child {
+  margin-right: 0%;
+}
+@media only screen and (max-width: 600px) {
+  .l-col3 {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .l-col3:first-child {
+    margin-left: auto;
+  }
+  .l-col3:last-child {
+    margin-right: auto;
+  }
+}

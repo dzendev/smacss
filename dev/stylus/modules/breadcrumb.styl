@@ -1,0 +1,23 @@
+/*!-----------------------------------------------------------------
+  .breadcrumb - хлебные крошки
+ -----------------------------------------------------------------*/
+.breadcrumb
+	padding: 0.75rem 1rem
+	// margin-bottom: 1rem
+	background-color: #eceeef
+	// border-radius: 0.25rem
+	a
+		display inline-block
+		&::after
+			display: inline-block
+			padding-right: 0.5rem
+			padding-left: 0.5rem
+			color: #636c72
+			content: "/"
+		&:hover
+			&::before
+				text-decoration: underline
+				text-decoration: none
+	span
+		display inline-block
+
