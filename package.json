@@ -1,0 +1,22 @@
+{
+  "name": "smacss",
+  "version": "1.0.0",
+  "description": "smacss",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzendev/smacss.git"
+  },
+  "keywords": [
+    "smacss"
+  ],
+  "author": "dzendev@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dzendev/smacss/issues"
+  },
+  "homepage": "https://github.com/dzendev/smacss#readme"
+}
