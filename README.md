@@ -1,1 +1,1 @@
-# smacss
+# SMACSS
