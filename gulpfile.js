@@ -38,7 +38,10 @@ function clear() {
 }
 
 function moveFont() {
-	return gulp.src('dev/lib/fonts/*')
+	return gulp.src([
+			'dev/lib/fonts/*',
+			'./node_modules/font-awesome/fonts/*'
+		])
 		.pipe(newer('build/fonts'))
 		.pipe(gulp.dest('build/fonts'));
 }
@@ -107,7 +110,7 @@ function img() {
 }
 
 function stylusToCss() {
-	return gulp.src(['dev/stylus/**/*.styl', '!dev/stylus/**/_*.styl'])
+	return gulp.src('dev/stylus/main.styl')
 		.pipe(plumberNotifier())
 		.pipe(stylus({ use: [nib(), rupture(), jeet()], 'include css': true}))
 		.pipe(pipeIf(env === 'production', uncss({
