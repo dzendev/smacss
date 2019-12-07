@@ -278,7 +278,8 @@ function watch() {
 exports.clear = clear; // очистка папки build
 exports.sprite = gulp.parallel(spritePng, spriteSvg); // создание спрайтов png и svg
 exports.font = gulp.parallel(svgToFont, fontBase64); // созадние из svg шрифта и преобразование шрифта в base64
-exports.move = gulp.parallel(moveFont, moveJs); // перемещение шрифтов и js библиотек
+const move = gulp.parallel(moveFont, moveJs);
+exports.move = move; // перемещение шрифтов и js библиотек
 exports.email = email; // генерация email письма из html
 
 const task = [
@@ -292,7 +293,7 @@ const task = [
 	// es6modules
 ];
 
-exports.build = gulp.series(clear, /*move,*/ gulp.parallel(...task));
+exports.build = gulp.series(clear, move, gulp.parallel(...task));
 const dev = gulp.parallel(sync, ...task, watch);
 exports.dev = dev;
 exports.default = dev;
