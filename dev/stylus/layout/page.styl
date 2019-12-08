@@ -4,15 +4,29 @@
 /*!-----------------------------------------------------------------
 	layout.pug
  -----------------------------------------------------------------*/
-#l-menu
-	background-color: rgba(10, 31, 41, 0.8)
+.l-page-width
+	padding 0 15px
+	max-width: 960px
+	margin: 0 auto
+
 #l-header
-	// height 100px
-	.l-page-width
-		display flex
-		justify-content flex-start
-		align-items center
-		padding 0 15px
+	&-menu
+		background-color: rgba(10, 31, 41, 0.8)
+		.nav
+			+below(m)
+				display none
+		.hamburger
+			float right
+			display none
+			margin-top 5px
+			cursor pointer
+			+below(m)
+				display inline-block
+	&-title
+		.l-page-width
+			display flex
+			justify-content flex-start
+			align-items center
 		img
 			margin: 7px 20px 0 0
 		h2
@@ -21,6 +35,10 @@
 		p
 			font-size 1.3rem
 			font-style: italic
+	&-breadcrumb
+		background-color: #eceeef
+	// height 100px
+
 #l-content
 	padding: 0 15px
 #l-footer
@@ -31,17 +49,21 @@
 nav.breadcrumb
 	padding-left: 15px
 
-.l-menu
-	.nav
-		+below(m)
-			display none
-	.hamburger
-		float right
-		display none
-		margin-top 5px
-		cursor pointer
-		+below(m)
-			display inline-block
+
+
+// прижатый футер к низу
+html, body
+	height: 100%
+
+body
+	display: flex
+	min-height: 100vh
+	flex-direction: column
+
+#l-content
+	flex: 1
+
+
 
 #l-1
 	width calc(30% - 2px)

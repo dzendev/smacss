@@ -974,10 +974,31 @@ footer.t-default,
 /*-----------------------------------------------------------------
 	layout.pug
  -----------------------------------------------------------------*/
-#l-menu {
+.l-page-width {
+  padding: 0 15px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+#l-header-menu {
   background-color: rgba(10,31,41,0.8);
 }
-#l-header .l-page-width {
+@media only screen and (max-width: 768px) {
+  #l-header-menu .nav {
+    display: none;
+  }
+}
+#l-header-menu .hamburger {
+  float: right;
+  display: none;
+  margin-top: 5px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  #l-header-menu .hamburger {
+    display: inline-block;
+  }
+}
+#l-header-title .l-page-width {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -996,18 +1017,20 @@ footer.t-default,
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  padding: 0 15px;
 }
-#l-header .l-page-width img {
+#l-header-title img {
   margin: 7px 20px 0 0;
 }
-#l-header .l-page-width h2 {
+#l-header-title h2 {
   font-size: 1.7rem;
   margin: 0 0 5px 0;
 }
-#l-header .l-page-width p {
+#l-header-title p {
   font-size: 1.3rem;
   font-style: italic;
+}
+#l-header-breadcrumb {
+  background-color: #eceeef;
 }
 #l-content {
   padding: 0 15px;
@@ -1021,21 +1044,33 @@ footer.t-default,
 nav.breadcrumb {
   padding-left: 15px;
 }
-@media only screen and (max-width: 768px) {
-  .l-menu .nav {
-    display: none;
-  }
+html,
+body {
+  height: 100%;
 }
-.l-menu .hamburger {
-  float: right;
-  display: none;
-  margin-top: 5px;
-  cursor: pointer;
+body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
-@media only screen and (max-width: 768px) {
-  .l-menu .hamburger {
-    display: inline-block;
-  }
+#l-content {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 #l-1 {
   width: calc(30% - 2px);
@@ -1372,11 +1407,11 @@ nav.breadcrumb {
 /*-----------------------------------------------------------------
   .breadcrumb - хлебные крошки
  -----------------------------------------------------------------*/
-.breadcrumb {
-  padding: 0.75rem 0;
+nav.breadcrumb {
+  padding: 0.55rem 0;
   background-color: #eceeef;
 }
-.breadcrumb ul {
+nav.breadcrumb ul {
   list-style: none;
   display: -webkit-box;
   display: -moz-box;
@@ -1387,21 +1422,21 @@ nav.breadcrumb {
   margin: 0;
   padding: 0;
 }
-.breadcrumb a {
+nav.breadcrumb a {
   display: inline-block;
 }
-.breadcrumb a::after {
+nav.breadcrumb a::after {
   display: inline-block;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   color: #636c72;
   content: "/";
 }
-.breadcrumb a:hover::before {
+nav.breadcrumb a:hover::before {
   text-decoration: underline;
   text-decoration: none;
 }
-.breadcrumb span {
+nav.breadcrumb span {
   display: inline-block;
 }
 /*-----------------------------------------------------------------

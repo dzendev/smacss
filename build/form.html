@@ -20,10 +20,10 @@ nav.breadcrumb
     <title>SMACSS</title><!--[if IE 9]>
     <script type="text/javascript" src="js/placeholders.min.js"></script><![endif]-->
   </head>
-  <body class="t-green">
-    <div id="l-menu">
-      <div class="l-page-width">
-        <div class="l-menu">
+  <body>
+    <header id="l-header">
+      <div id="l-header-menu">
+        <div class="l-page-width">
           <nav class="nav"><a class="is-active" href="index.html">Главная</a><a href="icon.html">Иконки</a><a href="navigation.html">Навигация</a><a href="form.html">Формы</a><a href="404.html">Ошибка 404</a>
           </nav>
           <!-- Этот javascript код для удобства тестирования многостраничной верстки-->
@@ -43,324 +43,328 @@ nav.breadcrumb
           <!-- /nav.nav--><span class="hamburger fa fa-menu"></span>
         </div>
       </div>
-    </div>
-    <header id="l-header">
-      <div class="l-page-width"><a href="http://smacss.com/"><img src="img/jack-head.png" alt="smacss site"></a>
-        <div>
-          <h2>SMACSS — масштабируемая и модульная архитектура CSS</h2>
-          <p>Создание сайтов малых и больших размеров.</p>
+      <div id="l-header-title">
+        <div class="l-page-width"><a href="http://smacss.com/"><img src="img/jack-head.png" alt="smacss site"></a>
+          <div>
+            <h2>SMACSS — масштабируемая и модульная архитектура CSS</h2>
+            <p>Создание сайтов малых и больших размеров.</p>
+          </div>
+        </div>
+      </div>
+      <div id="l-header-breadcrumb">
+        <div class="l-page-width">
+          <nav class="breadcrumb">
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="form.html">Формы</a></li>
+              <li>Подтема</li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
     <!-- /header#l-header-->
-    <div class="l-wrap-2">
-      <nav class="breadcrumb">
-        <ul>
-          <li><a href="/">Главная</a></li>
-          <li><a href="/about">Подтема1</a></li>
-          <li>Подтема2</li>
-        </ul>
-      </nav>
-    </div>
-    <div class="l-page-width" id="l-content">
-      <div class="l-wrap-2">
-        <h1>Формы и кнопки</h1>
-      </div>
-      <div class="container">
-        <div class="row" style="max-width:500px;margin:0 auto;">
-          <form>
-            <fieldset>
-              <legend>Обычная форма</legend>
-              <div class="form-wrap">
-                <label for="exampleinputemail1">email address</label>
-                <input class="form-control" id="exampleinputemail1" type="email" placeholder="email">
-              </div>
-              <div class="form-wrap">
-                <label for="exampleinputpassword1">password</label>
-                <input class="form-control" id="exampleinputpassword1" type="password" placeholder="password">
-              </div>
-              <div class="form-wrap">
-                <label for="exampleinputfile">file input</label>
-                <input id="exampleinputfile" type="file">
-                <p class="form-help">example block-level help text here.</p>
-              </div>
-              <div class="form-wrap">
-                <label for="exampleTextarea">textarea</label>
-                <textarea class="form-control" rows="3" id="exampleTextarea"></textarea>
-              </div>
-              <div class="form-checkbox">
-                <label>
-                  <input type="checkbox" checked>check me out
-                </label>
-              </div>
-              <div class="form-checkbox">
-                <label>
-                  <input type="checkbox" value="">Option one is this and that&mdash;be sure to include why it&apos;s great
-                </label>
-              </div>
-              <div class="form-checkbox is-disabled">
-                <label>
-                  <input type="checkbox" value="" disabled="">Option two is disabled
-                </label>
-              </div>
-              <div class="form-radio">
-                <label>
-                  <input id="optionsRadios1" type="radio" name="optionsRadios" value="option1" checked="">Option one is this and that&mdash;be sure to include why it&apos;s great
-                </label>
-              </div>
-              <div class="form-radio">
-                <label>
-                  <input id="optionsRadios2" type="radio" name="optionsRadios" value="option2">Option two can be something else and selecting it will deselect option one
-                </label>
-              </div>
-              <div class="form-radio is-disabled">
-                <label>
-                  <input id="optionsRadios3" type="radio" name="optionsRadios" value="option3" disabled="">Option three is disabled
-                </label>
-              </div>
-              <div class="form-wrap">
-                <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-              <div class="form-wrap">
-                <select class="form-control" multiple>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-              <button class="btn is-primary" type="submit">Submit</button>
-            </fieldset>
-          </form><br><br>
-          <form>
-            <fieldset disabled="">
-              <legend>Неактивная форма</legend>
-              <div class="form-wrap">
-                <label for="disabledtextinput">disabled input</label>
-                <input class="form-control" id="disabledtextinput" type="text" placeholder="disabled input">
-              </div>
-              <div class="form-wrap">
-                <label for="disabledselect">disabled select menu</label>
-                <select class="form-control" id="disabledselect">
-                  <option>disabled select</option>
-                </select>
-              </div>
-              <div class="form-checkbox">
-                <label>
-                  <input type="checkbox">can&apos;t check this
-                </label>
-              </div>
-              <button class="btn btn-primary" type="submit">submit</button>
-            </fieldset>
-          </form><br><br>
-          <form>
-            <fieldset>
-              <legend>Горизонтальная форма</legend>
-              <div class="form-wrap">
-                <label class="l-col-1-6 form-label" for="inputEmail3">Email</label>
-                <div class="l-col-5-6">
-                  <input class="form-control" id="inputEmail3" type="email" placeholder="Email">
+    <div id="l-content">
+      <div class="l-page-width">
+        <div class="l-wrap-2">
+          <h1>Формы и кнопки</h1>
+        </div>
+        <div class="container">
+          <div class="row" style="max-width:500px;margin:0 auto;">
+            <form>
+              <fieldset>
+                <legend>Обычная форма</legend>
+                <div class="form-wrap">
+                  <label for="exampleinputemail1">email address</label>
+                  <input class="form-control" id="exampleinputemail1" type="email" placeholder="email">
                 </div>
-              </div>
-              <div class="form-wrap">
-                <label class="l-col-1-6 form-label" for="inputPassword3">Password</label>
-                <div class="l-col-5-6">
-                  <input class="form-control" id="inputPassword3" type="password" placeholder="Password">
+                <div class="form-wrap">
+                  <label for="exampleinputpassword1">password</label>
+                  <input class="form-control" id="exampleinputpassword1" type="password" placeholder="password">
                 </div>
-              </div>
-              <div class="form-wrap">
-                <label class="l-col-1-6 form-label">Email</label>
-                <div class="l-col-5-6">
-                  <p class="form-text">email@example.com</p>
+                <div class="form-wrap">
+                  <label for="exampleinputfile">file input</label>
+                  <input id="exampleinputfile" type="file">
+                  <p class="form-help">example block-level help text here.</p>
                 </div>
-              </div>
-              <div class="form-wrap">
-                <label class="l-col-1-6 form-label">checkbox</label>
-                <div class="l-col-5-6">
-                  <label class="form-checkbox is-inline">
-                    <input id="inlineCheckbox1" type="checkbox" value="option1">1
-                  </label>
-                  <label class="form-checkbox is-inline">
-                    <input id="inlineCheckbox2" type="checkbox" value="option2">2
-                  </label>
-                  <label class="form-checkbox is-inline">
-                    <input id="inlineCheckbox3" type="checkbox" value="option3">3
-                  </label>
+                <div class="form-wrap">
+                  <label for="exampleTextarea">textarea</label>
+                  <textarea class="form-control" rows="3" id="exampleTextarea"></textarea>
                 </div>
-              </div>
-              <div class="form-wrap">
-                <label class="l-col-1-6 form-label">radio</label>
-                <div class="l-col-5-6">
-                  <label class="form-radio is-inline">
-                    <input id="inlineRadio1" type="radio" name="inlineRadioOptions" value="option1">1
-                  </label>
-                  <label class="form-radio is-inline">
-                    <input id="inlineRadio2" type="radio" name="inlineRadioOptions" value="option2">2
-                  </label>
-                  <label class="form-radio is-inline">
-                    <input id="inlineRadio3" type="radio" name="inlineRadioOptions" value="option3">3
-                  </label>
-                </div>
-              </div>
-              <div class="l-col-offset-5-6">
                 <div class="form-checkbox">
                   <label>
-                    <input type="checkbox">Remember me
+                    <input type="checkbox" checked>check me out
                   </label>
                 </div>
+                <div class="form-checkbox">
+                  <label>
+                    <input type="checkbox" value="">Option one is this and that&mdash;be sure to include why it&apos;s great
+                  </label>
+                </div>
+                <div class="form-checkbox is-disabled">
+                  <label>
+                    <input type="checkbox" value="" disabled="">Option two is disabled
+                  </label>
+                </div>
+                <div class="form-radio">
+                  <label>
+                    <input id="optionsRadios1" type="radio" name="optionsRadios" value="option1" checked="">Option one is this and that&mdash;be sure to include why it&apos;s great
+                  </label>
+                </div>
+                <div class="form-radio">
+                  <label>
+                    <input id="optionsRadios2" type="radio" name="optionsRadios" value="option2">Option two can be something else and selecting it will deselect option one
+                  </label>
+                </div>
+                <div class="form-radio is-disabled">
+                  <label>
+                    <input id="optionsRadios3" type="radio" name="optionsRadios" value="option3" disabled="">Option three is disabled
+                  </label>
+                </div>
+                <div class="form-wrap">
+                  <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-wrap">
+                  <select class="form-control" multiple>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <button class="btn is-primary" type="submit">Submit</button>
+              </fieldset>
+            </form><br><br>
+            <form>
+              <fieldset disabled="">
+                <legend>Неактивная форма</legend>
+                <div class="form-wrap">
+                  <label for="disabledtextinput">disabled input</label>
+                  <input class="form-control" id="disabledtextinput" type="text" placeholder="disabled input">
+                </div>
+                <div class="form-wrap">
+                  <label for="disabledselect">disabled select menu</label>
+                  <select class="form-control" id="disabledselect">
+                    <option>disabled select</option>
+                  </select>
+                </div>
+                <div class="form-checkbox">
+                  <label>
+                    <input type="checkbox">can&apos;t check this
+                  </label>
+                </div>
+                <button class="btn btn-primary" type="submit">submit</button>
+              </fieldset>
+            </form><br><br>
+            <form>
+              <fieldset>
+                <legend>Горизонтальная форма</legend>
+                <div class="form-wrap">
+                  <label class="l-col-1-6 form-label" for="inputEmail3">Email</label>
+                  <div class="l-col-5-6">
+                    <input class="form-control" id="inputEmail3" type="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <label class="l-col-1-6 form-label" for="inputPassword3">Password</label>
+                  <div class="l-col-5-6">
+                    <input class="form-control" id="inputPassword3" type="password" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <label class="l-col-1-6 form-label">Email</label>
+                  <div class="l-col-5-6">
+                    <p class="form-text">email@example.com</p>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <label class="l-col-1-6 form-label">checkbox</label>
+                  <div class="l-col-5-6">
+                    <label class="form-checkbox is-inline">
+                      <input id="inlineCheckbox1" type="checkbox" value="option1">1
+                    </label>
+                    <label class="form-checkbox is-inline">
+                      <input id="inlineCheckbox2" type="checkbox" value="option2">2
+                    </label>
+                    <label class="form-checkbox is-inline">
+                      <input id="inlineCheckbox3" type="checkbox" value="option3">3
+                    </label>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <label class="l-col-1-6 form-label">radio</label>
+                  <div class="l-col-5-6">
+                    <label class="form-radio is-inline">
+                      <input id="inlineRadio1" type="radio" name="inlineRadioOptions" value="option1">1
+                    </label>
+                    <label class="form-radio is-inline">
+                      <input id="inlineRadio2" type="radio" name="inlineRadioOptions" value="option2">2
+                    </label>
+                    <label class="form-radio is-inline">
+                      <input id="inlineRadio3" type="radio" name="inlineRadioOptions" value="option3">3
+                    </label>
+                  </div>
+                </div>
+                <div class="l-col-offset-5-6">
+                  <div class="form-checkbox">
+                    <label>
+                      <input type="checkbox">Remember me
+                    </label>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <div class="l-col-offset-5-6">
+                    <button class="btn is-primary" type="submit">Sign in</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form><br><br>
+            <form class="is-inline">
+              <div class="form-wrap">
+                <label for="exampleInputName2">Name</label>
+                <input class="form-control" id="exampleInputName2" type="text" placeholder="Jane Doe">
               </div>
               <div class="form-wrap">
-                <div class="l-col-offset-5-6">
-                  <button class="btn is-primary" type="submit">Sign in</button>
-                </div>
+                <label for="exampleInputEmail2">Email</label>
+                <input class="form-control" id="exampleInputEmail2" type="email" placeholder="jane.doe@example.com">
               </div>
-            </fieldset>
-          </form><br><br>
-          <form class="is-inline">
-            <div class="form-wrap">
-              <label for="exampleInputName2">Name</label>
-              <input class="form-control" id="exampleInputName2" type="text" placeholder="Jane Doe">
-            </div>
-            <div class="form-wrap">
-              <label for="exampleInputEmail2">Email</label>
-              <input class="form-control" id="exampleInputEmail2" type="email" placeholder="jane.doe@example.com">
-            </div>
-            <button class="btn is-primary" type="submit">Send invitation</button>
-          </form><br><br>
-          <form class="is-inline">
-            <div class="form-wrap">
-              <label class="sr-only" for="exampleinputemail3">email address</label>
-              <input class="form-control" id="exampleinputemail3" type="email" placeholder="email">
-            </div>
-            <div class="form-wrap">
-              <label class="sr-only" for="exampleinputpassword3">password</label>
-              <input class="form-control" id="exampleinputpassword3" type="password" placeholder="password">
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> remember me
-              </label>
-            </div>
-            <button class="btn is-primary" type="submit">sign in</button>
-          </form><br><br>
-          <form class="is-inline">
-            <div class="form-group">
-              <input class="form-control" id="exampleinputamount" type="text" placeholder="amount">
-              <button class="btn is-primary" type="submit">transfer cash</button>
-            </div>
-          </form><br><br>
-          <form class="is-inline">
-            <div class="form-wrap">
-              <label class="sr-only" for="exampleinputamount">amount (in dollars)</label>
-              <div class="input-group">
-                <div class="input-group-addon">$</div>
-                <input class="form-control" id="exampleinputamount" type="text" placeholder="amount">
-                <div class="input-group-addon">.00</div>
+              <button class="btn is-primary" type="submit">Send invitation</button>
+            </form><br><br>
+            <form class="is-inline">
+              <div class="form-wrap">
+                <label class="sr-only" for="exampleinputemail3">email address</label>
+                <input class="form-control" id="exampleinputemail3" type="email" placeholder="email">
               </div>
-            </div>
-            <button class="btn is-primary" type="submit">transfer cash</button>
-          </form>
-          <form class="form is-inline">
-            <div class="form-wrap">
-              <label class="sr-only" for="exampleinputamount">amount (in dollars)</label>
-              <div class="input-group">
-                <div class="input-group-addon form-control">$</div>
+              <div class="form-wrap">
+                <label class="sr-only" for="exampleinputpassword3">password</label>
+                <input class="form-control" id="exampleinputpassword3" type="password" placeholder="password">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> remember me
+                </label>
+              </div>
+              <button class="btn is-primary" type="submit">sign in</button>
+            </form><br><br>
+            <form class="is-inline">
+              <div class="form-group">
                 <input class="form-control" id="exampleinputamount" type="text" placeholder="amount">
                 <button class="btn is-primary" type="submit">transfer cash</button>
               </div>
-            </div>
-          </form>
-        </div>
-        <div class="row">
-          <h2>Btn</h2>
-          <div>
-            <button class="btn is-success">Success</button>
-            <button class="btn is-info">Info</button>
-            <button class="btn is-warning">Warning</button>
-            <button class="btn is-danger">Danger</button>
-            <button class="btn is-primary">Primary</button>
-            <button class="btn is-secondary">Secondary</button>
+            </form><br><br>
+            <form class="is-inline">
+              <div class="form-wrap">
+                <label class="sr-only" for="exampleinputamount">amount (in dollars)</label>
+                <div class="input-group">
+                  <div class="input-group-addon">$</div>
+                  <input class="form-control" id="exampleinputamount" type="text" placeholder="amount">
+                  <div class="input-group-addon">.00</div>
+                </div>
+              </div>
+              <button class="btn is-primary" type="submit">transfer cash</button>
+            </form>
+            <form class="form is-inline">
+              <div class="form-wrap">
+                <label class="sr-only" for="exampleinputamount">amount (in dollars)</label>
+                <div class="input-group">
+                  <div class="input-group-addon form-control">$</div>
+                  <input class="form-control" id="exampleinputamount" type="text" placeholder="amount">
+                  <button class="btn is-primary" type="submit">transfer cash</button>
+                </div>
+              </div>
+            </form>
           </div>
-          <div>
-            <input class="btn is-success" type="button" value="Success">
-            <input class="btn is-info" type="button" value="Info">
-            <input class="btn is-warning" type="button" value="Warning">
-            <input class="btn is-danger" type="button" value="Danger">
-            <input class="btn is-primary" type="button" value="Primary">
-            <input class="btn is-secondary" type="button" value="Secondary">
-          </div>
-          <div>
-            <input class="btn is-success" type="submit" value="Success">
-            <input class="btn is-info" type="submit" value="Info">
-            <input class="btn is-warning" type="submit" value="Warning">
-            <input class="btn is-danger" type="submit" value="Danger">
-            <input class="btn is-primary" type="submit" value="Primary">
-            <input class="btn is-secondary" type="submit" value="Secondary">
-          </div>
-          <div><a class="btn is-success">Success</a><a class="btn is-info">Info</a><a class="btn is-warning">Warning</a><a class="btn is-danger">Danger</a><a class="btn is-primary is-disable">Primary</a><a class="btn is-secondary">Secondary</a></div>
-          <div style="padding:20px 0">
-            <div class="btn-group">
+          <div class="row">
+            <h2>Btn</h2>
+            <div>
               <button class="btn is-success">Success</button>
               <button class="btn is-info">Info</button>
               <button class="btn is-warning">Warning</button>
               <button class="btn is-danger">Danger</button>
-              <button class="btn is-primary" disabled="disabled">Primary</button>
+              <button class="btn is-primary">Primary</button>
               <button class="btn is-secondary">Secondary</button>
             </div>
-          </div>
-          <div style="padding:20px 0">
-            <div class="btn-group-justified"><a class="btn is-success">Success</a><a class="btn is-info">Info</a><a class="btn is-warning">Warning</a><a class="btn is-danger">Danger</a><a class="btn is-primary">Primary</a><a class="btn is-secondary">Secondary</a></div>
-          </div>
-          <div style="padding:20px 0">
-            <div class="btn-group-justified">
+            <div>
+              <input class="btn is-success" type="button" value="Success">
+              <input class="btn is-info" type="button" value="Info">
+              <input class="btn is-warning" type="button" value="Warning">
+              <input class="btn is-danger" type="button" value="Danger">
+              <input class="btn is-primary" type="button" value="Primary">
+              <input class="btn is-secondary" type="button" value="Secondary">
+            </div>
+            <div>
+              <input class="btn is-success" type="submit" value="Success">
+              <input class="btn is-info" type="submit" value="Info">
+              <input class="btn is-warning" type="submit" value="Warning">
+              <input class="btn is-danger" type="submit" value="Danger">
+              <input class="btn is-primary" type="submit" value="Primary">
+              <input class="btn is-secondary" type="submit" value="Secondary">
+            </div>
+            <div><a class="btn is-success">Success</a><a class="btn is-info">Info</a><a class="btn is-warning">Warning</a><a class="btn is-danger">Danger</a><a class="btn is-primary is-disable">Primary</a><a class="btn is-secondary">Secondary</a></div>
+            <div style="padding:20px 0">
               <div class="btn-group">
                 <button class="btn is-success">Success</button>
-              </div>
-              <div class="btn-group">
                 <button class="btn is-info">Info</button>
-              </div>
-              <div class="btn-group">
                 <button class="btn is-warning">Warning</button>
-              </div>
-              <div class="btn-group">
                 <button class="btn is-danger">Danger</button>
-              </div>
-              <div class="btn-group">
-                <button class="btn is-primary">Primary</button>
-              </div>
-              <div class="btn-group">
+                <button class="btn is-primary" disabled="disabled">Primary</button>
                 <button class="btn is-secondary">Secondary</button>
               </div>
             </div>
+            <div style="padding:20px 0">
+              <div class="btn-group-justified"><a class="btn is-success">Success</a><a class="btn is-info">Info</a><a class="btn is-warning">Warning</a><a class="btn is-danger">Danger</a><a class="btn is-primary">Primary</a><a class="btn is-secondary">Secondary</a></div>
+            </div>
+            <div style="padding:20px 0">
+              <div class="btn-group-justified">
+                <div class="btn-group">
+                  <button class="btn is-success">Success</button>
+                </div>
+                <div class="btn-group">
+                  <button class="btn is-info">Info</button>
+                </div>
+                <div class="btn-group">
+                  <button class="btn is-warning">Warning</button>
+                </div>
+                <div class="btn-group">
+                  <button class="btn is-danger">Danger</button>
+                </div>
+                <div class="btn-group">
+                  <button class="btn is-primary">Primary</button>
+                </div>
+                <div class="btn-group">
+                  <button class="btn is-secondary">Secondary</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <label class="switch">
+              <input type="checkbox">
+              <div class="switch__slider"></div>
+            </label>
+            <label class="switch">
+              <input type="checkbox" checked="">
+              <div class="switch__slider"></div>
+            </label><br><br>
+            <label class="switch">
+              <input type="checkbox">
+              <div class="switch__slider is-secondary"></div>
+            </label>
+            <label class="switch">
+              <input type="checkbox" checked="">
+              <div class="switch__slider is-secondary"></div>
+            </label>
           </div>
         </div>
-        <div class="row">
-          <label class="switch">
-            <input type="checkbox">
-            <div class="switch__slider"></div>
-          </label>
-          <label class="switch">
-            <input type="checkbox" checked="">
-            <div class="switch__slider"></div>
-          </label><br><br>
-          <label class="switch">
-            <input type="checkbox">
-            <div class="switch__slider is-secondary"></div>
-          </label>
-          <label class="switch">
-            <input type="checkbox" checked="">
-            <div class="switch__slider is-secondary"></div>
-          </label>
-        </div>
+        <!-- /.container-->
       </div>
-      <!-- /.container-->
     </div>
     <footer id="l-footer">
       <div class="container l-page-width">

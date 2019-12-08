@@ -19,24 +19,27 @@ html(lang="ru")
 			script(type="text/javascript", src="js/placeholders.min.js")
 			<![endif]-->
 
-	body.t-green
-		#l-menu
-			.l-page-width
-				.l-menu
+	body
+		header#l-header
+			#l-header-menu
+				.l-page-width
 					+nav(nav)
 					span.hamburger.fa.fa-menu
-		header#l-header
-			.l-page-width
-				a(href="http://smacss.com/")
-					img(src="img/jack-head.png", alt="smacss site")
-				div
-					h2 SMACSS — масштабируемая и модульная архитектура CSS
-					p Создание сайтов малых и больших размеров.
+			#l-header-title
+				.l-page-width
+					a(href="http://smacss.com/")
+						img(src="img/jack-head.png", alt="smacss site")
+					div
+						h2 SMACSS — масштабируемая и модульная архитектура CSS
+						p Создание сайтов малых и больших размеров.
+			#l-header-breadcrumb
+				.l-page-width
+					+breadcrumb(breadcrumbs)
 		// /header#l-header
-		.l-wrap-2
-			+breadcrumb(breadcrumbs)
-		#l-content.l-page-width
-			block content
+
+		#l-content
+			.l-page-width
+				block content
 
 
 

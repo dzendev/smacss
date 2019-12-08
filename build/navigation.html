@@ -20,10 +20,10 @@ nav.breadcrumb
     <title>SMACSS</title><!--[if IE 9]>
     <script type="text/javascript" src="js/placeholders.min.js"></script><![endif]-->
   </head>
-  <body class="t-green">
-    <div id="l-menu">
-      <div class="l-page-width">
-        <div class="l-menu">
+  <body>
+    <header id="l-header">
+      <div id="l-header-menu">
+        <div class="l-page-width">
           <nav class="nav"><a class="is-active" href="index.html">Главная</a><a href="icon.html">Иконки</a><a href="navigation.html">Навигация</a><a href="form.html">Формы</a><a href="404.html">Ошибка 404</a>
           </nav>
           <!-- Этот javascript код для удобства тестирования многостраничной верстки-->
@@ -43,31 +43,35 @@ nav.breadcrumb
           <!-- /nav.nav--><span class="hamburger fa fa-menu"></span>
         </div>
       </div>
-    </div>
-    <header id="l-header">
-      <div class="l-page-width"><a href="http://smacss.com/"><img src="img/jack-head.png" alt="smacss site"></a>
-        <div>
-          <h2>SMACSS — масштабируемая и модульная архитектура CSS</h2>
-          <p>Создание сайтов малых и больших размеров.</p>
+      <div id="l-header-title">
+        <div class="l-page-width"><a href="http://smacss.com/"><img src="img/jack-head.png" alt="smacss site"></a>
+          <div>
+            <h2>SMACSS — масштабируемая и модульная архитектура CSS</h2>
+            <p>Создание сайтов малых и больших размеров.</p>
+          </div>
+        </div>
+      </div>
+      <div id="l-header-breadcrumb">
+        <div class="l-page-width">
+          <nav class="breadcrumb">
+            <ul>
+              <li><a href="/">Главная</a></li>
+              <li><a href="form.html">Формы</a></li>
+              <li>Подтема</li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
     <!-- /header#l-header-->
-    <div class="l-wrap-2">
-      <nav class="breadcrumb">
-        <ul>
-          <li><a href="/">Главная</a></li>
-          <li><a href="/about">Подтема1</a></li>
-          <li>Подтема2</li>
-        </ul>
-      </nav>
-    </div>
-    <div class="l-page-width" id="l-content">
-      <div class="l-wrap-2">
-        <h1>Навигация по сайту</h1>
-      </div>
-      <div class="l-wrap-2">
-        <nav class="pagination"><a class="is-disabled" href="prev">Previous</a><a class="is-active" href="1">1</a><a href="2">2</a><a href="3">3</a><a href="next">Next</a></nav>
+    <div id="l-content">
+      <div class="l-page-width">
+        <div class="l-wrap-2">
+          <h1>Навигация по сайту</h1>
+        </div>
+        <div class="l-wrap-2">
+          <nav class="pagination"><a class="is-disabled" href="prev">Previous</a><a class="is-active" href="1">1</a><a href="2">2</a><a href="3">3</a><a href="next">Next</a></nav>
+        </div>
       </div>
     </div>
     <footer id="l-footer">
