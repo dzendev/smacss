@@ -5,5 +5,10 @@
     {"name": "Навигация", "link": "navigation.html", "active": false},
     {"name": "Формы", "link": "form.html", "active": false},
     {"name": "Ошибка 404", "link": "404.html", "active": false}
+  ],
+  "breadcrumbs":[
+    {"name": "Главная", "url": "/"},
+    {"name": "Формы", "url": "form.html"},
+    {"name": "Подтема"}
   ]
 }

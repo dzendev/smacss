@@ -984,12 +984,12 @@ footer.t-default,
   display: -ms-flexbox;
   display: box;
   display: flex;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -o-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
   -webkit-box-align: center;
   -moz-box-align: center;
   -o-box-align: center;
@@ -1009,11 +1009,17 @@ footer.t-default,
   font-size: 1.3rem;
   font-style: italic;
 }
+#l-content {
+  padding: 0 15px;
+}
 #l-footer {
   height: 300px;
 }
 #l-footer .l-page-width {
   padding: 0 15px;
+}
+nav.breadcrumb {
+  padding-left: 15px;
 }
 @media only screen and (max-width: 768px) {
   .l-menu .nav {
@@ -1355,7 +1361,7 @@ footer.t-default,
   color: #fff;
 }
 .nav > a.is-active {
-  background-color: #0275d8;
+  background-color: #687179;
   color: #fff;
 }
 @media only screen and (max-width: 768px) {
@@ -1367,8 +1373,19 @@ footer.t-default,
   .breadcrumb - хлебные крошки
  -----------------------------------------------------------------*/
 .breadcrumb {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0;
   background-color: #eceeef;
+}
+.breadcrumb ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 .breadcrumb a {
   display: inline-block;

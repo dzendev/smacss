@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+
+<!-- mixin breadcrumb(active, ...items)
+nav.breadcrumb
+	each item in items
+		- for(var key in item) {
+				a(href=key)= item[key]
+		- }
+	span=active
+
+--><!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
@@ -45,10 +54,15 @@
     </header>
     <!-- /header#l-header-->
     <div class="l-wrap-2">
-      <nav class="breadcrumb"><a href="home">Главная</a><a href="library">Библиотека</a><a href="data">Данные</a><span>SMACSS</span>
+      <nav class="breadcrumb">
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/about">Подтема1</a></li>
+          <li>Подтема2</li>
+        </ul>
       </nav>
     </div>
-    <div class="l-page-width">
+    <div class="l-page-width" id="l-content">
       <div class="l-wrap-2">
         <h1>Ошибка <span>404</span></h1>
         <p>Вы ищете страницу, которая не существует.</p>

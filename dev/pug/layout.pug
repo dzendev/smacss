@@ -34,8 +34,8 @@ html(lang="ru")
 					p Создание сайтов малых и больших размеров.
 		// /header#l-header
 		.l-wrap-2
-			+breadcrumb('SMACSS', {home: 'Главная'}, {library: 'Библиотека'} , {data: 'Данные'})
-		.l-page-width
+			+breadcrumb(breadcrumbs)
+		#l-content.l-page-width
 			block content
 
 
