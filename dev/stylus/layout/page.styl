@@ -4,6 +4,19 @@
 /*!-----------------------------------------------------------------
 	layout.pug
  -----------------------------------------------------------------*/
+// прижатый футер к низу
+html, body
+	height: 100%
+
+body
+	display: flex
+	min-height: 100vh
+	flex-direction: column
+
+#l-content
+	flex: 1
+
+// отступ в центре страницы
 .l-page-width
 	padding 0 15px
 	max-width: 960px
@@ -39,37 +52,18 @@
 		background-color: #eceeef
 	// height 100px
 
-#l-content
-	padding: 0 15px
+// #l-content
+// 	padding: 0 15px
+
 #l-footer
-	height 300px
 	.l-page-width
-		padding 0 15px
-
-nav.breadcrumb
-	padding-left: 15px
-
-
-
-// прижатый футер к низу
-html, body
-	height: 100%
-
-body
-	display: flex
-	min-height: 100vh
-	flex-direction: column
-
-#l-content
-	flex: 1
+		padding-top:15px
+		padding-bottom 15px
+		display flex
+		justify-content space-between
 
 
 
-#l-1
-	width calc(30% - 2px)
-#l-2
-	gutter = 2px
-	width "calc(30% - %s)" % gutter
 
 pageCenterWidthh = 960px
 
@@ -140,6 +134,7 @@ foo()
 // .l-col4:last-child
 // 	column(1/4, $offset: 1/4)
 
+// стрелка наверх
 #l-top-scroll
 	height 50px
 	width 50px
@@ -157,3 +152,6 @@ foo()
 /*!-----------------------------------------------------------------
 	404.pug
  -----------------------------------------------------------------*/
+.page-404
+	font-size: 3.5rem
+	font-weight: 600

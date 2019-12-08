@@ -40,6 +40,52 @@
   - Функции для препроцессоров.
 *==================================================================
 */
+/*-----------------------------------------------------------------
+  Картинки
+ -----------------------------------------------------------------*/
+figure {
+  margin: 0;
+}
+img {
+  vertical-align: middle;
+}
+.b-img-fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.b-img-circle {
+  border-radius: 50%;
+}
+/*-----------------------------------------------------------------
+  Обёртка если элемент не умещается на странице, например таблица
+ -----------------------------------------------------------------*/
+.b-wrap-fluid {
+  overflow-x: auto;
+  min-height: 0.01%;
+}
+/*-----------------------------------------------------------------
+  Классы для текста
+ -----------------------------------------------------------------*/
+.b-text-left {
+  text-align: left;
+}
+.b-text-center {
+  text-align: center;
+}
+.b-text-right {
+  text-align: right;
+}
+.b-text-justify {
+  text-align: justify;
+}
+.b-text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -974,6 +1020,34 @@ footer.t-default,
 /*-----------------------------------------------------------------
 	layout.pug
  -----------------------------------------------------------------*/
+html,
+body {
+  height: 100%;
+}
+body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#l-content {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
 .l-page-width {
   padding: 0 15px;
   max-width: 960px;
@@ -1032,51 +1106,21 @@ footer.t-default,
 #l-header-breadcrumb {
   background-color: #eceeef;
 }
-#l-content {
-  padding: 0 15px;
-}
-#l-footer {
-  height: 300px;
-}
 #l-footer .l-page-width {
-  padding: 0 15px;
-}
-nav.breadcrumb {
-  padding-left: 15px;
-}
-html,
-body {
-  height: 100%;
-}
-body {
+  padding-top: 15px;
+  padding-bottom: 15px;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: box;
   display: flex;
-  min-height: 100vh;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -o-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-#l-content {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-#l-1 {
-  width: calc(30% - 2px);
-}
-#l-2 {
-  width: calc(30% - 2px);
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 .l-center {
   margin: 0 auto;
@@ -1362,6 +1406,10 @@ body {
 /*-----------------------------------------------------------------
 	404.pug
  -----------------------------------------------------------------*/
+.page-404 {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
 /*
 *==================================================================
   Modules — стили модулей.

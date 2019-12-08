@@ -66,16 +66,28 @@ nav.breadcrumb
     <!-- /header#l-header-->
     <div id="l-content">
       <div class="l-page-width">
-        <h1>HOME</h1>
-        <div class="content">
-          <div class="col"><img src="img/gulp.png" alt="" width="200"></div>
-          <div class="col"><img src="img/book-covers.png" alt="" width="200"></div>
-        </div>
+        <h1>SMACSS — это стиль организации кода!</h1><img src="img/book-covers.png" alt="" width="200">
+        <p>SMACSS — это стиль организации кода!</p>
+        <p>Стили делятся на 5 категорий:</p>
+        <ul>
+          <li>Темы</li>
+          <li>Состояние</li>
+          <li>Базовые стили</li>
+          <li>Модули</li>
+          <li>Правила компановки</li>
+        </ul>
+        <ul>
+          <li>Base rules — базовые стили. Это стили основных элементов сайта — body, input, button, ul, ol и т.п. В этой секции используются в основном селекторы тэгов и атрибутов, классы — в исключительных случаях (например, если у вас стилизованные JavaScript’ом селекты);</li>
+          <li>Layout rules — стили макета. Здесь находятся стили глобальных элементов размеры шапки, футера, сайдбара и т.п. Джонатан предлагает использовать здесь id в селекторах, так как эти элементы не будут встречаться более 1 раза на странице. Однако автор статьи считает это плохой практикой (каждый раз, когда в стилях появляется id селектор, где-то в мире грустит котенок). Используйте классы и будет вам счастье.</li>
+          <li>Modules rules — стили модулей, то есть блоков, которые могут использоваться несколько раз на одной странице. Для классов модулей не рекомендуется использовать id и селекторы тэгов (для многократного использования и независимости от контекста соответственно).</li>
+          <li>State rules — стили состояния. В этом разделе прописываются различные состояния модулей и скелета сайта. Это единственный раздел, в котором допустимо использование ключевого слова «!important».</li>
+          <li>Theme rules — оформление. Здесь описываются стили оформлений, которые со временем, возможно, нужно будет заменить (так удобно делать, например, новогоднее оформление; для html-тем, выставленных на продажу такие стили позволяют переключать цветовую гамму и т.п.).</li>
+        </ul>
         <div class="wrap_icon"><span class="icon icon-Char"></span><span class="icon-svg svg-wordpress"></span><span class="svg-font svg-font-drupal" style="color:red;font-size:60px;"></span></div>
       </div>
     </div>
     <footer id="l-footer">
-      <div class="container l-page-width">
+      <div class="l-page-width">
         <div><a class="socicons fa fa-vk" href="http://vk.com/modxrevolution"></a><a class="socicons fa fa-facebook" href="https://www.facebook.com/groups/modxrevolution/"></a><a class="socicons fa fa-twitter" href="http://twitter.com/@viktorminator"></a><a class="socicons fa fa-github" href="http://github.com/Viktorminator"></a><a class="socicons fa fa-skype" href="skype:viktorminator?chat&amp;topic=MODX уроки"></a></div>
         <div class="col-md-6">
           <address><b>Twitter, Inc.<br></b>Francisco, CA 94103<br>
