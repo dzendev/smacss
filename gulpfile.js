@@ -32,6 +32,8 @@ const browserSync      = require('browser-sync');
 const sass             = require('gulp-sass');
 sass.compiler          = require('node-sass');
 const env              = process.env.NODE_ENV;
+// const varTemplate      = JSON.parse(require('./var-smacss.json'));
+var varTemplate      = require('./var-smacss.json');
 
 function clear() {
 	return del(['build/*']);
@@ -68,7 +70,7 @@ function sync() {
 function pugToHtml() {
 	return gulp.src(['dev/pug/**/*.pug', '!dev/pug/layout.pug', '!dev/pug/_*.pug'])
 		.pipe(plumberNotifier())
-		.pipe(pug({ pretty: true }))
+		.pipe(pug({ pretty: true, locals: varTemplate  }))
 		.pipe(pipeIf(env === 'production', htmlReplace({
 			css: 'css/style.min.css',
 			js_app: 'js/app.min.js',

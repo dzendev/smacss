@@ -23,11 +23,8 @@ html(lang="ru")
 		#l-menu
 			.l-page-width
 				.l-menu
-						+nav([
-							{name:"Главная", link:"index.html", "active": true},
-							{name:"Формы", link:"index.html", "active": false}
-						])
-						span.hamburger.fa.fa-menu
+					+nav(nav)
+					span.hamburger.fa.fa-menu
 		header#l-header
 			.l-page-width
 				a(href="http://smacss.com/")
