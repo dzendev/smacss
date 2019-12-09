@@ -153,7 +153,7 @@ function spritePng() {
 			.pipe(pipeIf(env === 'production', imagemin()))
 			.pipe(gulp.dest('build/img'));
 		spriteData.css
-			.pipe(gulp.dest('dev/stylus'));
+			.pipe(gulp.dest('dev/stylus/modules'));
 }
 
 function spriteSvg() {
@@ -183,16 +183,16 @@ function spriteSvg() {
 
 function svgToFont() {
 	const runTimestamp = Math.round(Date.now()/1000);
-	return gulp.src(['dev/img/sprite-svg/*.svg'])
+	return gulp.src(['dev/img/icon-font/*.svg'])
 		.pipe(iconfontCss({
-			fontName: 'svgfont',
-			// path: 'app/assets/css/templates/_icons.scss',
-			targetPath: '../../dev/stylus/_svg-font.css',
-			fontPath: '../fonts/',
-			cssClass: 'svg-font'
+			fontName: 'iconfont',
+      // path: 'app/assets/css/templates/_icons.scss',
+      targetPath: '../../dev/stylus/modules/_iconfont.css',
+      fontPath: '../fonts/',
+      cssClass: 'iconfont'
 		}))
 		.pipe(iconfont({
-			fontName: 'svgfont', // required
+			fontName: 'iconfont', // required
 			prependUnicode: true, // recommended option
 			formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'], // default, 'woff2' and 'svg' are available
 			timestamp: runTimestamp, // recommended to get consistent builds when watching files

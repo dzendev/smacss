@@ -26,6 +26,8 @@ body
 	&-menu
 		background-color: rgba(10, 31, 41, 0.8)
 		.nav
+			position relative
+			margin-left: -10px
 			+below(m)
 				display none
 		.hamburger
@@ -36,12 +38,13 @@ body
 			+below(m)
 				display inline-block
 	&-title
+		padding 7px 0
 		.l-page-width
 			display flex
 			justify-content flex-start
 			align-items center
 		img
-			margin: 7px 20px 0 0
+			margin-right: 20px
 		h2
 			font-size: 1.7rem
 			margin: 0 0 5px 0

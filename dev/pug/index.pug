@@ -7,11 +7,11 @@ block content
 	h1 SMACSS — это стиль организации кода!
 	//- img(src="img/gulp.png", alt="", width="200")
 	//- img(src="img/book-covers.png", alt="", width="200").b-align-left
-	figure.b-align-left
+	figure.b-img-left
 		img(src="img/book-covers.png", width="200", alt="Обложка книги по SMACSS")
 		figcaption Обложка книги по SMACSS
-	p.b-clearFix SMACSS — это стиль организации кода!
-	p Стили делятся на 5 категорий:
+	p.b-clearFix SMACSS — это скорее руководство по стилю, чем жесткое руководство. Данный подход позволяет документировать последовательный подход к разработке сайта при использовании CSS.
+	h3 Стили делятся на 5 категорий:
 	ol
 		li <strong>Base rules</strong> — базовые стили.
 			ul
@@ -46,10 +46,4 @@ block content
 				li Допускается применение «!important».
 				li (.is-) - состояние html элемента. Абстрактные классы, могут быть переопределены модулями
 				li (.a-) - анимация
-	.wrap_icon
-		span.icon.icon-Char
-		span.icon-svg.svg-wordpress
-		span.svg-font.svg-font-drupal(style="color:red;font-size:60px;")
 
-//- block append footer
-//- 	p text footer 2

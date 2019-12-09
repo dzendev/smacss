@@ -65,8 +65,13 @@ img {
 .b-clearFix:after {
   clear: both;
 }
-.b-align-left {
+.b-img-left {
   float: left;
+  margin: 0 1em 1em 0;
+}
+.b-img-right {
+  float: right;
+  margin: 0 0 1em 1em;
 }
 /*-----------------------------------------------------------------
 	Обёртка если элемент не умещается на странице, например таблица
@@ -1078,6 +1083,10 @@ body {
 #l-header-menu {
   background-color: rgba(10,31,41,0.8);
 }
+#l-header-menu .nav {
+  position: relative;
+  margin-left: -10px;
+}
 @media only screen and (max-width: 768px) {
   #l-header-menu .nav {
     display: none;
@@ -1093,6 +1102,9 @@ body {
   #l-header-menu .hamburger {
     display: inline-block;
   }
+}
+#l-header-title {
+  padding: 7px 0;
 }
 #l-header-title .l-page-width {
   display: -webkit-box;
@@ -1115,7 +1127,7 @@ body {
   align-items: center;
 }
 #l-header-title img {
-  margin: 7px 20px 0 0;
+  margin-right: 20px;
 }
 #l-header-title h2 {
   font-size: 1.7rem;
@@ -5011,15 +5023,187 @@ form.is-inline .form-group > *:last-child {
  -----------------------------------------------------------------*/
 .icon {
   display: inline-block;
+  vertical-align: middle;
 }
-.icon-facebook-logo {
+.icon-Alert {
   background-position: 0px 0px;
   background-image: url("../img/sprite.png");
-  width: 16px;
-  height: 16px;
+  width: 48px;
+  height: 48px;
 }
-.icon-facebook-logo:hover {
-  background-position: -16px 0px;
+.icon-Applications {
+  background-position: -48px 0px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Back {
+  background-position: 0px -48px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Bookmark {
+  background-position: -48px -48px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Char {
+  background-position: -96px 0px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Delete {
+  background-position: -96px -48px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Documents {
+  background-position: 0px -96px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Download {
+  background-position: -48px -96px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Favorite {
+  background-position: -96px -96px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Forward {
+  background-position: -144px 0px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-HD {
+  background-position: -144px -48px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Home {
+  background-position: -144px -96px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Mail {
+  background-position: 0px -144px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Package {
+  background-position: -48px -144px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-RSS {
+  background-position: -144px -144px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Refresh {
+  background-position: -96px -144px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Search {
+  background-position: -192px 0px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Security {
+  background-position: -192px -48px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Select {
+  background-position: -192px -96px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Settings {
+  background-position: -192px -144px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Speaker {
+  background-position: 0px -192px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Stats {
+  background-position: -48px -192px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Stop {
+  background-position: -96px -192px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-System {
+  background-position: -144px -192px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Temporary {
+  background-position: -192px -192px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Upload {
+  background-position: -240px 0px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-User {
+  background-position: -240px -48px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Video {
+  background-position: -240px -96px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Weather {
+  background-position: -240px -144px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
+}
+.icon-Web {
+  background-position: -240px -192px;
+  background-image: url("../img/sprite.png");
+  width: 48px;
+  height: 48px;
 }
 @font-face {
 	font-family: "iconfont";
@@ -5096,6 +5280,8 @@ form.is-inline .form-group > *:last-child {
   width: 32px;
   height: 32px;
   display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5em;
   fill: #f00;
 }
 .iconsvg:hover {
