@@ -1140,6 +1140,9 @@ body {
 #l-header-breadcrumb {
   background-color: #eceeef;
 }
+#l-content {
+  padding-bottom: 20px;
+}
 #l-footer .l-page-width {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -2245,7 +2248,7 @@ form.is-inline .form-group > *:last-child {
 .alert {
   padding: 0.75rem 2rem 0.75rem 1.25rem;
   margin-bottom: 1rem;
-  border: 1px solid transparent;
+  border: 1px solid #eee;
   border-radius: 0.25rem;
   position: relative;
 }
