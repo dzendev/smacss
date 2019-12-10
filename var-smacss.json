@@ -3,6 +3,7 @@
     {"name": "Главная", "link": "index.html", "active": true},
     {"name": "Иконки", "link": "icon.html", "active": false},
     {"name": "Навигация", "link": "navigation.html", "active": false},
+    {"name": "Сообщения", "link": "message.html", "active": false},
     {"name": "Формы", "link": "form.html", "active": false},
     {"name": "Ошибка 404", "link": "404.html", "active": false}
   ],

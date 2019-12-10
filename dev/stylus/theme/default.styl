@@ -17,6 +17,61 @@ fontFace(SegoeUISemiBold)
 // Grid
 rupture.scale = 0 320px 480px 768px 992px 1170px 1440px
 rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 'hd'
+
+$theme = {}
+$theme[default] = {
+	name: '.t-default',
+	font: {
+		size: 16,
+		lineHeight: (24 / 16)em,
+		color: #000,
+		family: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+	},
+	link: {
+		color: #337ab7,
+		colorHover: #23527c,
+		colorFocus: #23527c
+	},
+	pageBg: {
+		body: transparent,
+		header: rgba(51, 153, 204, 0.5),
+		menu: rgba(10,31,41,0.8),
+		breadcrumb: #eceeef,
+		footer: #eceeef
+	},
+	border: {
+		radius: .25rem,
+		color: #eee
+	},
+	isActive: {
+		bgColor: #0275d8,
+		color: #fff
+	},
+	isDanger: {
+		bgColor: #f2dede,
+		borderColor: #ebcccc,
+		color: #a94442,
+		colorHover: #a94442
+	},
+	isSuccess: {
+		bgColor: #dff0d8,
+		borderColor: #d0e9c6,
+		color: #3c763d,
+		colorHover: #3c763d
+	},
+	isWarning: {
+		bgColor: #fcf8e3,
+		borderColor: #faf2cc,
+		color: #8a6d3b,
+		colorHover: #8a6d3b
+	},
+	isInfo: {
+		bgColor: #d9edf7,
+		borderColor: #bcdff1,
+		color: #31708f,
+		colorHover: #31708f
+	}
+}
 // Name theme
 themeDefault = '.t-default'
 themeDefaultBazeFontFamily = "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -37,9 +92,12 @@ themeDefaultBorderRadius = .25rem
 themeDefaultIsActiveBg = #0275d8
 themeDefaultIsActiveColor = #fff
 /*!-----------------------------------------------------------------
-  Typography
+  Типографика
  -----------------------------------------------------------------*/
-body
+div{$theme.default.name}
+	// font 100%/theme[default][font][lineHeight] theme[default][font][family]
+	color $theme.default.font.color
+
 body{themeDefault}
 	font 100%/themeDefaultBazeFontLineHeight themeDefaultBazeFontFamily
 	color themeDefaultBazeFontColor
@@ -96,7 +154,7 @@ address
 small, {themeDefault} small
 	font-size 85%
 /*!-----------------------------------------------------------------
-  Link
+  Ссылки
  -----------------------------------------------------------------*/
 a
 	color themeDefaultLinkColor
