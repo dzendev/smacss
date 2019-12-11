@@ -17,30 +17,30 @@
 	a
 		text-decoration underline
 	&.is-danger
-		background-color: #f2dede
-		border-color: #ebcccc
-		color: #a94442
+		background-color: $theme.default.isDanger.bgColor
+		border-color: lightness($theme.default.isDanger.borderColor, 85%)
+		color: $theme.default.isDanger.color
 		a
 		a:hover
-			color #a94442
+			color $theme.default.isDanger.color
 	&.is-success
-		background-color: #dff0d8
-		border-color: #d0e9c6
-		color: #3c763d
+		background-color: $theme.default.isSuccess.bgColor
+		border-color: lightness($theme.default.isSuccess.borderColor, 85%)
+		color: $theme.default.isSuccess.color
 		a
 		a:hover
-			color #3c763d
+			color $theme.default.isSuccess.color
 	&.is-warning
-		background-color: #fcf8e3
-		border-color: #faf2cc
-		color: #8a6d3b
+		background-color: $theme.default.isWarning.bgColor
+		border-color: lightness($theme.default.isWarning.borderColor, 85%)
+		color: $theme.default.isWarning.color
 		a
 		a:hover
-			color #8a6d3b
+			color $theme.default.isWarning.color
 	&.is-info
-		background-color: #d9edf7
-		border-color: #bcdff1
-		color: #31708f
+		background-color: $theme.default.isInfo.bgColor
+		border-color: lightness($theme.default.isInfo.borderColor, 85%)
+		color: $theme.default.isInfo.color
 		a
 		a:hover
-			color #31708f
+			color $theme.default.isInfo.color

@@ -6,7 +6,7 @@
 	margin: 20px 0
 	border: 1px solid #eee
 	border-left-width: 5px
-	border-radius: themeDefaultBorderRadius
+	border-radius: $theme.default.border.radius
 
 	h4
 		margin-top: 0
@@ -18,18 +18,18 @@
 		margin-top: -5px
 
 	&.is-warning
-		border-left-color: #f0ad4e
+		border-color: $theme.default.isWarning.borderColor
 		h4
-			color: #f0ad4e
+			color: $theme.default.isWarning.borderColor
 	&.is-danger
-		border-left-color: #a94442
+		border-color: $theme.default.isDanger.borderColor
 		h4
-			color #a94442
+			color $theme.default.isDanger.borderColor
 	&.is-info
-		border-left-color: #31708f
+		border-color: $theme.default.isInfo.borderColor
 		h4
-			color #31708f
+			color $theme.default.isInfo.borderColor
 	&.is-success
-		border-left-color: #3c763d
+		border-color: $theme.default.isSuccess.borderColor
 		h4
-			color #3c763d
+			color $theme.default.isSuccess.borderColor

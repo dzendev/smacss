@@ -52,6 +52,8 @@ function moveJs() {
 	return gulp.src([
 			'dev/lib/js/*.js',
 			'./node_modules/jquery/dist/jquery.min.js',
+			'./node_modules/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
+			'./node_modules/pointer-events-polyfill/src/',
 			'./node_modules/@babel/polyfill/dist/polyfill.min.js'
 		])
 		.pipe(newer('build/js'))
