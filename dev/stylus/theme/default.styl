@@ -94,34 +94,31 @@ themeDefaultIsActiveColor = #fff
 /*!-----------------------------------------------------------------
   Типографика
  -----------------------------------------------------------------*/
-div{$theme.default.name}
-	// font 100%/theme[default][font][lineHeight] theme[default][font][family]
+body
+body{$theme.default.name}
+	font 100%/$theme.default.font.lineHeight $theme.default.font.family
 	color $theme.default.font.color
-
-body{themeDefault}
-	font 100%/themeDefaultBazeFontLineHeight themeDefaultBazeFontFamily
-	color themeDefaultBazeFontColor
 h1, h2, h3, h4, h5, h6
-{themeDefault} h1, {themeDefault} h2, {themeDefault} h3, {themeDefault} h4, {themeDefault} h5, {themeDefault} h6
+{$theme.default.name} h1, {$theme.default.name} h2, {$theme.default.name} h3, {$theme.default.name} h4, {$theme.default.name} h5, {$theme.default.name} h6
 	font-weight 500
 	line-height 1.1
 h1
-{themeDefault} h1
+{$theme.default.name} h1
 	font-size 36
 h2
-{themeDefault} h2
+{$theme.default.name} h2
 	font-size 30
 h3
-{themeDefault} h3
+{$theme.default.name} h3
 	font-size 24
 h4
-{themeDefault} h4
+{$theme.default.name} h4
 	font-size 18
 h5
-{themeDefault} h5
+{$theme.default.name} h5
 	font-size 14
 h6
-{themeDefault} h6
+{$theme.default.name} h6
 	font-size 12
 .h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small {
     font-size: 65%;
@@ -132,38 +129,51 @@ h6
 	color #777
 }
 p
-{themeDefault} p
+{$theme.default.name} p
 	font-size 16
 	margin 0 0 10px
 	line-height 1.428
-ul, ol
+ul
 	font-size 16
-	padding-inline-start: $pl = 30px
-	padding-left: $pl
+	padding-left: $pl = 30px
+	padding-inline-start: $pl
+ol
+	padding-left: $pl = 18px
+	padding-inline-start: $pl
+	counter-reset: item
+	li
+		display: block
+		&:before
+			content: counters(item, ".") "."
+			counter-increment: item
+			position: relative
+			left: -5px
+
+
 abbr[title]
-{themeDefault} abbr[title]
+{$theme.default.name} abbr[title]
 	font-size 14
 	cursor help
 	border-bottom 1px dotted #777
 	text-decoration none
 address
-{themeDefault} address
+{$theme.default.name} address
 	font-size 14
 	font-style normal
-.small, {themeDefault} .small,
-small, {themeDefault} small
+.small, {$theme.default.name} .small,
+small, {$theme.default.name} small
 	font-size 85%
 /*!-----------------------------------------------------------------
   Ссылки
  -----------------------------------------------------------------*/
 a
-	color themeDefaultLinkColor
+	color $theme.default.link.color
 	text-decoration none
 	&:focus
-		color themeDefaultLinkColorFocus
+		color $theme.default.link.colorFocus
 		text-decoration: underline
 	&:hover
-		color themeDefaultLinkColorHover
+		color $theme.default.link.colorHover
 		text-decoration: underline
 /*!-----------------------------------------------------------------
   Таблицы
@@ -197,10 +207,10 @@ figcaption
   Фон страниц layout.pug
  -----------------------------------------------------------------*/
 header
-header{themeDefault}
-{themeDefault} header
-	background themeDefaultBgHeader
+header{$theme.default.name}
+{$theme.default.name} header
+	background $theme.default.pageBg.header
 footer
-footer{themeDefault}
-{themeDefault} footer
-	background themeDefaultBgFooter
+footer{$theme.default.name}
+{$theme.default.name} footer
+	background $theme.default.pageBg.footer

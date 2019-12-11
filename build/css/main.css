@@ -507,11 +507,9 @@ template {
 /*-----------------------------------------------------------------
   Типографика
  -----------------------------------------------------------------*/
-div.t-default {
-  color: #000;
-}
+body,
 body.t-default {
-  font: 100%/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 100% /1.5em '"Helvetica Neue", Helvetica, Arial, sans-serif';
   color: #000;
 }
 h1,
@@ -601,11 +599,24 @@ p,
   margin: 0 0 10px;
   line-height: 1.428;
 }
-ul,
-ol {
+ul {
   font-size: 1rem;
-  padding-inline-start: 30px;
   padding-left: 30px;
+  padding-inline-start: 30px;
+}
+ol {
+  padding-left: 18px;
+  padding-inline-start: 18px;
+  counter-reset: item;
+}
+ol li {
+  display: block;
+}
+ol li:before {
+  content: counters(item, ".") ".";
+  counter-increment: item;
+  position: relative;
+  left: -5px;
 }
 abbr[title],
 .t-default abbr[title] {
@@ -628,10 +639,8 @@ small,
 /*-----------------------------------------------------------------
   Ссылки
  -----------------------------------------------------------------*/
-a {
-  color: #337ab7;
-  text-decoration: none;
-}
+a color $theme.default.link.color,
+a text-decoration none,
 a:focus {
   color: #23527c;
   text-decoration: underline;
@@ -688,7 +697,7 @@ header.t-default,
 footer,
 footer.t-default,
 .t-default footer {
-  background: #eee;
+  background: #eceeef;
 }
 /*
  *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
