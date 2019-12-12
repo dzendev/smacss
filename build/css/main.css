@@ -704,6 +704,95 @@ footer.t-default,
  * Modified Theme
  *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
+/*-----------------------------------------------------------------
+	  Подключение шрифтов
+	 -----------------------------------------------------------------*/
+/*-----------------------------------------------------------------
+	  Typography
+	 -----------------------------------------------------------------*/
+body.t-modified {
+  font: 100% /1.5em 'Arial, Helvetica, sans-serif';
+  color: #000;
+}
+h1.t-modified,
+h2.t-modified,
+h3.t-modified,
+h4.t-modified,
+h5.t-modified,
+h6.t-modified,
+.t-modified h1,
+.t-modified h2,
+.t-modified h3,
+.t-modified h4,
+.t-modified h5,
+.t-modified h6 {
+  font-weight: 500;
+}
+h1.t-modified,
+.t-modified h1 {
+  font-size: 2.25em;
+}
+h2.t-modified,
+.t-modified h2 {
+  font-size: 1.875em;
+}
+h3.t-modified,
+.t-modified h3 {
+  font-size: 1.5em;
+}
+h4.t-modified,
+.t-modified h4 {
+  font-size: 1.125em;
+}
+h5.t-modified,
+.t-modified h5 {
+  font-size: 0.875em;
+}
+h6.t-modified,
+.t-modified h6 {
+  font-size: 0.75em;
+}
+p.t-modified,
+.t-modified p {
+  font-size: 0.875em;
+}
+abbr[title].t-modified,
+.t-modified abbr[title] {
+  font-size: 0.875em;
+  cursor: help;
+  border-bottom: 1px dotted #777;
+  text-decoration: none;
+}
+address.t-modified,
+.t-modified address {
+  font-size: 0.875em;
+  font-style: normal;
+}
+a.t-modified color $theme.modified.link.color,
+.t-modified a color $theme.modified.link.color,
+a.t-modified text-decoration none,
+.t-modified a text-decoration none,
+a.t-modified:focus,
+.t-modified a:focus {
+  color: #bbb;
+  text-decoration: underline;
+}
+a.t-modified:hover,
+.t-modified a:hover {
+  color: #bbb;
+  text-decoration: underline;
+}
+/*-----------------------------------------------------------------
+  Фон
+ -----------------------------------------------------------------*/
+header.t-modified,
+.t-modified header {
+  background: #ccc;
+}
+footer.t-modified,
+.t-modified footer {
+  background: #ccc;
+}
 /*
  *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  * Print Theme

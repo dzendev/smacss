@@ -6,91 +6,124 @@
 /*-----------------------------------------------------------------
   Переменные. Ипользуются theme, modules и state
  -----------------------------------------------------------------*/
+$theme[modified] = {
+	name: '.t-modified',
+	font: {
+		size: 16,
+		lineHeight: (24 / 16)em,
+		color: #000,
+		family: 'Arial, Helvetica, sans-serif'
+	},
+	link: {
+		color: #bbb,
+		colorHover: #bbb,
+		colorFocus: #bbb
+	},
+	pageBg: {
+		body: transparent,
+		header: #ccc,
+		menu: rgba(10,31,41,0.8),
+		breadcrumb: #eceeef,
+		footer: #ccc
+	},
+	border: {
+		radius: .25rem,
+		color: #eee
+	},
+	isActive: {
+		bgColor: #0275d8,
+		color: #444
+	},
+	isDanger: {
+		bgColor: #f2dede,
+		borderColor: #a94442,
+		color: #a94442,
+		colorHover: #a94442
+	},
+	isSuccess: {
+		bgColor: #dff0d8,
+		borderColor: #3c763d,
+		color: #3c763d,
+		colorHover: #3c763d
+	},
+	isWarning: {
+		bgColor: #fcf8e3,
+		borderColor: #f0ad4e,
+		color: #8a6d3b,
+		colorHover: #8a6d3b
+	},
+	isInfo: {
+		bgColor: #d9edf7,
+		borderColor: #31708f,
+		color: #31708f,
+		colorHover: #31708f
+	}
+}
 
-// Name theme
-themeModified = '.t-green'
-// Font
-themeModifiedBazeFontFamily = "Arial", Helvetica, Arial, sans-serif
-themeModifiedBazeFontSize = 16
-themeModifiedBazeFontLineHeight = (24 / themeModifiedBazeFontSize)em
-themeModifiedBazeFontColor = #000
-// Link
-themeModifiedLinkColor = #337ab7
-themeModifiedLinkColorHover = #23527c
-themeModifiedLinkColorFocus = themeModifiedLinkColorHover
-// Backgound page
-themeModifiedBgHeader = #ccc
-themeModifiedBgFooter = themeModifiedBgHeader
-// State
-themeModifiedIsActive = #444
-if false
-	/*!-----------------------------------------------------------------
-	  Подключение шрифтов
-	 -----------------------------------------------------------------*/
-	fontFace(SegoeUIBold)
-	fontFace(SegoeUIItalic)
-	fontFace(SegoeUILight)
-	fontFace(SegoeUIRegular)
-	fontFace(SegoeUISemiBold)
-if false
-	/*!-----------------------------------------------------------------
-	  Typography
-	 -----------------------------------------------------------------*/
-	body{themeModified}
-		font 100%/themeModifiedBazeFontLineHeight themeModifiedBazeFontFamily
-		color themeModifiedBazeFontColor
-	h1{themeModified}, h2{themeModified}, h3{themeModified}, h4{themeModified}, h5{themeModified}, h6{themeModified},
-	{themeModified} h1, {themeModified} h2, {themeModified} h3, {themeModified} h4, {themeModified} h5, {themeModified} h6
-		font-weight 500
-	h1{themeModified}
-	{themeModified} h1
-		font-size (36 / themeModifiedBazeFontSize)em
-	h2{themeModified}
-	{themeModified} h2
-		font-size (30 / themeModifiedBazeFontSize)em
-	h3{themeModified}
-	{themeModified} h3
-		font-size (24 / themeModifiedBazeFontSize)em
-	h4{themeModified}
-	{themeModified} h4
-		font-size (18 / themeModifiedBazeFontSize)em
-	h5{themeModified}
-	{themeModified} h5
-		font-size (14 / themeModifiedBazeFontSize)em
-	h6{themeModified}
-	{themeModified} h6
-		font-size (12 / themeModifiedBazeFontSize)em
-	p{themeModified}
-	{themeModified} p
-		font-size (14 / themeModifiedBazeFontSize)em
-	abbr[title]{themeModified}
-	{themeModified} abbr[title]
-		font-size (14 / themeModifiedBazeFontSize)em
-		cursor help
-		border-bottom 1px dotted #777
-		text-decoration none
-	address{themeModified}
-	{themeModified} address
-		font-size (14 / themeModifiedBazeFontSize)em
-		font-style normal
-if false
-	a{themeModified}
-	{themeModified} a
-		color themeModifiedLinkColor
-		text-decoration none
-		&:focus
-			color themeModifiedLinkColorFocus
-			text-decoration: underline
-		&:hover
-			color themeModifiedLinkColorHover
-			text-decoration: underline
+/*!-----------------------------------------------------------------
+  Подключение шрифтов
+ -----------------------------------------------------------------*/
+// fontFace(SegoeUIBold)
+// fontFace(SegoeUIItalic)
+// fontFace(SegoeUILight)
+// fontFace(SegoeUIRegular)
+// fontFace(SegoeUISemiBold)
+/*!-----------------------------------------------------------------
+  Typography
+ -----------------------------------------------------------------*/
+body{$theme.modified.name}
+	font 100%/$theme.modified.font.lineHeight $theme.modified.font.family
+	color $theme.modified.font.color
+h1{$theme.modified.name}, h2{$theme.modified.name}, h3{$theme.modified.name}, h4{$theme.modified.name}, h5{$theme.modified.name}, h6{$theme.modified.name},
+{$theme.modified.name} h1, {$theme.modified.name} h2, {$theme.modified.name} h3, {$theme.modified.name} h4, {$theme.modified.name} h5, {$theme.modified.name} h6
+	font-weight 500
+h1{$theme.modified.name}
+{$theme.modified.name} h1
+	font-size (36 / $theme.modified.font.size)em
+h2{$theme.modified.name}
+{$theme.modified.name} h2
+	font-size (30 / $theme.modified.font.size)em
+h3{$theme.modified.name}
+{$theme.modified.name} h3
+	font-size (24 / $theme.modified.font.size)em
+h4{$theme.modified.name}
+{$theme.modified.name} h4
+	font-size (18 / $theme.modified.font.size)em
+h5{$theme.modified.name}
+{$theme.modified.name} h5
+	font-size (14 / $theme.modified.font.size)em
+h6{$theme.modified.name}
+{$theme.modified.name} h6
+	font-size (12 / $theme.modified.font.size)em
+p{$theme.modified.name}
+{$theme.modified.name} p
+	font-size (14 / $theme.modified.font.size)em
+abbr[title]{$theme.modified.name}
+{$theme.modified.name} abbr[title]
+	font-size (14 / $theme.modified.font.size)em
+	cursor help
+	border-bottom 1px dotted #777
+	text-decoration none
+address{$theme.modified.name}
+{$theme.modified.name} address
+	font-size (14 / $theme.modified.font.size)em
+	font-style normal
+a{$theme.modified.name}
+{$theme.modified.name} a
+	color $theme.modified.link.color
+	text-decoration none
+	&:focus
+		color $theme.modified.link.colorFocus
+		text-decoration: underline
+	&:hover
+		color $theme.modified.link.colorHover
+		text-decoration: underline
 /*!-----------------------------------------------------------------
   Фон
  -----------------------------------------------------------------*/
-if false
-	header{themeModified}
-	{themeModified} header
-		background themeModifiedBgHeader
-	footer{themeModified}
-	{themeModified} footer
-		background themeModifiedBgFooter
+header{$theme.modified.name}
+{$theme.modified.name} header
+	background $theme.modified.pageBg.header
+footer{$theme.modified.name}
+{$theme.modified.name} footer
+	background $theme.modified.pageBg.footer

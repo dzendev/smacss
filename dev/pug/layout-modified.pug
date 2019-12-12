@@ -1,0 +1,78 @@
+//- include _mixins.pug
+include _modules.pug
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="description", content="")
+		meta(name="viewport", content="width=device-width,initial-scale=1")
+		// build:css
+		link(rel="stylesheet", href="/css/main.css")
+		// endbuild
+		//- link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=cyrillic,cyrillic-ext")
+		block title
+			title SMACSS
+
+		block top-script
+
+	body.t-modified
+		header#l-header
+			#l-header-menu
+				.l-page-width
+					+nav(nav)
+					span.hamburger.fa.fa-menu
+			#l-header-title
+				.l-page-width
+					a(href="http://smacss.com/")
+						img(src="img/jack-head.png", alt="smacss site")
+					div
+						h2 SMACSS — масштабируемая и модульная архитектура CSS
+						p Создание сайтов малых и средних размеров.
+			#l-header-breadcrumb
+				.l-page-width
+					+breadcrumb(breadcrumbs)
+		// /header#l-header
+
+		#l-content
+			.l-page-width
+				block content
+
+
+
+		footer#l-footer
+			.l-page-width
+				div
+					a(href='http://vk.com/modxrevolution').socicons.fa.fa-vk
+					a(href='https://www.facebook.com/groups/modxrevolution/').socicons.fa.fa-facebook
+					a(href='http://twitter.com/@viktorminator').socicons.fa.fa-twitter
+					a(href='http://github.com/Viktorminator').socicons.fa.fa-github
+					a(href='skype:viktorminator?chat&topic=MODX уроки').socicons.fa.fa-skype
+				.col-md-6
+					address
+						b Twitter, Inc.<br>
+						| Francisco, CA 94103<br>
+						| 1355 Market Street, Suite 900<br>
+						abbr(title="Phone") P:
+						| &nbsp;(123) 456-7890
+				.col-md-6
+					address
+						b Full Name<br>
+						a(href="mailto:FullName@gmail.com") FullName@gmail.com
+					p(role="contentinfo")
+						| Сайт сделан
+		// /footer#l-footer
+		.is-hide
+			include sprite-svg/symbol/svg/sprite.symbol.svg
+		// /#is-hide module svg sprite
+		a(href="#l-header")#l-top-scroll
+			i.fa.fa-arrow-circle-up
+		block bottom-script
+			script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+			script(src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js")
+			script(src="/js/jquery.waypoints.min.js")
+			script(src="/js/jquery.malihu.PageScroll2id.js")
+			// build:js
+			script(src="/js/script.js")
+			// endbuild
+			script(src="/js/pointer_events_polyfill.js")
