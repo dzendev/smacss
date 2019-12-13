@@ -32,14 +32,6 @@ mixin nav(items)
 	// /nav.nav
 
 //- .breadcrumb - модуль хлебные крошки
-// mixin breadcrumb(active, ...items)
-	nav.breadcrumb
-		each item in items
-			- for(var key in item) {
-					a(href=key)= item[key]
-			- }
-		span=active
-
 mixin breadcrumb(breadcrumbs)
 	nav.breadcrumb
 		ul

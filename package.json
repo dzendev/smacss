@@ -63,6 +63,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
-    "page-scroll-to-id": "^1.6.3"
+    "page-scroll-to-id": "^1.6.3",
+    "slick-carousel": "^1.8.1"
   }
 }

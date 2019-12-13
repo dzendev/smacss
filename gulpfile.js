@@ -42,7 +42,8 @@ function clear() {
 function moveFont() {
 	return gulp.src([
 			'dev/lib/fonts/*',
-			'./node_modules/font-awesome/fonts/*'
+			'./node_modules/font-awesome/fonts/*',
+			'./node_modules/slick-carousel/slick/fonts/*'
 		])
 		.pipe(newer('build/fonts'))
 		.pipe(gulp.dest('build/fonts'));
@@ -53,11 +54,20 @@ function moveJs() {
 			'dev/lib/js/*.js',
 			'./node_modules/jquery/dist/jquery.min.js',
 			'./node_modules/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
-			'./node_modules/pointer-events-polyfill/src/',
-			'./node_modules/@babel/polyfill/dist/polyfill.min.js'
+			'./node_modules/@babel/polyfill/dist/polyfill.min.js',
+			'./node_modules/slick-carousel/slick/slick.min.js'
 		])
 		.pipe(newer('build/js'))
 		.pipe(gulp.dest('build/js'));
+}
+
+function moveCss() {
+	return gulp.src([
+		'./node_modules/slick-carousel/slick/slick.css',
+		'./node_modules/slick-carousel/slick/slick-theme.css'
+	])
+	.pipe(newer('dev/stylus/modules'))
+	.pipe(gulp.dest('dev/stylus/modules'));
 }
 
 function sync() {
@@ -285,7 +295,7 @@ function watch() {
 exports.clear = clear; // очистка папки build
 exports.sprite = gulp.parallel(spritePng, spriteSvg); // создание спрайтов png и svg
 exports.font = gulp.parallel(svgToFont, fontBase64); // созадние из svg шрифта и преобразование шрифта в base64
-const move = gulp.parallel(moveFont, moveJs);
+const move = gulp.parallel(moveFont, moveJs, moveCss);
 exports.move = move; // перемещение шрифтов и js библиотек
 exports.email = email; // генерация email письма из html
 

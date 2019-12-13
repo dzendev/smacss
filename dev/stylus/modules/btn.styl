@@ -64,9 +64,11 @@
 		&:hover
 			background-color: #46a049
 	&.is-warning
-		background-color: #ff9800
+		// background-color: #ff9800
+		background-color: $theme.default.isWarning.borderColor
 		&:hover
-			background: #e68a00
+			// background: #e68a00
+			background: saturation($theme.default.isWarning.borderColor, 85%)
 	&.is-info
 		background-color: #2196F3
 		&:hover

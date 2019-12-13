@@ -33,7 +33,7 @@
     //     });
     //   });
     // };
-    $('.alert.is-danger').animated('a-shake');
+    // $('.alert.is-danger').animated('a-shake');
     // Закрыть предупреждение
     $('.alert .fa-close').on('click', function(event) {
       $(this).closest('.alert').fadeOut('slow/400/fast', function() {

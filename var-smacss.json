@@ -3,6 +3,7 @@
     {"name": "Главная", "link": "index.html", "active": true},
     {"name": "Иконки", "link": "icon.html", "active": false},
     {"name": "Навигация", "link": "navigation.html", "active": false},
+    {"name": "Слайдер", "link": "slider.html", "active": false},
     {"name": "Сообщения", "link": "message.html", "active": false},
     {"name": "Типографика", "link": "typography.html", "active": false},
     {"name": "Темы", "link": "modified-theme.html", "active": false},

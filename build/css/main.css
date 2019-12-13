@@ -705,11 +705,11 @@ footer.t-default,
  *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
 /*-----------------------------------------------------------------
-	  Подключение шрифтов
-	 -----------------------------------------------------------------*/
+  Подключение шрифтов
+ -----------------------------------------------------------------*/
 /*-----------------------------------------------------------------
-	  Typography
-	 -----------------------------------------------------------------*/
+  Typography
+ -----------------------------------------------------------------*/
 body.t-modified {
   font: 100% /1.5em 'Arial, Helvetica, sans-serif';
   color: #000;
@@ -1535,7 +1535,7 @@ body {
   color: #fff;
   font-size: 40px;
   text-align: center;
-  line-height: 50px;
+  line-height: 51px;
 }
 /*-----------------------------------------------------------------
 	index.pug
@@ -1758,7 +1758,7 @@ nav.breadcrumb span {
   background-color: #ff9800;
 }
 .btn.is-warning:hover {
-  background: #e68a00;
+  background: #ec9413;
 }
 .btn.is-info {
   background-color: #2196f3;
@@ -2319,10 +2319,10 @@ form.is-inline .form-group > *:last-child {
   margin-top: -5px;
 }
 .callout.is-warning {
-  border-color: #f0ad4e;
+  border-color: #ff9800;
 }
 .callout.is-warning h4 {
-  color: #f0ad4e;
+  color: #ff9800;
 }
 .callout.is-danger {
   border-color: #a94442;
@@ -2391,7 +2391,7 @@ form.is-inline .form-group > *:last-child {
 }
 .alert.is-warning {
   background-color: #fcf8e3;
-  border-color: #f9deb8;
+  border-color: #ffe6c2;
   color: #8a6d3b;
 }
 .alert.is-warning a,
