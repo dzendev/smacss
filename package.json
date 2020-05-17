@@ -53,7 +53,7 @@
     "gulp.spritesmith": "^6.11.0",
     "jeet": "^7.2.0",
     "nib": "^1.1.2",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "rupture": "^0.7.1",
     "vinyl-buffer": "^1.0.1",
     "webpack-stream": "^5.2.1"
@@ -61,7 +61,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
     "page-scroll-to-id": "^1.6.3",
     "slick-carousel": "^1.8.1"

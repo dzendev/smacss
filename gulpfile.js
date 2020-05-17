@@ -154,7 +154,7 @@ function sassToCss() {
 }
 
 function spritePng() {
-	var spriteData = gulp.src('dev/img/sprite-png/*.png').pipe(spritesmith({
+	var spriteData = gulp.src('dev/img/sprite-png/**/*.png').pipe(spritesmith({
 				imgName: 'sprite.png',
 				cssName: '_sprite.styl',
 				cssFormat: 'stylus',
