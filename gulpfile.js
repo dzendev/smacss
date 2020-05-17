@@ -219,7 +219,7 @@ function svgToFont() {
 function fontBase64() {
 	return gulp.src(['dev/lib/fonts/*'])
 		.pipe(inlineFonts({ name: 'NairiNormal' }))
-		.pipe(gulp.dest('dev/stylus/'));
+		.pipe(gulp.dest('dev/stylus/modules/'));
 }
 
 function es6() {
@@ -293,11 +293,18 @@ function watch() {
 }
 
 exports.clear = clear; // очистка папки build
-exports.sprite = gulp.parallel(spritePng, spriteSvg); // создание спрайтов png и svg
-exports.font = gulp.parallel(svgToFont, fontBase64); // созадние из svg шрифта и преобразование шрифта в base64
+exports.email = email; // генерация email письма из html
+
+const sprite = gulp.parallel(spritePng, spriteSvg);
+exports.sprite = sprite; // создание спрайтов png и svg
+
+const font = gulp.parallel(svgToFont, fontBase64);
+exports.font = font; // созадние из svg шрифта и преобразование шрифта в base64
+
 const move = gulp.parallel(moveFont, moveJs, moveCss);
 exports.move = move; // перемещение шрифтов и js библиотек
-exports.email = email; // генерация email письма из html
+
+exports.init = gulp.parallel(sprite, font, move); // инициализация
 
 const task = [
 	pugToHtml,
