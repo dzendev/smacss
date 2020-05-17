@@ -116,7 +116,7 @@ function img() {
 	return gulp.src([
 		'dev/img/**/*.*',
 		'!dev/img/sprite-svg/*.*',
-		'!dev/img/sprite-png/*.*'
+		'!dev/img/sprite-png/**/*.*'
 	])
 	.pipe(newer('build/img'))
 	.pipe(pipeIf(env === 'production', imagemin()))
