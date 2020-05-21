@@ -17,6 +17,7 @@ const stylus           = require('gulp-stylus');
 const gcmq             = require('gulp-group-css-media-queries');
 const rename           = require('gulp-rename');
 const cssnano          = require('gulp-cssnano');
+const autoprefixer     = require('gulp-autoprefixer');
 const uncss            = require('gulp-uncss-sp');
 const nib              = require('nib');
 const rupture          = require('rupture');
@@ -131,6 +132,10 @@ function stylusToCss() {
 				// html: ['./build/index.html']
 				html: glob.sync('./build/**/*.html')
 		})))
+		.pipe(env === 'production', autoprefixer({
+			cascade: false,
+			grid: "autoplace" // для поддержки grid в IE11
+		}))
 		.pipe(pipeIf(env === 'production', gcmq()))
 		.pipe(pipeIf(env === 'production', cssnano()))
 		.pipe(pipeIf(env === 'production', rename({suffix: '.min'})))
