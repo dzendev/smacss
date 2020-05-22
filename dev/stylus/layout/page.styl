@@ -11,6 +11,8 @@ html, body
 body
 	display: flex
 	min-height: 100vh
+	// исправление возможного бага с прижатым футером в мобильной версии
+	min-height: -webkit-fill-available
 	flex-direction: column
 
 #l-content
