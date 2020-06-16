@@ -132,10 +132,10 @@ function stylusToCss() {
 				// html: ['./build/index.html']
 				html: glob.sync('./build/**/*.html')
 		})))
-		.pipe(env === 'production', autoprefixer({
+		.pipe(pipeIf(env === 'production', autoprefixer({
 			cascade: false,
 			grid: "autoplace" // для поддержки grid в IE11
-		}))
+		})))
 		.pipe(pipeIf(env === 'production', gcmq()))
 		.pipe(pipeIf(env === 'production', cssnano()))
 		.pipe(pipeIf(env === 'production', rename({suffix: '.min'})))
