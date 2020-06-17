@@ -9,6 +9,17 @@
       $(this).toggleClass('fa-menu').toggleClass('fa-close');
       $nav.toggleClass('is-show');
     });
+
+    // Модуль табуляция
+    $tab = $('.tab');
+    $tabLink = $tab.find('ul.tab-links > li');
+    $tabContent = $tab.find('.tab-content');
+    $tabLink.on('click', function(event){
+      $tabLink.removeClass('is-active');
+      $(this).addClass('is-active');
+      $tabContent.removeClass('is-show').eq($(this).attr('data-show-content')).addClass('is-show');
+    });
+
     // плавный скролл на верх страницы
     $('a.scrollto').click(function() {
       var destination, elementClick;
