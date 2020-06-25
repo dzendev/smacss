@@ -22,7 +22,6 @@ const jeet             = require('jeet');
 const glob             = require('glob');
 const babel            = require('gulp-babel');
 const uglify           = require('gulp-uglify');
-const	coffee           = require('gulp-coffee');
 const iconfont         = require('gulp-iconfont');
 const iconfontCss      = require('gulp-iconfont-css');
 const webpack          = require('webpack-stream');
@@ -256,25 +255,6 @@ function es6modules() {
 		.pipe(browserSync.reload({ stream: true }));
 }
 
-function coffeeToJs() {
-	var configCoffee = {
-		bare: true
-	};
-
-	if(env === 'production'){
-		configCoffee['transpile'] = {
-			presets: [
-				["env", {"modules": false}]
-			]
-		};
-	}
-
-	return gulp.src('dev/coffee/**/*.coffee')
-		.pipe(plumberNotifier())
-		.pipe(coffee(configCoffee))
-		.pipe(gulp.dest('dev/js'));
-}
-
 function watch() {
 	gulp.watch('dev/pug/**/*.pug', pugToHtml);
 	// gulp.watch('dev/html/**/*.html', html);
@@ -283,7 +263,6 @@ function watch() {
 	// gulp.watch('dev/sass/**/*.scss', sassToCss);
 	gulp.watch('dev/js/**/*.js', es6);
 	// gulp.watch('dev/js/**/*.js', es6modules);
-	gulp.watch('dev/coffee/**/*.coffee', coffeeToJs);
 }
 
 exports.clear = clear; // очистка папки build
@@ -305,7 +284,6 @@ const task = [
 	img,
 	stylusToCss,
 	// sassToCss,
-	// coffeeToJs,
 	es6,
 	// es6modules
 ];
