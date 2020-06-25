@@ -87,18 +87,6 @@ function pugToHtml() {
 		.pipe(browserSync.reload({ stream: true }));
 }
 
-function html() {
-	return gulp.src('dev/html/*.html')
-		.pipe(plumberNotifier())
-		.pipe(pipeIf(env === 'production', htmlReplace({
-			css: 'css/style.min.css',
-			js_app: 'js/app.min.js',
-			js_script: 'js/script.min.js'
-		})))
-		.pipe(gulp.dest('build'))
-		.pipe(browserSync.reload({ stream: true }));
-}
-
 function img() {
 	return gulp.src([
 		'dev/img/**/*.*',
@@ -240,7 +228,6 @@ function es6modules() {
 
 function watch() {
 	gulp.watch('dev/pug/**/*.pug', pugToHtml);
-	// gulp.watch('dev/html/**/*.html', html);
 	gulp.watch('dev/img/**/*.*', img);
 	gulp.watch('dev/stylus/**/*.styl', stylusToCss);
 	gulp.watch('dev/js/**/*.js', es6);
@@ -262,7 +249,6 @@ exports.init = gulp.parallel(sprite, font, move); // инициализация
 
 const task = [
 	pugToHtml,
-	// html,
 	img,
 	stylusToCss,
 	es6,
