@@ -4,9 +4,6 @@ const pipeIf           = require('gulp-if');
 const pug              = require('gulp-pug');
 const plumberNotifier  = require('gulp-plumber-notifier');
 const htmlReplace      = require('gulp-html-replace');
-const image64          = require('gulp-image64');
-const inlineCss        = require('gulp-inline-css');
-const rewriteImagePath = require('gulp-rewrite-image-path');
 const imagemin         = require('gulp-imagemin');
 const spritesmith      = require('gulp.spritesmith');
 const svgSprite        = require('gulp-svg-sprite');
@@ -103,14 +100,6 @@ function html() {
 		})))
 		.pipe(gulp.dest('build'))
 		.pipe(browserSync.reload({ stream: true }));
-}
-
-function email() {
-	return gulp.src(['build/index.html'])
-		.pipe(rewriteImagePath({path:"build"}))
-		.pipe(inlineCss())
-		.pipe(image64())
-		.pipe(gulp.dest('build/email'));
 }
 
 function img() {
@@ -298,7 +287,6 @@ function watch() {
 }
 
 exports.clear = clear; // очистка папки build
-exports.email = email; // генерация email письма из html
 
 const sprite = gulp.parallel(spritePng, spriteSvg);
 exports.sprite = sprite; // создание спрайтов png и svg
