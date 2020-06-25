@@ -18,7 +18,6 @@ const autoprefixer     = require('gulp-autoprefixer');
 const uncss            = require('gulp-uncss-sp');
 const nib              = require('nib');
 const rupture          = require('rupture');
-const jeet             = require('jeet');
 const glob             = require('glob');
 const babel            = require('gulp-babel');
 const uglify           = require('gulp-uglify');
@@ -101,7 +100,7 @@ function img() {
 function stylusToCss() {
 	return gulp.src('dev/stylus/main.styl')
 		.pipe(plumberNotifier())
-		.pipe(stylus({ use: [nib(), rupture(), jeet()], 'include css': true}))
+		.pipe(stylus({ use: [nib(), rupture()], 'include css': true}))
 		.pipe(pipeIf(env === 'production', uncss({
 				// html: ['./build/index.html']
 				html: glob.sync('./build/**/*.html')
