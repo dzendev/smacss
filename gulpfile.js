@@ -26,8 +26,6 @@ const iconfont         = require('gulp-iconfont');
 const iconfontCss      = require('gulp-iconfont-css');
 const webpack          = require('webpack-stream');
 const browserSync      = require('browser-sync');
-const sass             = require('gulp-sass');
-sass.compiler          = require('node-sass');
 const env              = process.env.NODE_ENV;
 // const varTemplate      = JSON.parse(require('./var-smacss.json'));
 var varTemplate      = require('./var-smacss.json');
@@ -123,21 +121,6 @@ function stylusToCss() {
 		.pipe(pipeIf(env === 'production', autoprefixer({
 			cascade: false,
 			grid: "autoplace" // для поддержки grid в IE11
-		})))
-		.pipe(pipeIf(env === 'production', gcmq()))
-		.pipe(pipeIf(env === 'production', cssnano()))
-		.pipe(pipeIf(env === 'production', rename({suffix: '.min'})))
-		.pipe(gulp.dest('build/css'))
-		.pipe(browserSync.reload({ stream: true }));
-}
-
-function sassToCss() {
-	return gulp.src('dev/sass/**/*.scss')
-		.pipe(plumberNotifier())
-		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-		.pipe(pipeIf(env === 'production', uncss({
-				// html: ['./build/index.html']
-				html: glob.sync('./build/**/*.html')
 		})))
 		.pipe(pipeIf(env === 'production', gcmq()))
 		.pipe(pipeIf(env === 'production', cssnano()))
@@ -260,7 +243,6 @@ function watch() {
 	// gulp.watch('dev/html/**/*.html', html);
 	gulp.watch('dev/img/**/*.*', img);
 	gulp.watch('dev/stylus/**/*.styl', stylusToCss);
-	// gulp.watch('dev/sass/**/*.scss', sassToCss);
 	gulp.watch('dev/js/**/*.js', es6);
 	// gulp.watch('dev/js/**/*.js', es6modules);
 }
@@ -283,7 +265,6 @@ const task = [
 	// html,
 	img,
 	stylusToCss,
-	// sassToCss,
 	es6,
 	// es6modules
 ];
