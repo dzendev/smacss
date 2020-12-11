@@ -25,8 +25,16 @@ const iconfontCss      = require('gulp-iconfont-css');
 const webpack          = require('webpack-stream');
 const browserSync      = require('browser-sync');
 const env              = process.env.NODE_ENV;
-// const varTemplate      = JSON.parse(require('./var-smacss.json'));
-var varTemplate      = require('./var-smacss.json');
+// breakpoint ипользуются stylus и pug
+// pug -> module picture
+// stylus -> mixin imageSet, @media
+const breakpoint = {
+	sizeSmall: "480px",
+	sizeMedium: "800px",
+	sizeLarge: "991px",
+	sizeExtraLarge: "1170px",
+	sizeHD: "1440px"
+};
 
 function clear() {
 	return del(['build/*']);
@@ -75,7 +83,7 @@ function sync() {
 function pugToHtml() {
 	return gulp.src(['dev/pug/**/*.pug', '!dev/pug/layout.pug', '!dev/pug/_*.pug'])
 		.pipe(plumberNotifier())
-		.pipe(pug({ pretty: true, locals: varTemplate  }))
+		.pipe(pug({ pretty: true, locals: breakpoint }))
 		.pipe(pipeIf(env === 'production', htmlReplace({
 			css: 'css/style.min.css',
 			js_app: 'js/app.min.js',
@@ -99,7 +107,7 @@ function img() {
 function stylusToCss() {
 	return gulp.src('dev/stylus/main.styl')
 		.pipe(plumberNotifier())
-		.pipe(stylus({ use: [rupture()], 'include css': true}))
+		.pipe(stylus({ use: [rupture()], 'include css': true, rawDefine: { ...breakpoint }}))
 		.pipe(pipeIf(env === 'production', uncss({
 				// html: ['./build/index.html']
 				html: glob.sync('./build/**/*.html')

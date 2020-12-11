@@ -16,19 +16,6 @@ mixin nav(items)
 				a(href=item.link).is-active= item.name
 			else
 				a(href=item.link)= item.name
-	// Этот javascript код для удобства тестирования многостраничной верстки
-	// Его надо удалить после создания шаблонов
-	script.
-		var nav;
-		nav = document.querySelectorAll('nav.nav > a');
-		nav.forEach(function(elem){
-			if (elem.classList.contains('is-active')){
-				elem.classList.remove('is-active');
-			}
-			if (elem.href === window.location.href){
-				elem.classList.add('is-active');
-			}
-		});
 	// /nav.nav
 
 //- .breadcrumb - модуль хлебные крошки
