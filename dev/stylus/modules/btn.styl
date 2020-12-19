@@ -3,7 +3,7 @@
  -----------------------------------------------------------------*/
 .btn
 	cursor: pointer
-	border-radius: themeDefaultBorderRadius
+	border-radius: .25em
 	text-decoration none
 	display: inline-block
 	font-weight: normal
@@ -64,11 +64,9 @@
 		&:hover
 			background-color: #46a049
 	&.is-warning
-		// background-color: #ff9800
-		background-color: $theme.default.isWarning.borderColor
+		background-color: $isWarning.borderColor
 		&:hover
-			// background: #e68a00
-			background: saturation($theme.default.isWarning.borderColor, 85%)
+			background: saturation($isWarning.borderColor, 85%)
 	&.is-info
 		background-color: #2196F3
 		&:hover

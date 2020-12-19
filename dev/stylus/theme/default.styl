@@ -1,6 +1,6 @@
 /*!
  *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- * Default Theme
+ * Theme
  *+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
 /*!-----------------------------------------------------------------
@@ -14,136 +14,74 @@ fontFace(SegoeUISemiBold)
 /*-----------------------------------------------------------------
 	Переменные. Ипользуются theme, modules и state
  -----------------------------------------------------------------*/
-:root
-	--fontSize: 16px
-	--fontFamily: 'Raleway'\, sans-serif
-	--fontColor: #000
-	--fontLineHeight: 1.5em
-$theme = {}
-$theme[default] = {
-	name: '.t-default',
-	font: {
-		size: 16,
-		lineHeight: (24 / 16)em,
-		color: #000,
-		family: "Times New Roman"\, "Times CY"\, "Nimbus Roman No9 L"\, serif
-	},
-	link: {
-		color: #337ab7,
-		colorHover: #23527c,
-		colorFocus: #23527c
-	},
-	pageBg: {
-		body: transparent,
-		header: rgba(51, 153, 204, 0.5),
-		menu: rgba(10,31,41,0.8),
-		breadcrumb: #eceeef,
-		footer: #eceeef
-	},
-	border: {
-		radius: .25rem,
-		color: #eee
-	},
-	isActive: {
-		bgColor: #0275d8,
-		color: #fff
-	},
-	isDanger: {
-		bgColor: #f2dede,
-		borderColor: #a94442,
-		// borderColor: #f44336,
-		color: #a94442,
-		colorHover: #a94442
-	},
-	isSuccess: {
-		bgColor: #dff0d8,
-		borderColor: #3c763d,
-		color: #3c763d,
-		colorHover: #3c763d
-	},
-	isWarning: {
-		bgColor: #fcf8e3,
-		// borderColor: #f0ad4e,
-		borderColor: #ff9800,
-		color: #8a6d3b,
-		colorHover: #8a6d3b
-	},
-	isInfo: {
-		bgColor: #d9edf7,
-		borderColor: #31708f,
-		color: #31708f,
-		colorHover: #31708f
-	}
+$colorWhite = #fff
+$colorBlack = #000
+$colorGray = #eceeef
+$isActive = {
+	bgColor: #0275d8,
+	color: #fff
 }
-// Name theme
-themeDefault = '.t-default'
-themeDefaultBazeFontFamily = "Helvetica Neue", Helvetica, Arial, sans-serif
-themeDefaultBazeFontSize = 16
-themeDefaultBazeFontLineHeight = (24 / themeDefaultBazeFontSize)em
-themeDefaultBazeFontColor = #000
-// Link
-themeDefaultLinkColor = #337ab7
-themeDefaultLinkColorHover = #23527c
-themeDefaultLinkColorFocus = themeDefaultLinkColorHover
-// Background page
-themeDefaultBgHeader = rgba(51, 153, 204, 0.5)
-// themeDefaultBgFooter = themeDefaultBgHeader
-themeDefaultBgFooter = #EEE
-// Border-radius element
-themeDefaultBorderRadius = .25rem
-// State
-themeDefaultIsActiveBg = #0275d8
-themeDefaultIsActiveColor = #fff
+$isDanger = {
+	bgColor: #f2dede,
+	borderColor: #f44336,
+	color: #a94442,
+	colorHover: #a94442
+}
+$isSuccess = {
+	bgColor: #dff0d8,
+	borderColor: #3c763d,
+	color: #3c763d,
+	colorHover: #3c763d
+}
+$isWarning = {
+	bgColor: #fcf8e3,
+	borderColor: #ff9800,
+	color: #8a6d3b,
+	colorHover: #8a6d3b
+}
+$isInfo = {
+	bgColor: #d9edf7,
+	borderColor: #31708f,
+	color: #31708f,
+	colorHover: #31708f
+}
 /*!-----------------------------------------------------------------
   Типографика
  -----------------------------------------------------------------*/
 html
-	font-size var(--fontSize)
+	font-size 16px
 body
-	font-family: var(--fontFamily)
-	color var(--fontColor)
-	line-height: var(--fontLineHeight)
-// body
-// body{$theme.default.name}
-// 	font 100%/$theme.default.font.lineHeight $theme.default.font.family
-// 	color $theme.default.font.color
+	font-family: 'Raleway'\, sans-serif
+	color #000
+	line-height: 1.5em
 h1, h2, h3, h4, h5, h6
-{$theme.default.name} h1, {$theme.default.name} h2, {$theme.default.name} h3, {$theme.default.name} h4, {$theme.default.name} h5, {$theme.default.name} h6
 	font-weight 500
 	line-height 1.1
 h1
-{$theme.default.name} h1
-	font-size 36
+	font-size 2.25rem
 h2
-{$theme.default.name} h2
-	font-size 30
+	font-size 1.875rem
 h3
-{$theme.default.name} h3
-	font-size 24
+	font-size 1.5rem
 h4
-{$theme.default.name} h4
-	font-size 18
+	font-size 1.125rem
 h5
-{$theme.default.name} h5
-	font-size 14
+	font-size 0.875rem
 h6
-{$theme.default.name} h6
-	font-size 12
-.h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small {
-    font-size: 65%;
-}
-.h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, .h4 .small, .h4 small, .h5 .small, .h5 small, .h6 .small, .h6 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small, h4 .small, h4 small, h5 .small, h5 small, h6 .small, h6 small{
+	font-size 0.75rem
+h1 .is-small, h2 .is-small, h3 .is-small, h4 .is-small, h5 .is-small, h6 .issmall-
 	font-weight 400
+	font-size: 65%;
 	line-height 1
 	color #777
-}
+small
+	font-size 85%
 p
-{$theme.default.name} p
-	font-size 16
+	font-size 1rem
 	margin 0 0 10px
 	line-height 1.428
 ul
-	font-size 16
+	font-size 1rem
 	padding-left: $pl = 30px
 	padding-inline-start: $pl
 ol
@@ -158,31 +96,26 @@ ol
 			position: relative
 			left: -5px
 abbr[title]
-{$theme.default.name} abbr[title]
-	font-size 14
+	font-size 0.875rem
 	cursor help
 	border-bottom 1px dotted #777
 	text-decoration none
 address
-{$theme.default.name} address
-	font-size 14
+	font-size 0.875rem
 	font-style normal
-.small, {$theme.default.name} .small,
-small, {$theme.default.name} small
-	font-size 85%
 // html[lang="ru"] q
 // 	quotes: '«' '»'
 /*!-----------------------------------------------------------------
   Ссылки
  -----------------------------------------------------------------*/
 a
-	color $theme.default.link.color
+	color #337ab7
 	text-decoration none
 	&:focus
-		color $theme.default.link.colorFocus
+		color darken(@color, 35%)
 		text-decoration: underline
 	&:hover
-		color $theme.default.link.colorHover
+		color darken(@color, 35%)
 		text-decoration: underline
 /*!-----------------------------------------------------------------
   Таблицы
@@ -194,7 +127,7 @@ table
 	border-collapse collapse
 	width: 100%
 	max-width: 100%
-	+below(m)
+	+mema(sizeMedium)
 		display: block
 		overflow-x: auto
 td, th
@@ -212,14 +145,3 @@ figcaption
 	font-size 14
 	text-align center
 	font-style: italic
-/*!-----------------------------------------------------------------
-  Фон страниц layout.pug
- -----------------------------------------------------------------*/
-header
-header{$theme.default.name}
-{$theme.default.name} header
-	background $theme.default.pageBg.header
-footer
-footer{$theme.default.name}
-{$theme.default.name} footer
-	background $theme.default.pageBg.footer
