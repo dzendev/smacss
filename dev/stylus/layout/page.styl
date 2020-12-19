@@ -27,18 +27,12 @@ body
 #l-header
 	&-menu
 		background-color: rgba(10, 31, 41, 0.8)
-		.nav
-			position relative
-			margin-left: -10px
-			+mema(m)
-				display none
-		.hamburger
-			float right
-			display none
-			margin-top 5px
-			cursor pointer
-			+mema(m)
-				display inline-block
+		.l-page-width
+			height 32px
+			+mema(sizeMedium)
+				display flex
+				align-items center
+				justify-content flex-end
 	&-title
 		padding 7px 0
 		.l-page-width

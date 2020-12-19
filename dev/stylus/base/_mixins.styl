@@ -24,11 +24,11 @@ fontFace(fontFamily)
  * Размер шрифта
  * Если не задан размер вычисляем относительный размер
  */
-font-size(size)
-	if unit(size) == ''
-		font-size (size / themeDefaultBazeFontSize)rem
-	else
-		font-size size
+// font-size(size)
+// 	if unit(size) == ''
+// 		font-size (size / themeDefaultBazeFontSize)rem
+// 	else
+// 		font-size size
 /*
  * Перечисление классов с модификтором .col-$ -> .col-1, .col-2...
  */
@@ -40,6 +40,14 @@ joinClassName(ClassName, args)
 		else
 			buf += ClassName + arg
 	return buf
+/*
+ * Задание width и height
+ * size 40px -> width 40px height 40px
+ * size 40px 60px -> width 40px height 60px
+ */
+size(width, height=width)
+	width width
+	height height
 /*
  * Работа с @media
 */

@@ -12,8 +12,13 @@ fontFace(SegoeUILight)
 fontFace(SegoeUIRegular)
 fontFace(SegoeUISemiBold)
 /*-----------------------------------------------------------------
-  Переменные. Ипользуются theme, modules и state
+	Переменные. Ипользуются theme, modules и state
  -----------------------------------------------------------------*/
+:root
+	--fontSize: 16px
+	--fontFamily: 'Raleway'\, sans-serif
+	--fontColor: #000
+	--fontLineHeight: 1.5em
 $theme = {}
 $theme[default] = {
 	name: '.t-default',
@@ -92,10 +97,16 @@ themeDefaultIsActiveColor = #fff
 /*!-----------------------------------------------------------------
   Типографика
  -----------------------------------------------------------------*/
+html
+	font-size var(--fontSize)
 body
-body{$theme.default.name}
-	font 100%/$theme.default.font.lineHeight $theme.default.font.family
-	color $theme.default.font.color
+	font-family: var(--fontFamily)
+	color var(--fontColor)
+	line-height: var(--fontLineHeight)
+// body
+// body{$theme.default.name}
+// 	font 100%/$theme.default.font.lineHeight $theme.default.font.family
+// 	color $theme.default.font.color
 h1, h2, h3, h4, h5, h6
 {$theme.default.name} h1, {$theme.default.name} h2, {$theme.default.name} h3, {$theme.default.name} h4, {$theme.default.name} h5, {$theme.default.name} h6
 	font-weight 500

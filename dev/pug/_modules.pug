@@ -1,21 +1,11 @@
 //- .nav - модуль навигации
-//- mixin nav(active, ...items)
-//- 	nav.nav
-//- 		each item in items
-//- 			- for(var key in item) {
-//- 				if active == key
-//- 					a(href=key).is-active= item[key]
-//- 				else
-//- 					a(href=key)= item[key]
-//- 			- }
-
 mixin nav(items)
 	nav.nav
 		each item in items
 			if item.active == true
-				a(href=item.link).is-active= item.name
+				a(href=item.link class="nav__link is-active")= item.name
 			else
-				a(href=item.link)= item.name
+				a(href=item.link class="nav__link")= item.name
 	// /nav.nav
 
 //- .breadcrumb - модуль хлебные крошки

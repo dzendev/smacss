@@ -6,7 +6,7 @@
     // скрыть/показать меню на маленьких экранах при клике
     $hamburger.on('click', function(event) {
       event.preventDefault();
-      $(this).toggleClass('fa-menu').toggleClass('fa-close');
+      $(this).toggleClass('fa-bars').toggleClass('fa-times');
       $nav.toggleClass('is-show');
     });
 

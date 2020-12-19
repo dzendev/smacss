@@ -1,47 +1,11 @@
 /*!-----------------------------------------------------------------
   .nav - модуль навигации
  -----------------------------------------------------------------*/
-// navIsActive = #fff
-// navIsLinkColor = red
-// navIsLinkColorHover = blue
-// nav()
-// 	.nav
-// 		margin 0
-// 		padding 0
-// 		&__item
-// 			list-style none
-// 			if navIsActive != themeDefaultIsActive
-// 				&.is-active
-// 					background navIsActive
-// 			../__link
-// 				text-decoration none
-// 				display block
-// 				if navIsLinkColor != themeDefaultLinkColor
-// 					color navIsLinkColor
-// 				&:hover
-// 					if navIsLinkColorHover != themeDefaultLinkColorHover
-// 						color navIsLinkColorHover
-// 				if navIsActive != themeDefaultIsActive
-// 					&.is-active
-// 						background navIsActive
-// nav()
-// themeModifiedIsActive = #111
-// themeModifiedLinkColor = #fff
-// themeModifiedLinkColorHover = #ccc
-// themeModified = '.t-new-t'
-// if themeModified == '.t-new-t'
-// 	navIsActive = themeModifiedIsActive
-// 	navIsLinkColor = themeModifiedLinkColor
-// 	navIsLinkColorHover = themeModifiedLinkColorHover
-// 	{themeModified} .nav
-// 	.nav{themeModified}
-// 		nav()
-
 .nav
 	margin 0
 	padding 0
 	display flex
-	> a
+	&__link
 		display block
 		text-decoration none
 		padding: 4px 10px
@@ -51,5 +15,5 @@
 		&.is-active
 			background-color #687179
 			color themeDefaultIsActiveColor
-		+below(m)
-			display block
+		+mema(sizeMedium)
+			display none
