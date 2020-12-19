@@ -40,3 +40,30 @@ joinClassName(ClassName, args)
 		else
 			buf += ClassName + arg
 	return buf
+/*
+ * Работа с @media
+*/
+memi(minWidth)
+	if (typeof(minWidth) == 'string')
+		minWidth = convert(minWidth)
+	@media screen and (min-width: minWidth)
+		{block}
+
+mema(maxWidth)
+	if (typeof(maxWidth) == 'string')
+		maxWidth = convert(maxWidth)
+	@media screen and (max-width: maxWidth)
+		{block}
+
+memima(minWidth, maxWidth)
+	if (typeof(minWidth) == 'string')
+		minWidth = convert(minWidth)
+	if (typeof(maxWidth) == 'string')
+		maxWidth = convert(maxWidth)
+	@media screen and (min-width: minWidth) and (max-width: maxWidth)
+		{block}
+
+meretina(dpr)
+	@media (-webkit-min-device-pixel-ratio: dpr), (min-resolution: (dpr * 96)dpi)
+		{block}
+

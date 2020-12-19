@@ -52,7 +52,6 @@
     "gulp-uglify": "^3.0.2",
     "gulp-uncss-sp": "0.0.1",
     "gulp.spritesmith": "^6.11.0",
-    "rupture": "^0.7.1",
     "vinyl-buffer": "^1.0.1",
     "webpack-stream": "^5.2.1"
   },

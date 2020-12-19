@@ -16,7 +16,6 @@ const rename           = require('gulp-rename');
 const cssnano          = require('gulp-cssnano');
 const autoprefixer     = require('gulp-autoprefixer');
 const uncss            = require('gulp-uncss-sp');
-const rupture          = require('rupture');
 const glob             = require('glob');
 const babel            = require('gulp-babel');
 const uglify           = require('gulp-uglify');
@@ -107,7 +106,7 @@ function img() {
 function stylusToCss() {
 	return gulp.src('dev/stylus/main.styl')
 		.pipe(plumberNotifier())
-		.pipe(stylus({ use: [rupture()], 'include css': true, rawDefine: { ...breakpoint }}))
+		.pipe(stylus({ 'include css': true, rawDefine: { ...breakpoint }}))
 		.pipe(pipeIf(env === 'production', uncss({
 				// html: ['./build/index.html']
 				html: glob.sync('./build/**/*.html')
