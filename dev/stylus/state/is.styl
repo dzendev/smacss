@@ -3,25 +3,18 @@
  -----------------------------------------------------------------*/
 /*!
 	Состояние элементов
-	Для работы pointer-events: none в id 9-10
-	нужен полифил pointer_events_polyfill.js
 */
 [disabled]
 .is-disable
 .is-active
-	pointer-events: none
-	cursor: not-allowed
+	overflow visible
 /*!
 	Видимость элементов
 */
 .is-toggle
-	overflow visible
 .is-hide
-	display none !important
 .is-show
-	display block !important
-.is-invisible
-	visibility hidden !important
+	overflow visible
 /*!
 	Вид элементов:
 */
@@ -42,6 +35,7 @@
 .is-up // сверхку
 .is-down // снизу
 .is-center // по центру
+.is-sticky // приклеиное
 	overflow visible
 /*!
 	Размер элементов
