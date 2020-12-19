@@ -10,8 +10,7 @@
   Стили разбиты на 5 категорий:
   1. Base
   	1.1 Normalize.css
-  	1.2 Stylus use
-  	1.3 Mixins
+  	1.2 Mixins
   2. Theme
   	2.1 Load font
   	2.2 Typography
@@ -19,8 +18,8 @@
   	2.4 Table
   	2.5 Var
   3. Layout
-  	3.1 Grid system
-  	3.2 Style page
+    3.1 layout
+    3.2 Page
   4. Modules
   	4.1 .form
   	4.2 .btn
@@ -28,7 +27,6 @@
   	...
   5. State
   	5.1 state element
-  	5.2 animate element
 */
 /*!
 *==================================================================
@@ -65,16 +63,7 @@
   - Допускается каскадность
 *==================================================================
 */
-// @import "layout/mygrid.styl"
-// это стандартный бутстраповский @grid-gutter-width -- это расстояние между колонками, оно настраивается перед скачиванием бутстрапа. Ну или можете отменить это расстояние:
-
-// .no-gutter > [class*='col-'] {
-//     padding-right:0;
-//     padding-left:0;
-// }
-// @import "layout/grid_bootstrap.styl"
-
-@import "layout/grid.styl"
+@import "layout/layout.styl"
 @import "layout/page.styl"
 /*!
 *==================================================================
