@@ -1,5 +1,5 @@
 //- include _mixins.pug
-include _modules.pug
+include ../_modules.pug
 include _variable.pug
 doctype html
 html(lang="ru")
@@ -17,15 +17,15 @@ html(lang="ru")
 
 		block top-script
 
-	body.t-modified
+	body
 		header#l-header
 			#l-header-menu
 				.l-page-width
 					+nav(nav)
-					span.hamburger.fa.fa-menu
+					span.hamburger.fa.fa-bars
 			#l-header-title
 				.l-page-width
-					a(href="http://smacss.com/")
+					a(href="/")
 						img(src="img/jack-head.png", alt="smacss site")
 					div
 						h2 SMACSS — масштабируемая и модульная архитектура CSS
@@ -39,29 +39,24 @@ html(lang="ru")
 			.l-page-width
 				block content
 
-
-
 		footer#l-footer
 			.l-page-width
 				div
 					a(href='http://vk.com/modxrevolution').socicons.fa.fa-vk
 					a(href='https://www.facebook.com/groups/modxrevolution/').socicons.fa.fa-facebook
 					a(href='http://twitter.com/@viktorminator').socicons.fa.fa-twitter
-					a(href='http://github.com/Viktorminator').socicons.fa.fa-github
+					a(href='https://github.com/dzendev/smacss').socicons.fa.fa-github
 					a(href='skype:viktorminator?chat&topic=MODX уроки').socicons.fa.fa-skype
-				.col-md-6
-					address
-						b Twitter, Inc.<br>
-						| Francisco, CA 94103<br>
-						| 1355 Market Street, Suite 900<br>
-						abbr(title="Phone") P:
-						| &nbsp;(123) 456-7890
-				.col-md-6
-					address
-						b Full Name<br>
-						a(href="mailto:FullName@gmail.com") FullName@gmail.com
-					p(role="contentinfo")
-						| Сайт сделан
+				address
+					b Twitter, Inc.<br>
+					| Francisco, CA 94103<br>
+					| 1355 Market Street, Suite 900<br>
+					abbr(title="Phone") P:
+					| &nbsp;(123) 456-7890
+				address
+					b Full Name<br>
+					a(href="mailto:FullName@gmail.com") FullName@gmail.com
+					p(role="contentinfo") Сайт сделан
 		// /footer#l-footer
 		//- .is-hide
 		//- 	include sprite-svg/symbol/svg/sprite.symbol.svg
@@ -69,8 +64,10 @@ html(lang="ru")
 		a(href="#l-header")#l-top-scroll
 			i.fa.fa-arrow-circle-up
 		block bottom-script
-			script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-			script(src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js")
+			//- script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+			script(src="/js/jquery.min.js")
+			//- script(src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js")
+			script(src="/js/slick.min.js")
 			script(src="/js/jquery.waypoints.min.js")
 			script(src="/js/jquery.malihu.PageScroll2id.js")
 			// build:js
