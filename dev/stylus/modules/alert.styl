@@ -4,43 +4,40 @@
 .alert
 	padding: .75rem 2rem .75rem 1.25rem
 	margin-bottom: 1rem
-	border: 1px solid #eee
-	border-radius: .25rem
+	border: 1px solid $isSecondary.borderColor
+	border-radius: $borderRadius
 	position: relative
+	color: $isSecondary.color
 	> .fa-close
+		color $isSecondary.borderColor
 		cursor: pointer
 		position absolute
 		transform-style: preserve-3d
 		top: 50%
 		right 1rem
 		transform: translate(0%, -50%)
-	a
-		text-decoration underline
-	&.is-danger
-		background-color: $isDanger.bgColor
-		border-color: lightness($isDanger.bgColor, 85%)
-		color: $isDanger.color
-		a
-		a:hover
-			color $isDanger.color
 	&.is-success
 		background-color: $isSuccess.bgColor
-		border-color: lightness($isSuccess.borderColor, 85%)
+		border-color: @background-color
 		color: $isSuccess.color
-		a
-		a:hover
-			color $isSuccess.color
-	&.is-warning
-		background-color: $isWarning.bgColor
-		border-color: lightness($isWarning.borderColor, 88%)
-		color: $isWarning.color
-		a
-		a:hover
-			color $isWarning.color
+		span.fa-close
+			color $isSuccess.borderColor
 	&.is-info
 		background-color: $isInfo.bgColor
-		border-color: lightness($isInfo.borderColor, 85%)
+		border-color: @background-color
 		color: $isInfo.color
-		a
-		a:hover
-			color $isInfo.color
+		span.fa-close
+			color $isInfo.borderColor
+	&.is-warning
+		background-color: $isWarning.bgColor
+		border-color: @background-color
+		color: $isWarning.color
+		span.fa-close
+			color $isWarning.borderColor
+	&.is-danger
+		background-color: $isDanger.bgColor
+		border-color: @background-color
+		color: $isDanger.color
+		span.fa-close
+			color $isDanger.borderColor
+
