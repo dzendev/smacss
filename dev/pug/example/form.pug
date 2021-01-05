@@ -176,59 +176,52 @@ block content
 						input#exampleinputamount.form-control(type='text', placeholder='amount')
 						button.btn.is-primary(type='submit') transfer cash
 		.row
-			h2 Btn
-			div
+			h2 .btn
+			div(style="padding-bottom:20px;")
 				button.btn.is-success Success
 				button.btn.is-info Info
 				button.btn.is-warning Warning
 				button.btn.is-danger Danger
 				button.btn.is-primary Primary
 				button.btn.is-secondary Secondary
-			div
+			div(style="padding-bottom:20px;")
 				input(type="button", value="Success").btn.is-success
 				input(type="button", value="Info").btn.is-info
 				input(type="button", value="Warning").btn.is-warning
 				input(type="button", value="Danger").btn.is-danger
 				input(type="button", value="Primary").btn.is-primary
 				input(type="button", value="Secondary").btn.is-secondary
-			div
-				input(type="submit", value="Success").btn.is-success
-				input(type="submit", value="Info").btn.is-info
-				input(type="submit", value="Warning").btn.is-warning
-				input(type="submit", value="Danger").btn.is-danger
-				input(type="submit", value="Primary").btn.is-primary
-				input(type="submit", value="Secondary").btn.is-secondary
-			div
+			div(style="padding-bottom:20px;")
+				input(type="submit", value="Success").btn.is-success.is-disable
+				input(type="submit", value="Info").btn.is-info.is-disable
+				input(type="submit", value="Warning").btn.is-warning.is-disable
+				input(type="submit", value="Danger").btn.is-danger.is-disable
+				input(type="submit", value="Primary").btn.is-primary.is-disable
+				input(type="submit", value="Secondary").btn.is-secondary.is-disable
+			div(style="padding-bottom:20px;")
 				a.btn.is-success Success
 				a.btn.is-info Info
 				a.btn.is-warning Warning
 				a.btn.is-danger Danger
-				a.btn.is-primary.is-disable Primary
+				a.btn.is-primary Primary
 				a.btn.is-secondary Secondary
-			div(style="padding:20px 0")
+			h2 .btn-group
+			div(style="padding-bottom:20px;")
 				.btn-group
 					button.btn.is-success Success
 					button.btn.is-info Info
 					button.btn.is-warning Warning
 					button.btn.is-danger Danger
-					button(disabled="disabled").btn.is-primary Primary
+					button.btn.is-primary Primary
 					button.btn.is-secondary Secondary
-			div(style="padding:20px 0")
-				.btn-group-justified
+			div(style="padding-bottom:20px;")
+				.btn-group.is-inline
 					a.btn.is-success Success
 					a.btn.is-info Info
 					a.btn.is-warning Warning
 					a.btn.is-danger Danger
 					a.btn.is-primary Primary
 					a.btn.is-secondary Secondary
-			div(style="padding:20px 0")
-				.btn-group-justified
-					.btn-group: button.btn.is-success Success
-					.btn-group: button.btn.is-info Info
-					.btn-group: button.btn.is-warning Warning
-					.btn-group: button.btn.is-danger Danger
-					.btn-group: button.btn.is-primary Primary
-					.btn-group: button.btn.is-secondary Secondary
 		.row
 			label.switch
 				input(type='checkbox')

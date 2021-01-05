@@ -3,72 +3,78 @@
  -----------------------------------------------------------------*/
 .btn
 	cursor: pointer
-	border-radius: .25em
+	border-radius $borderRadius
 	text-decoration none
 	display: inline-block
 	font-weight: normal
 	line-height: 1.25
 	text-align: center
 	white-space: nowrap
-	vertical-align: middle
-	-webkit-user-select: none
-	-moz-user-select: none
-	-ms-user-select: none
+	// vertical-align: middle
 	user-select: none
 	border: 1px solid transparent
 	padding: 0.38rem .8em
 	font-size: 1rem
 	transition: all 0.2s ease-in-out
+	color: #fff
 
 	&.is-disable
 	&[disabled]
 		opacity .65
+		cursor default
 
 	&:focus, &.is-focus
 		outline: 0
 		box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25)
 	&:focus, &:hover
 		text-decoration: none
+		color #fff
 
-	&.is-primary
-		color: #fff
-		background-color: #0275d8
-		border-color: #0275d8
-		&:hover:not(.is-disable)
-			color: #fff
-			background-color: #025aa5
-			border-color: #01549b
-
-	&.is-secondary
-		color: #292b2c
-		background-color: #fff
-		border-color: #ccc
-		&:hover
-			color: #292b2c
-			background-color: #e6e6e6
-			border-color: #adadad
-	&.is-info
-		color: #fff
-		background-color: #5bc0de
-		border-color: #5bc0de
-		&:hover
-			color: #fff
-			background-color: #31b0d5
-			border-color: #2aabd2
-	&.is-danger
-		background-color: #f44336
-		&:hover
-			background: #da190b
 	&.is-success
-		background-color: #4CAF50
+		background-color: $isSuccess.bgColor
 		&:hover
-			background-color: #46a049
-	&.is-warning
-		background-color: $isWarning.borderColor
-		&:hover
-			background: saturation($isWarning.borderColor, 85%)
+			background-color: $isSuccess.bgColorHover
+		&.is-disable:hover
+		&[disabled]:hover
+			background-color: $isSuccess.bgColor
 	&.is-info
-		background-color: #2196F3
+		background-color: $isInfo.bgColor
 		&:hover
-			background: #0b7dda
+			background-color: $isInfo.bgColorHover
+		&.is-disable:hover
+		&[disabled]:hover
+			background-color: $isInfo.bgColor
+	&.is-warning
+		background-color: $isWarning.bgColor
+		&:hover
+			background-color: $isWarning.bgColorHover
+		&.is-disable:hover
+		&[disabled]:hover
+			background-color: $isWarning.bgColor
+	&.is-danger
+		background-color: $isDanger.bgColor
+		&:hover
+			background-color: $isDanger.bgColorHover
+		&.is-disable:hover
+		&[disabled]:hover
+			background-color: $isDanger.bgColor
+	&.is-primary
+		background-color: $isActive.bgColor
+		&:hover
+			background-color: $isActive.bgColorHover
+		&.is-disable:hover
+		&[disabled]:hover
+			background-color: $isActive.bgColor
+	&.is-secondary
+		border: 1px solid $isSecondary.borderColor
+		color: $isSecondary.color
+		background-color: $isSecondary.bgColor
+		&:hover
+			background-color: $isSecondary.bgColorHover
+		&.is-disable:hover
+		&[disabled]:hover
+			background-color: $isSecondary.bgColor
+
+
+
 
