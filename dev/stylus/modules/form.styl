@@ -1,9 +1,9 @@
 /*!-----------------------------------------------------------------
 	.form - модуль форм
  -----------------------------------------------------------------*/
-form
+.form
+	// группирование элементов формы
 	fieldset
-		min-width 0
 		padding 0
 		margin 0
 		border 0
@@ -24,25 +24,17 @@ form
 		max-width 100%
 		margin-bottom 5px
 
-	input[type="search"]
-		box-sizing border-box
-
 	input[type="radio"],
 	input[type="checkbox"]
 		margin 4px 0 0
-		margin-top 1px \9
 		line-height normal
-
-	input[type="file"]
-		display block
-
-	input[type="range"]
-		display block
-		width 100%
 
 	select[multiple],
 	select[size]
 		height auto
+
+	input[type="file"]
+		display block
 
 	input[type="file"]:focus,
 	input[type="radio"]:focus,
@@ -50,79 +42,52 @@ form
 		outline 5px auto -webkit-focus-ring-color
 		outline-offset -2px
 
-	output
-		display block
-		padding-top 7px
-		font-size 14px
-		line-height 1.42857143
-		color #555
+	input[type="search"]
+		-webkit-appearance: none
 
 	// инпуты
-	.form-control
+	&__control
 		display block
 		width 100%
-		height 34px
-		padding 6px 12px
-		font-size 14
+		padding 8px 12px
 		line-height 1.42857143
 		color #555
 		background-color #fff
 		background-image none
 		border 1px solid #ccc
-		border-radius themeDefaultBorderRadius
 		box-shadow inset 0 1px 1px rgba(0, 0, 0, .075)
 		transition border-color ease-in-out .15s, box-shadow ease-in-out .15s
 		&:focus
 			border-color #66afe9
 			outline 0
 			box-shadow inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6)
-		&::-moz-placeholder
+		&::placeholder
 			color #999
-			opacity 1
-		&:-ms-input-placeholder
-			color #999
-		&::-webkit-input-placeholder
-			color #999
-		&::-ms-expand
-			background-color transparent
-			border 0
-
-	.form-control[disabled],
-	.form-control[readonly],
-	fieldset[disabled] .form-control
-		background-color #eee
-		opacity 1
-
-	.form-control[disabled],
-	fieldset[disabled] .form-control
-		cursor not-allowed
-
-	textarea.form-control
+	textarea&__control
 		height auto
+		resize none
+		display block
+		padding-top 10px
+		padding-bottom 10px
 
-	input[type="search"]
-		-webkit-appearance: none
 	// Переключатели
-	.form-radio,
-	.form-checkbox
+	&__check
 		position relative
 		display block
 		margin-top 10px
 		margin-bottom 10px
 		padding-left: 20px
-		&.is-inline,
 		&.is-inline
 			display inline-block
 			margin 0
 			font-weight normal
 			vertical-align middle
 			cursor pointer
-			padding-top: 7px
+			padding-top: 0
 			padding-bottom 3px
 			& input[type="radio"],
 			& input[type="checkbox"]
-				margin-top 11px
-		& label,
+				margin-top 4px
 		& label
 			min-height 20px
 			margin-bottom 0
@@ -134,152 +99,59 @@ form
 			top: 0
 			left: 0
 			margin-top: 5px
-			// position absolute
-			// margin-top 4px \9
-			// margin-left -20px
-
-	.form-radio + .form-radio,
-	.form-checkbox + .form-checkbox
+	&__check + &__check
 		margin-top -5px
-
-	.form-radio.is-inline + .form-radio.is-inline,
-	.form-checkbox.is-inline + .form-checkbox.is-inline
+	&__check.is-inline + &__check.is-inline
 		margin-top 0
 		margin-left 10px
 	// Вместо инпута идёт текст
-	.form-text
+	&__text
 		min-height 34px
 		padding-top 7px
 		padding-bottom 7px
 		margin-bottom 0
 	// поясняющая информация
-	.form-help
+	&__help
 		display block
 		margin-top 5px
 		margin-bottom 10px
+		font-size .85rem
 		color #737373
-	// label слева, input справа
-	.form-label
-		padding: 5px 10px 0 0
-		margin-bottom: 0
-		text-align: right
-
-// min-width: 768px
-+above(l)
-	form.is-inline
-		.form-wrap
-			display: inline-block
-			margin-bottom: 0
-			vertical-align: middle
-		.form-control
-			display: inline-block
-			width: auto
-			vertical-align: middle
-		.form-text
-			display: inline-block
-		.form-input-group
-			display: inline-table
-			vertical-align: middle
-			.input-group-addon,
-			.input-group-btn,
-			.form-control
-				width: auto
-			& > .form-control
-				width: 100%
-		.form-control-label
-			margin-bottom: 0
-			vertical-align: middle
-		.form-radio,
-		.form-checkbox
-			display: inline-block
-			margin-top: 0
-			margin-bottom: 0
-			vertical-align: middle
-		.form-radio label,
-		.form-checkbox label
-			padding-left: 0
-		.form-radio input[type="radio"],
-		.form-checkbox input[type="checkbox"]
-			position: relative
-			margin-left: 0
-		.is-feedback
-			.form-control-feedback
-					top: 0
+	// Неактивные элементы формы
+	&__control[disabled],
+	&__control[readonly],
+	fieldset[disabled] &__control
+		background-color #eee
+		opacity 1
+	&__control[disabled],
+	fieldset[disabled] &__control,
+		cursor not-allowed
+	// расстояние между элементами формы
+	&__wrap
+		margin-bottom: 15px
+	// Группировка полей формы
+	&__group
+		vertical-align middle
+		display flex
+		width 100%
+		.form__text
+			display flex
+			align-items center
+			justify-content center
+			padding 0 12px
+			border: 1px solid #ccc
+			box-shadow: inset 0 1px 1px rgba(0,0,0,0.075)
+			margin 0
+		> *
+		.form__text
+			border-radius: 0
+			border-left-width 0
+			&:first-child
+				border-left-width 1px
+				border-top-left-radius: $borderRadius
+				border-bottom-left-radius: $borderRadius
+			&:last-child
+				border-top-right-radius: $borderRadius
+				border-bottom-right-radius: $borderRadius
 
 
-
-
-
-
-
-
-
-
-
-
-
-// .form.is-inline .input-group .input-group-addon,
-// .form.is-inline .input-group .input-group-btn,
-// @media (min-width: 768px)
-// 	.form.is-inline .input-group .form-control
-// 		width auto
-
-// .form.is-inline .radio,
-// @media (min-width: 768px)
-// .form.is-inline .checkbox
-// 	display inline-block
-// 	margin-top 0
-// 	margin-bottom 0
-// 	vertical-align middle
-
-// .form.is-inline .radio label,
-// @media (min-width: 768px)   .form.is-inline .checkbox label
-// 	padding-left 0
-
-// .form.is-inline .radio input[type="radio"],
-// @media (min-width: 768px)   .form.is-inline .checkbox input[type="checkbox"]
-// 	position relative
-// 	margin-left 0
-
-.form-horizontal .form-radio,
-.form-horizontal .form-checkbox,
-.form-horizontal .form-radio.is-inline,
-.form-horizontal .form-checkbox.is-inline
-	padding-top 7px
-	margin-top 0
-	margin-bottom 0
-
-.form-horizontal .form-radio,
-.form-horizontal .form-checkbox
-	min-height 27px
-
-.form-wrap
-	clearfix()
-
-.form-wrap
-	margin-bottom: 15px
-.form-horizontal
-	.is-feedback
-		.form-control-feedback
-			right 15px
-
-// @media (min-width: 768px)
-// 	.form-horizontal
-// 		.control-label
-// 			padding-top 7px
-// 			margin-bottom 0
-// 			text-align right
-
-// @media (min-width: 768px)
-// 	.form-horizontal
-// 		.form-wrap-lg
-// 			.control-label
-// 				padding-top 11px
-// 				font-size 18px
-
-// @media (min-width: 768px)
-// 	.form-horizontal
-// 		.form-wrap-sm
-// 			.control-label
-// 				padding-top 6px
-// 				font-size 12px
