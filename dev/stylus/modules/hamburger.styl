@@ -4,9 +4,10 @@
 .hamburger
 	font-size 1.7rem !important
 	color #fff
-	display none
 	cursor pointer
-	+mema(sizeMedium)
-		display inline-block
+	position fixed
+	z-index 2
 	&.fa
 		display none
+		+mema(sizeMedium)
+			display inline-block
