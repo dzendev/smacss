@@ -1,107 +1,87 @@
 (function($) {
-  $(function() {
-    var $hamburger, $nav, slider;
-    $hamburger = $('.hamburger');
-    $nav = $('.nav');
-    // скрыть/показать меню на маленьких экранах при клике
-    $hamburger.on('click', function(event) {
-      event.preventDefault();
-      $(this).toggleClass('fa-bars').toggleClass('fa-times');
-      $nav.toggleClass('is-show');
-    });
-
-    // Модуль табуляция
-    $tab = $('.tab');
-    $tabLink = $tab.find('ul.tab-links > li');
-    $tabContent = $tab.find('.tab-content');
-    $tabLink.on('click', function(event){
-      $tabLink.removeClass('is-active');
-      $(this).addClass('is-active');
-      $tabContent.removeClass('is-show').eq($(this).attr('data-show-content')).addClass('is-show');
-    });
-
-    // плавный скролл на верх страницы
-    $('a.scrollto').click(function() {
-      var destination, elementClick;
-      elementClick = "#" + $(this).attr("href").split("#")[1];
-      destination = $(elementClick).offset().top;
-      $('html:not(:animated),body:not(:animated)').animate({
-        scrollTop: destination
-      }, 800);
-      return false;
-    });
-    // анимация при скролле
-    // $.fn.animated = function(inEffect) {
-    //   $(this).each(function() {
-    //     var ths;
-    //     ths = $(this);
-    //     ths.css("opacity", "0").addClass("is-animated").waypoint(function(dir) {
-    //       if (dir === "down") {
-    //         ths.addClass(inEffect).css("opacity", "1");
-    //       }
-    //     }, {
-    //       offset: "90%"
-    //     });
-    //   });
-    // };
-    // $('.alert.is-danger').animated('a-shake');
-    // Закрыть предупреждение
-    $('.alert .fa-close').on('click', function(event) {
-      $(this).closest('.alert').fadeOut('slow/400/fast', function() {
-        $(this).remove();
-      });
-    });
-    $("#l-top-scroll").mPageScroll2id();
-    // Полифил для pointer-events: none в браузере IE9, IE10
-    PointerEventsPolyfill.initialize({});
-    // Слайдеры
-    slider = $('.slider');
-    // Слайдер баннеров
-    $(slider).closest('.slider-banner').slick({
-      dots: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      speed: 2000,
-      autoplay: true,
-      responsive: [
-        {
-          breakpoint: 480,
-          settings: {
-            arrows: true,
-            dots: false
-          }
-        }
-      ]
-    });
-    // Слайдер купили на этой недели
-    $(slider).closest('.slider-img').slick({
-      dots: true,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      // arrows: false
-      responsive: [
-        {
-          breakpoint: 1060,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3
-          }
-        },
-        {
-          breakpoint: 769,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 640,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-    });
+  // Модуль .hamburger
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav');
+  hamburger.addEventListener('click', function (event) {
+    event.preventDefault();
+    event.target.classList.toggle('fa-bars');
+    event.target.classList.toggle('fa-times');
+    nav.classList.toggle('is-show');
   });
+
+  // Модуль табуляция
+  const tabLink = document.querySelector('.tab-links');
+  if(tabLink) {
+    const tabLinks = tabLink.querySelectorAll('li');
+    const tabContent = document.querySelectorAll('.tab-content');
+    tabLink.onclick = function (event) {
+      let li = event.target.closest('li');
+      if (!li) return;
+      tabLinks.forEach((el) => el.classList.remove('is-active'));
+      tabContent.forEach((el) => el.classList.remove('is-show'));
+      li.classList.add('is-active');
+      let indexContent = event.target.dataset.showContent;
+      tabContent[indexContent].classList.add('is-show');
+    };
+  }
+
+  // Закрыть предупреждение
+  const alertClose = document.querySelectorAll('.alert .fa-close');
+  alertClose.forEach(close => {
+    close.onclick = function (event) {
+      let alertBlock = event.target.closest('.alert');
+      if(!alertBlock) return;
+      alertBlock.remove();
+    };
+  });
+
+  // Слайдеры
+  var slider = $('.slider');
+  // Слайдер баннеров
+  $(slider).closest('.slider-banner').slick({
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 2000,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: true,
+          dots: false
+        }
+      }
+    ]
+  });
+  // Слайдер купили на этой недели
+  $(slider).closest('.slider-img').slick({
+    dots: true,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    // arrows: false
+    responsive: [
+      {
+        breakpoint: 1060,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+    });
 })(jQuery);
