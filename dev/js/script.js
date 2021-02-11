@@ -10,19 +10,24 @@
   });
 
   // Модуль табуляция
-  const tabLink = document.querySelector('.tab-links');
-  if(tabLink) {
-    const tabLinks = tabLink.querySelectorAll('li');
-    const tabContent = document.querySelectorAll('.tab-content');
+  function tabHandler(tab) {
+    const tabLink = tab.querySelector('.tab__links');
+    const tabItem = tab.querySelectorAll('.tab__item');
+    const tabContent = tab.querySelectorAll('.tab__content');
     tabLink.onclick = function (event) {
-      let li = event.target.closest('li');
-      if (!li) return;
-      tabLinks.forEach((el) => el.classList.remove('is-active'));
+      event.preventDefault();
+      let item = event.target.closest('.tab__item');
+      if (!item) return;
+      tabItem.forEach((el) => el.classList.remove('is-active'));
       tabContent.forEach((el) => el.classList.remove('is-show'));
-      li.classList.add('is-active');
+      item.classList.add('is-active');
       let indexContent = event.target.dataset.showContent;
       tabContent[indexContent].classList.add('is-show');
     };
+  }
+  const tabs = document.querySelectorAll('.tab');
+  if(tabs.length != 0) {
+    tabs.forEach(tabHandler);
   }
 
   // Закрыть предупреждение
