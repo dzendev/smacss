@@ -8,7 +8,8 @@
 	border-radius: $borderRadius
 	position: relative
 	color: $isSecondary.color
-	> .fa-close
+	transition: opacity .4s
+	> .alert__close
 		color $isSecondary.borderColor
 		cursor: pointer
 		position absolute
@@ -16,28 +17,30 @@
 		top: 50%
 		right 1rem
 		transform: translate(0%, -50%)
+	&.is-hide
+		opacity 0
 	&.is-success
 		background-color: $isSuccess.bgColor
 		border-color: @background-color
 		color: $isSuccess.color
-		span.fa-close
+		.alert__close
 			color $isSuccess.borderColor
 	&.is-info
 		background-color: $isInfo.bgColor
 		border-color: @background-color
 		color: $isInfo.color
-		span.fa-close
+		.alert__close
 			color $isInfo.borderColor
 	&.is-warning
 		background-color: $isWarning.bgColor
 		border-color: @background-color
 		color: $isWarning.color
-		span.fa-close
+		.alert__close
 			color $isWarning.borderColor
 	&.is-danger
 		background-color: $isDanger.bgColor
 		border-color: @background-color
 		color: $isDanger.color
-		span.fa-close
+		.alert__close
 			color $isDanger.borderColor
 

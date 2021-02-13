@@ -9,7 +9,7 @@
     nav.classList.toggle('is-show');
   });
 
-  // Модуль табуляция
+  // Модуль .tab
   function tabHandler(tab) {
     const tabLink = tab.querySelector('.tab__links');
     const tabItem = tab.querySelectorAll('.tab__item');
@@ -30,13 +30,16 @@
     tabs.forEach(tabHandler);
   }
 
-  // Закрыть предупреждение
-  const alertClose = document.querySelectorAll('.alert .fa-close');
+  // Модуль .alert
+  const alertClose = document.querySelectorAll('.alert__close');
   alertClose.forEach(close => {
     close.onclick = function (event) {
       let alertBlock = event.target.closest('.alert');
       if(!alertBlock) return;
-      alertBlock.remove();
+      alertBlock.classList.add('is-hide');
+      setTimeout(function() {
+        alertBlock.remove();
+      }, 400);
     };
   });
 
