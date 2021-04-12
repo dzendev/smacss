@@ -31,8 +31,7 @@
   }
 
   // Модуль .alert
-  const alertClose = document.querySelectorAll('.alert__close');
-  alertClose.forEach(close => {
+  function alertHandler(close) {
     close.onclick = function (event) {
       let alertBlock = event.target.closest('.alert');
       if(!alertBlock) return;
@@ -41,7 +40,11 @@
         alertBlock.remove();
       }, 400);
     };
-  });
+  }
+  const alertClose = document.querySelectorAll('.alert__close');
+  if(alertClose.length != 0) {
+    alertClose.forEach(alertHandler);
+  }
 
   // Слайдеры
   var slider = $('.slider');
