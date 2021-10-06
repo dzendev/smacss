@@ -3,7 +3,6 @@ extends layout.pug
 block content
 
 	h2 Заголовки
-
 	h1 Заголовок первого уровня <small>уменьшенный текст</small>
 	h2 Заголовок второго уровня <small>уменьшенный текст</small>
 	h3 Заголовок третьего уровня <small>уменьшенный текст</small>
@@ -12,7 +11,6 @@ block content
 	h6 Заголовок шевтого уровня <small>уменьшенный текст</small>
 
 	h2 Абзацы
-
 	p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore optio magnam, eos officiis dolores eius similique saepe unde beatae quis. Corrupti incidunt porro officiis repellat, autem facere amet esse ducimus et deleniti adipisci reprehenderit ea! Consectetur voluptatem quidem nihil ratione.
 	p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit fugiat porro tempore odio, molestias velit ab vitae necessitatibus accusamus rerum neque cum atque natus, nisi aspernatur placeat distinctio saepe delectus!
 	<p>Станислав Лец утверждал: <q>Чаще всего выход там, где был вход</q>.</p>
@@ -36,3 +34,36 @@ block content
 				li Lorem ipsum dolor sit amet, consectetur.
 				li Lorem ipsum dolor sit amet, consectetur.
 		li Lorem ipsum dolor sit amet.
+
+	h2 Таблица
+	table
+		<caption>Таблица размеров обуви</caption>
+		thead
+			tr
+				th #
+				th Название товара
+				th Категория
+				th Цена
+		tbody
+			tr
+				td 1
+				td Шлёпки оранжевые
+				td Обувь
+				td 900₽
+			tr
+				td 2
+				td Швабра
+				td Товары для дома
+				td 700₽
+			tr
+				td 3
+				td Кастрюля
+				td Посуда
+				td 1200₽
+			tr
+		tfoot
+			tr
+				td
+				td
+				td Всего
+				td 2800₽

@@ -14,6 +14,12 @@ fontFace(SegoeUISemiBold)
 /*-----------------------------------------------------------------
 	Переменные.
  -----------------------------------------------------------------*/
+:root
+	--colorWhite: #fff
+	--colorBlack: #000
+	--colorGray: #e3e6e8
+	--borderRadius: .25rem
+
 $colorWhite = #fff
 $colorBlack = #000
 $colorGray = #eceeef
@@ -55,7 +61,6 @@ $borderRadius = .25em
 html
 	font-size 16px
 body
-	// font-family: 'Raleway'\, sans-serif
 	font-family: 'Roboto'\, sans-serif
 	color #000
 	line-height: 1.5em
@@ -130,11 +135,22 @@ table
 	+mema(sizeMedium)
 		display: block
 		overflow-x: auto
-td, th
-	padding .2rem 0.75rem
-	border 1px solid #eceeef
-th
-	text-align left
+	caption
+		padding-bottom .2em
+		font-style italic
+	td, th
+		padding .4rem 0.75rem
+	td
+		border-bottom 1px solid var(--colorGray)
+	th
+		text-align left
+		font-weight bold
+	thead th
+		border 0
+		border-bottom 1px solid var(--colorBlack)
+	tfoot td
+		border 0
+		border-top 1px solid var(--colorBlack)
 /*!-----------------------------------------------------------------
   Адаптивные картинки
  -----------------------------------------------------------------*/
