@@ -1,11 +1,12 @@
 /*!-----------------------------------------------------------------
-	.switch - модуль переключатель
+	.switch - модуль кастомных checkbox и radio
  -----------------------------------------------------------------*/
 .switch
 	position: relative
-	display: inline-block
-	width: 60px
+	display: flex
+	align-items center
 	height: 34px
+	margin-bottom 15px
 	input
 		display none
 		&:checked + ^[0]__slider
@@ -14,17 +15,19 @@
 			transform: translateX(26px)
 		&:focus + ^[0]__slider
 			box-shadow: 0 0 1px #2196F3
+	input[type="radio"]
+		&:checked + ^[0]__slider
+		&:checked ~ ^[0]__text
+			cursor default
 
 	&__slider
-		position: absolute
+		width: 60px
+		height 34px
 		cursor: pointer
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
 		background-color: #ccc
 		transition: .4s
 		&:before
+			width: 60px
 			position: absolute
 			content: ""
 			height: 26px
@@ -33,7 +36,11 @@
 			bottom: 4px
 			background-color: #fff
 			transition: .4s
-		&.is-secondary
+		&.t-secondary
 			border-radius: 34px
 			&:before
 				border-radius: 50%
+	&__text
+		display block
+		padding-left 10px
+		cursor pointer

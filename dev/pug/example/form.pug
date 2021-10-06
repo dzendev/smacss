@@ -179,17 +179,70 @@ block content
 					a.btn.t-primary Primary
 					a.btn.t-secondary Secondary
 		div
+			h2 .switch — модуль кастомных checkbox и radio
+
+			h3 input[type="checkbox"]
+
 			label.switch
-				input(type='checkbox')
+				input(type='checkbox', value="checkbox1")
 				.switch__slider
+				span.switch__text checkbox1
 			label.switch
-				input(type='checkbox', checked='')
+				input(type='checkbox', checked='', value="checkbox2")
 				.switch__slider
-			br
-			br
+				span.switch__text checkbox2
 			label.switch
-				input(type='checkbox')
+				input(type='checkbox', value="checkbox3")
 				.switch__slider.t-secondary
 			label.switch
-				input(type='checkbox', checked='')
+				input(type='checkbox', checked='', value="checkbox4")
 				.switch__slider.t-secondary
+
+			div.l-inline-switch
+				label.switch
+					input(type='checkbox', value="checkbox1")
+					.switch__slider
+					span.switch__text checkbox1
+				label.switch
+					input(type='checkbox', checked='', value="checkbox2")
+					.switch__slider
+					span.switch__text checkbox2
+				label.switch
+					input(type='checkbox', value="checkbox3")
+					.switch__slider.t-secondary
+				label.switch
+					input(type='checkbox', checked='', value="checkbox4")
+					.switch__slider.t-secondary
+
+			h3 input[type="radio"]
+
+			label.switch
+				input(type='radio', value="radio1", name="radio_group1")
+				.switch__slider
+				span.switch__text radio_group1 radio1
+			label.switch
+				input(type='radio', checked, value="radio2", name="radio_group1")
+				.switch__slider
+				span.switch__text radio_group1 radio2
+			label.switch
+				input(type='radio', value="radio1", name="radio_group2")
+				.switch__slider.t-secondary
+			label.switch
+				input(type='radio', checked, value="radio2", name="radio_group2")
+				.switch__slider.t-secondary
+
+			div.l-inline-switch
+				label.switch
+					input(type='radio', value="radio1", name="radio_group3")
+					.switch__slider
+					span.switch__text radio_group3 radio1
+				label.switch
+					input(type='radio', checked, value="radio2", name="radio_group3")
+					.switch__slider
+					span.switch__text radio_group3 radio2
+				label.switch
+					input(type='radio', value="radio1", name="radio_group4")
+					.switch__slider.t-secondary
+				label.switch
+					input(type='radio', checked, value="radio2", name="radio_group4")
+					.switch__slider.t-secondary
