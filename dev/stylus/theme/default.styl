@@ -18,40 +18,37 @@ $colorWhite = #fff
 $colorBlack = #000
 $colorGray = #eceeef
 $borderRadius = .25em
-$isSuccess = {
-	bgColor: #4CAF50,
-	bgColorHover: #46a049,
-	borderColor: #3c763d,
-	color: #001e00
-}
-$isInfo = {
-	bgColor: #2196F3,
-	bgColorHover: #0b7dda,
-	borderColor: #1053a8,
-	color: #003351
-}
-$isWarning = {
-	bgColor: #ff9800,
-	bgColorHover: #ec9413,
-	borderColor: #b5520e,
-	color: #572d04
-}
-$isDanger = {
-	bgColor: #f44336,
-	bgColorHover: #da190b,
-	borderColor: #a94442,
-	color: #4a1716
-}
-$isActive = {
-	bgColor: #0275d8,
-	bgColorHover: #01549b
-}
-$isSecondary = {
-	bgColor: #fff,
-	bgColorHover: #e6e6e6,
-	color: #292b2c,
-	borderColor: #ccc
-}
+.t-success
+	--bgColor: #4CAF50
+	--bgColorHover: #46a049
+	--borderColor: #3c763d
+	--color: #001e00
+.t-info
+	--bgColor: #2196F3
+	--bgColorHover: #0b7dda
+	--borderColor: #1053a8
+	--color: #003351
+.t-warning
+	--bgColor: #ff9800
+	--bgColorHover: #ec9413
+	--borderColor: #b5520e
+	--color: #572d04
+.t-danger
+	--bgColor: #f44336
+	--bgColorHover: #da190b
+	--borderColor: #a94442
+	--color: #4a1716
+.t-secondary
+	--bgColor: #fff
+	--bgColorHover: #e6e6e6
+	--color: #292b2c
+	--borderColor: #ccc
+.t-primary
+.is-active
+	--bgColor: #0275d8
+	--bgColorHover: #01549b
+	--color: #fff
+	--borderColor: #003351
 /*!-----------------------------------------------------------------
   Типографика
  -----------------------------------------------------------------*/
@@ -77,11 +74,6 @@ h5
 	font-size 0.875rem
 h6
 	font-size 0.75rem
-h1 .is-small, h2 .is-small, h3 .is-small, h4 .is-small, h5 .is-small, h6 .issmall-
-	font-weight 400
-	font-size: 65%;
-	line-height 1
-	color #777
 small
 	font-size 85%
 p

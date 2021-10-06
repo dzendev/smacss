@@ -4,43 +4,43 @@
 .alert
 	padding: .75rem 2rem .75rem 1.25rem
 	margin-bottom: 1rem
-	border: 1px solid $isSecondary.borderColor
+	border: 1px solid #000
 	border-radius: $borderRadius
 	position: relative
-	color: $isSecondary.color
+	color: #000
 	transition: opacity .4s
 	> .alert__close
-		color $isSecondary.borderColor
+		color #000
 		cursor: pointer
 		position absolute
 		transform-style: preserve-3d
 		top: 50%
 		right 1rem
 		transform: translate(0%, -50%)
-	&.is-hide
+	&.t-hide
 		opacity 0
-	&.is-success
-		background-color: $isSuccess.bgColor
-		border-color: @background-color
-		color: $isSuccess.color
+	&.t-success
+		background-color: var(--bgColor)
+		border-color: var(--borderColor)
+		color: var(--color)
 		.alert__close
-			color $isSuccess.borderColor
-	&.is-info
-		background-color: $isInfo.bgColor
-		border-color: @background-color
-		color: $isInfo.color
+			color var(--borderColor)
+	&.t-info
+		background-color: var(--bgColor)
+		border-color: var(--borderColor)
+		color: var(--color)
 		.alert__close
-			color $isInfo.borderColor
-	&.is-warning
-		background-color: $isWarning.bgColor
-		border-color: @background-color
-		color: $isWarning.color
+			color var(--borderColor)
+	&.t-warning
+		background-color: var(--bgColor)
+		border-color: var(--borderColor)
+		color: var(--color)
 		.alert__close
-			color $isWarning.borderColor
-	&.is-danger
-		background-color: $isDanger.bgColor
-		border-color: @background-color
-		color: $isDanger.color
+			color var(--borderColor)
+	&.t-danger
+		background-color: var(--bgColor)
+		border-color: var(--borderColor)
+		color: var(--color)
 		.alert__close
-			color $isDanger.borderColor
+			color var(--borderColor)
 

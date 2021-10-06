@@ -18,62 +18,62 @@
 	transition: all 0.2s ease-in-out
 	color: #fff
 
-	&.is-disable
+	&.t-disable
 	&[disabled]
 		opacity .65
 		cursor default
 
-	&:focus, &.is-focus
+	&:focus, &.t-focus
 		outline: 0
 		box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25)
 	&:focus, &:hover
 		text-decoration: none
 		color #fff
 
-	&.is-success
-		background-color: $isSuccess.bgColor
+	&.t-success
+		background-color: var(--bgColor)
 		&:hover
-			background-color: $isSuccess.bgColorHover
+			background-color: var(--bgColorHover)
 		&.is-disable:hover
 		&[disabled]:hover
-			background-color: $isSuccess.bgColor
-	&.is-info
-		background-color: $isInfo.bgColor
+			background-color: var(--bgColor)
+	&.t-info
+		background-color: var(--bgColor)
 		&:hover
-			background-color: $isInfo.bgColorHover
+			background-color: var(--bgColorHover)
 		&.is-disable:hover
 		&[disabled]:hover
-			background-color: $isInfo.bgColor
-	&.is-warning
-		background-color: $isWarning.bgColor
+			background-color: var(--bgColor)
+	&.t-warning
+		background-color: var(--bgColor)
 		&:hover
-			background-color: $isWarning.bgColorHover
+			background-color: var(--bgColorHover)
 		&.is-disable:hover
 		&[disabled]:hover
-			background-color: $isWarning.bgColor
-	&.is-danger
-		background-color: $isDanger.bgColor
+			background-color: var(--bgColor)
+	&.t-danger
+		background-color: var(--bgColor)
 		&:hover
-			background-color: $isDanger.bgColorHover
+			background-color: var(--bgColorHover)
 		&.is-disable:hover
 		&[disabled]:hover
-			background-color: $isDanger.bgColor
-	&.is-primary
-		background-color: $isActive.bgColor
+			background-color: var(--bgColor)
+	&.t-primary
+		background-color: var(--bgColor)
 		&:hover
-			background-color: $isActive.bgColorHover
+			background-color: var(--bgColorHover)
 		&.is-disable:hover
 		&[disabled]:hover
-			background-color: $isActive.bgColor
-	&.is-secondary
-		border: 1px solid $isSecondary.borderColor
-		color: $isSecondary.color
-		background-color: $isSecondary.bgColor
+			background-color: var(--bgColor)
+	&.t-secondary
+		border: 1px solid var(--borderColor)
+		color: var(--color)
+		background-color: var(--bgColor)
 		&:hover
-			background-color: $isSecondary.bgColorHover
+			background-color: var(--bgColorHover)
 		&.is-disable:hover
 		&[disabled]:hover
-			background-color: $isSecondary.bgColor
+			background-color: var(--bgColor)
 
 
 
