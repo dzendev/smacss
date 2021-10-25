@@ -4,12 +4,12 @@
   "description": "smacss",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "set NODE_ENV=development&&gulp", // раработка
-    "build": "set NODE_ENV=production&&gulp build", // продакшен
-    "move": "gulp move", // перемещение шрифтов, стилей, скрпитов в папку build
-    "font": "gulp font", // создание шрифта из svg
-    "sprite": "gulp sprite", // создание спрайтов из картинок
-    "clear": "gulp clear" // удалить содержимое папки build
+    "dev": "set NODE_ENV=development&&gulp",
+    "build": "set NODE_ENV=production&&gulp build",
+    "move": "gulp move",
+    "font": "gulp font",
+    "sprite": "gulp sprite",
+    "clear": "gulp clear"
   },
   "repository": {
     "type": "git",
