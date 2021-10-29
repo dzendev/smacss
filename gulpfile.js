@@ -96,7 +96,8 @@ function img() {
 	return gulp.src([
 		'dev/img/**/*.*',
 		'!dev/img/sprite-svg/*.*',
-		'!dev/img/sprite-png/**/*.*'
+		'!dev/img/sprite-png/**/*.*',
+		'!dev/img/icon-font/**/*.*'
 	])
 	.pipe(newer('build/img'))
 	.pipe(pipeIf(env === 'production', imagemin()))
@@ -142,24 +143,35 @@ function spriteSvg() {
 		.pipe(svgSprite({
 			shape: {
 				dimension: {
-					maxWidth: 64,
-					maxHeight: 64
+//					maxWidth: 64,
+//					maxHeight: 64
+					maxWidth: 32,
+					maxHeight: 32
 				}
 			},
 			mode: {
-				css: {
-					render: {
-						css: true,
-					},
-				}
+//				css: {
+//					render: {
+//						css: true,
+//					},
+//				},
+				inline: true,
+				symbol: true
+			},
+			svg: {
+				namespaceClassnames: true
 			}
 		}))
-		.pipe(gulp.dest('dev/stylus'))
-		.on('end', () => {
-			gulp.src('dev/stylus/css/svg/*.svg')
-				.pipe(imagemin())
-				.pipe(gulp.dest('build/css/svg'));
-		});
+		.pipe(gulp.dest('dev/img/sprite'))
+		//.on('end', () => {
+			//gulp.src('dev/img/css/svg/*.svg')
+				// .pipe(imagemin())
+				// .pipe(rename({
+					// basename: "iconsvg",
+					// extname: ".svg"
+				// }))
+				//.pipe(gulp.dest('dev/img/sprite'));
+		//});
 }
 
 function svgToFont() {
@@ -167,10 +179,10 @@ function svgToFont() {
 	return gulp.src(['dev/img/icon-font/*.svg'])
 		.pipe(iconfontCss({
 			fontName: 'iconfont',
-      // path: 'app/assets/css/templates/_icons.scss',
-      targetPath: '../../dev/stylus/modules/_iconfont.css',
-      fontPath: '../fonts/',
-      cssClass: 'iconfont'
+			// path: 'app/assets/css/templates/_icons.scss',
+			targetPath: '../../dev/stylus/modules/_iconfont.css',
+			fontPath: '../fonts/',
+			cssClass: 'iconfont'
 		}))
 		.pipe(iconfont({
 			fontName: 'iconfont', // required
