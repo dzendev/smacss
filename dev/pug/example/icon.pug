@@ -37,8 +37,7 @@ block content
 
 	h2 Модуль .iconsvg - svg sprite
 	div
-		div(style="display:none")
-			include ../../img/sprite/symbol/svg/sprite.symbol.svg
+		.callout.t-warning Для работы модуля нужно inline svg поместить в #{'<div style="display:none;"></div>'}
 		p
 			+iconsvg('js', 't-large')
 			| svg.iconsvg.iconsvg-js.t-large > use#js
@@ -48,18 +47,6 @@ block content
 		p
 			+iconsvg('js', 't-small')
 			| svg.iconsvg.iconsvg-js.t-small > use#js
-	h3 Вставка изображения из svg спрайта (inline или url)
-	p
-		+svg('', 'js')(width="100" height="100" fill="#f9cc46")
-		| svg(width="100", height="100", fill="#f9cc46")
-	p
-		+svg('', 'css3')(style="width:50px;height:50px;fill:#379BD6;")
-		| svg(style="width:50px;height:50px;fill:#379BD6;")
-	style
-		| .svgimg {width:50px;height:50px;fill:#E44D25;}
-	p
-		+svg('', 'html')(class="svgimg")
-		| svg(class="svgimg")
 
 	h2 Модуль CSS Arrows
 	div
