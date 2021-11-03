@@ -123,60 +123,59 @@ function stylusToCss() {
 		.pipe(browserSync.reload({ stream: true }));
 }
 
-function spritePng() {
-	var spriteData = gulp.src('dev/img/sprite-png/**/*.png').pipe(spritesmith({
-				imgName: 'sprite.png',
+async function spritePng() {
+	var spriteData = gulp.src('dev/img/iconpng/**/*.png').pipe(spritesmith({
+				imgName: 'iconpng.png',
 				cssName: '_sprite.styl',
 				cssFormat: 'stylus',
-				imgPath: '../img/sprite.png'
+				imgPath: '../img/sprite/iconpng.png'
 		}));
 		spriteData.img
 			.pipe(buffer())
 			.pipe(pipeIf(env === 'production', imagemin()))
-			.pipe(gulp.dest('build/img'));
+			.pipe(gulp.dest('dev/img/sprite'));
 		spriteData.css
 			.pipe(gulp.dest('dev/stylus/modules'));
 }
 
 function spriteSvg() {
-	return gulp.src('dev/img/sprite-svg/*.svg')
+	return gulp.src('dev/img/iconsvg/*.svg')
 		.pipe(svgSprite({
 			shape: {
+				id: {
+					generator: function(name, file) {
+						return 'iconsvg-' + file.stem;
+					}
+				},
 				dimension: {
-//					maxWidth: 64,
-//					maxHeight: 64
 					maxWidth: 32,
 					maxHeight: 32
+				},
+				spacing: {
+					padding: 0,
 				}
 			},
 			mode: {
-//				css: {
-//					render: {
-//						css: true,
-//					},
-//				},
 				inline: true,
 				symbol: true
 			},
-			svg: {
-				namespaceClassnames: true
-			}
 		}))
-		.pipe(gulp.dest('dev/img/sprite'))
-		//.on('end', () => {
-			//gulp.src('dev/img/css/svg/*.svg')
-				// .pipe(imagemin())
-				// .pipe(rename({
-					// basename: "iconsvg",
-					// extname: ".svg"
-				// }))
-				//.pipe(gulp.dest('dev/img/sprite'));
-		//});
+		.on('end', () => {
+			gulp.src('dev/img/sprite/symbol/svg/sprite.symbol.svg')
+				.pipe(rename({
+					basename: "iconsvg",
+					extname: ".svg"
+				}))
+				.pipe(gulp.dest('dev/img/sprite'))
+		})
+		.on('end', () => {
+			del(['dev/img/sprite/symbol'])
+		})
 }
 
 function svgToFont() {
 	const runTimestamp = Math.round(Date.now()/1000);
-	return gulp.src(['dev/img/icon-font/*.svg'])
+	return gulp.src(['dev/img/iconfont/*.svg'])
 		.pipe(iconfontCss({
 			fontName: 'iconfont',
 			// path: 'app/assets/css/templates/_icons.scss',
@@ -190,10 +189,10 @@ function svgToFont() {
 			formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'], // default, 'woff2' and 'svg' are available
 			timestamp: runTimestamp, // recommended to get consistent builds when watching files
 		}))
-			.on('glyphs', function(glyphs, options) {
-				// CSS templating, e.g.
-				console.log(glyphs, options);
-			})
+		//.on('glyphs', function(glyphs, options) {
+			// CSS templating, e.g.
+			//console.log(glyphs, options);
+		//})
 		.pipe(gulp.dest('build/fonts/'));
 }
 
@@ -262,7 +261,7 @@ exports.font = font; // созадние из svg шрифта и преобра
 const move = gulp.parallel(moveFont, moveJs, moveCss);
 exports.move = move; // перемещение шрифтов и js библиотек
 
-exports.init = gulp.parallel(sprite, font, move); // инициализация
+exports.init = gulp.series(clear, gulp.parallel(sprite, font, move)); // инициализация
 
 const task = [
 	pugToHtml,

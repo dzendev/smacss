@@ -41,3 +41,12 @@ mixin imgRetina(image, alt='', dpr=[1, 2])
 			src=`/img/retina/${basename + '.1x.' + extname}`
 			srcset= dpr.map(size => `/img/retina/${basename}.${size}x.${extname} ${size}x`).join(', ')
 		)
+
+//- вставить svg изображение из url или по id
+mixin svg(svg_url, svg_id)
+	if svg_id
+		svg()&attributes(attributes)
+			use(xlink:href= svg_url + '#' + svg_id)
+	else
+		svg()&attributes(attributes)
+			use(xlink:href= svg_url)

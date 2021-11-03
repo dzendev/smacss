@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "set NODE_ENV=development&&gulp",
     "build": "set NODE_ENV=production&&gulp build",
+    "init": "gulp init",
     "move": "gulp move",
     "font": "gulp font",
     "sprite": "gulp sprite",
