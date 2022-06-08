@@ -132,9 +132,6 @@ table
 	border-collapse collapse
 	width: 100%
 	max-width: 100%
-	+mema(sizeMedium)
-		display: block
-		overflow-x: auto
 	caption
 		padding-bottom .2em
 		font-style italic
@@ -151,6 +148,32 @@ table
 	tfoot td
 		border 0
 		border-top 1px solid var(--colorBlack)
+	+mema(sizeMedium)
+		thead
+			display none
+		tbody
+			tr
+				margin-bottom: 10px
+				display: block
+				border-bottom: 1px solid var(--colorBlack)
+				width 100%
+				&:last-child
+					border-bottom 0
+			td
+				display: flex
+				justify-content: space-between
+				border-bottom: 1px solid var(--colorGray)
+				&:before
+					content: attr(data-label)
+					font-weight: bold
+		tfoot
+			tr
+				display flex
+				justify-content space-between
+			td
+				border 0
+				font-weight bold
+
 /*!-----------------------------------------------------------------
   Адаптивные картинки
  -----------------------------------------------------------------*/
