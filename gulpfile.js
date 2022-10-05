@@ -55,19 +55,28 @@ function moveJs() {
 			'./node_modules/jquery/dist/jquery.min.js',
 			'./node_modules/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
 			'./node_modules/@babel/polyfill/dist/polyfill.min.js',
-			'./node_modules/slick-carousel/slick/slick.min.js'
+			'./node_modules/slick-carousel/slick/slick.min.js',
+			'./dev/lib/js/prism.js'
 		])
 		.pipe(newer('build/js'))
 		.pipe(gulp.dest('build/js'));
 }
 
-function moveCss() {
+function moveCssModules() {
 	return gulp.src([
 		'./node_modules/slick-carousel/slick/slick.css',
 		'./node_modules/slick-carousel/slick/slick-theme.css'
 	])
 	.pipe(newer('dev/stylus/modules'))
 	.pipe(gulp.dest('dev/stylus/modules'));
+}
+
+function moveCss() {
+	return gulp.src([
+		'./dev/lib/css/prism.css'
+	])
+	.pipe(newer('build/css'))
+	.pipe(gulp.dest('build/css'));
 }
 
 function sync() {
@@ -258,7 +267,7 @@ exports.sprite = sprite; // создание спрайтов png и svg
 const font = gulp.parallel(svgToFont, fontBase64);
 exports.font = font; // созадние из svg шрифта и преобразование шрифта в base64
 
-const move = gulp.parallel(moveFont, moveJs, moveCss);
+const move = gulp.parallel(moveFont, moveJs, moveCss, moveCssModules);
 exports.move = move; // перемещение шрифтов и js библиотек
 
 exports.init = gulp.series(clear, gulp.parallel(sprite, font, move)); // инициализация
