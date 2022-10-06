@@ -1,3 +1,7 @@
+import test from './modules/test.js'
+
+test();
+
 (function($) {
   // Модуль .hamburger
   const hamburger = document.querySelector('.hamburger');

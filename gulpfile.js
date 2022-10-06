@@ -1,28 +1,28 @@
-const del              = require('del');
-const gulp             = require('gulp');
-const pipeIf           = require('gulp-if');
-const pug              = require('gulp-pug');
-const plumberNotifier  = require('gulp-plumber-notifier');
-const htmlReplace      = require('gulp-html-replace');
-const imagemin         = require('gulp-imagemin');
-const spritesmith      = require('gulp.spritesmith');
-const svgSprite        = require('gulp-svg-sprite');
-const inlineFonts      = require('gulp-inline-fonts');
-const buffer           = require('vinyl-buffer');
-const newer            = require('gulp-newer');
-const stylus           = require('gulp-stylus');
-const gcmq             = require('gulp-group-css-media-queries');
-const rename           = require('gulp-rename');
-const cssnano          = require('gulp-cssnano');
-const autoprefixer     = require('gulp-autoprefixer');
-const uncss            = require('gulp-uncss-sp');
-const glob             = require('glob');
-const babel            = require('gulp-babel');
-const uglify           = require('gulp-uglify');
-const iconfont         = require('gulp-iconfont');
-const iconfontCss      = require('gulp-iconfont-css');
-const webpack          = require('webpack-stream');
-const browserSync      = require('browser-sync');
+import del from 'del';
+import gulp from 'gulp';
+import pipeIf from "gulp-if";
+import pug from "gulp-pug";
+import plumberNotifier from "gulp-plumber-notifier";
+import htmlReplace from 'gulp-html-replace';
+import imagemin from 'gulp-imagemin';
+import spritesmith from "gulp.spritesmith";
+import svgSprite from "gulp-svg-sprite";
+import inlineFonts from "gulp-inline-fonts";
+import buffer from "vinyl-buffer";
+import newer from "gulp-newer";
+import stylus from "gulp-stylus";
+import gcmq from "gulp-group-css-media-queries";
+import rename from "gulp-rename";
+import cssnano from 'gulp-cssnano';
+import autoprefixer from "gulp-autoprefixer";
+import uncss from "gulp-uncss-sp";
+import glob from "glob";
+import babel from "gulp-babel";
+import uglify from "gulp-uglify";
+import iconfont from "gulp-iconfont";
+import iconfontCss from "gulp-iconfont-css";
+import webpack from 'webpack-stream';
+import browserSync from "browser-sync";
 const env              = process.env.NODE_ENV;
 // breakpoint ипользуются stylus и pug
 // pug -> module picture
@@ -34,10 +34,6 @@ const breakpoint = {
 	sizeExtraLarge: "1170px",
 	sizeHD: "1440px"
 };
-
-function clear() {
-	return del(['build/*']);
-}
 
 function moveFont() {
 	return gulp.src([
@@ -53,7 +49,6 @@ function moveJs() {
 	return gulp.src([
 			'dev/lib/js/*.js',
 			'./node_modules/jquery/dist/jquery.min.js',
-			'./node_modules/page-scroll-to-id/jquery.malihu.PageScroll2id.js',
 			'./node_modules/@babel/polyfill/dist/polyfill.min.js',
 			'./node_modules/slick-carousel/slick/slick.min.js',
 			'./dev/lib/js/prism.js'
@@ -211,76 +206,65 @@ function fontBase64() {
 		.pipe(gulp.dest('dev/stylus/modules/'));
 }
 
-function es6() {
-	return gulp.src('dev/js/**/*.js', { sourcemaps: true })
-		.pipe(plumberNotifier())
-		// .pipe(sourcemaps.init())
-		.pipe(pipeIf(env === 'production', babel({
-			presets: [
-				["env"]
-			]
-		})))
-		.pipe(pipeIf(env === 'production', uglify()))
-		.pipe(pipeIf(env === 'production', rename({suffix: '.min'})))
-		// .pipe(sourcemaps.write("."))
-		.pipe(gulp.dest('build/js', { sourcemaps: true }))
-		.pipe(browserSync.reload({ stream: true }));
-}
-
-function es6modules() {
-	return gulp.src('dev/js/**/*.js')
-		.pipe(plumberNotifier())
-		.pipe(webpack({
-			entry: {
-				app: env === 'production' ? ['babel-polyfill', './dev/js/app.js'] : './dev/js/app.js',
-				script: './dev/js/script.js'
-			},
-			mode: env,
-			output: {
-				filename: '[name].js',
-			}
-		}))
-		.pipe(pipeIf(env === 'production', babel({
-			presets: [
-				["env", {"modules": false}]
-			]
-		})))
-		.pipe(pipeIf(env === 'production', uglify()))
-		.pipe(pipeIf(env === 'production', rename({suffix: '.min'})))
-		.pipe(gulp.dest('build/js'))
-		.pipe(browserSync.reload({ stream: true }));
+function js() {
+	return (
+    gulp
+      .src("dev/js/**/*.js", { sourcemaps: true })
+      .pipe(plumberNotifier())
+      .pipe(babel({
+				"presets": [["@babel/preset-env", { modules: false }]],
+			}))
+			.pipe(pipeIf(env === "production", webpack({
+				entry: {
+					// app: ['babel-polyfill'],
+					app: './dev/js/script.js',
+					script: './dev/js/script.js'
+				},
+				mode: env,
+				output: {
+					filename: '[name].js',
+				}
+			})))
+      .pipe(pipeIf(env === "production", uglify()))
+      .pipe(pipeIf(env === "production", rename({ suffix: ".min" })))
+      .pipe(gulp.dest("build/js", { sourcemaps: true }))
+      .pipe(browserSync.reload({ stream: true }))
+  );
 }
 
 function watch() {
 	gulp.watch('dev/pug/**/*.pug', pugToHtml);
 	gulp.watch('dev/img/**/*.*', img);
 	gulp.watch('dev/stylus/**/*.styl', stylusToCss);
-	gulp.watch('dev/js/**/*.js', es6);
-	// gulp.watch('dev/js/**/*.js', es6modules);
+	gulp.watch('dev/js/**/*.js', js);
 }
 
-exports.clear = clear; // очистка папки build
+// очистка папки build
+export function clear() {
+	return del(['build/*']);
+}
 
-const sprite = gulp.parallel(spritePng, spriteSvg);
-exports.sprite = sprite; // создание спрайтов png и svg
+// создание спрайтов png и svg
+export const sprite = gulp.parallel(spritePng, spriteSvg);
 
-const font = gulp.parallel(svgToFont, fontBase64);
-exports.font = font; // созадние из svg шрифта и преобразование шрифта в base64
+// созадние из svg шрифта и преобразование шрифта в base64
+export const font = gulp.parallel(svgToFont, fontBase64);
 
-const move = gulp.parallel(moveFont, moveJs, moveCss, moveCssModules);
-exports.move = move; // перемещение шрифтов и js библиотек
+// перемещение шрифтов и js библиотек
+export const move = gulp.parallel(moveFont, moveJs, moveCss, moveCssModules);
 
-exports.init = gulp.series(clear, gulp.parallel(sprite, font, move)); // инициализация
+// инициализация
+export const init = gulp.series(clear, gulp.parallel(sprite, font, move));
 
 const task = [
 	pugToHtml,
 	img,
 	stylusToCss,
-	es6,
-	// es6modules
+	js
 ];
 
-exports.build = gulp.series(clear, move, gulp.parallel(...task));
-const dev = gulp.parallel(sync, ...task, watch);
-exports.dev = dev;
-exports.default = dev;
+// компиляция проекта, сжатие файлов (js, css), оптимизация изображений
+export const build = gulp.series(clear, move, gulp.parallel(...task));
+// разработка
+const dev = gulp.parallel(move, sync, ...task, watch);
+export default dev;
